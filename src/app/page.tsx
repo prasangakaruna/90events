@@ -328,7 +328,7 @@ export default function Home() {
             </div>
             
             {/* Right side - Professional Event Slider */}
-            <div className="relative flex items-center justify-center h-full">
+            <div className="relative flex items-center justify-center h-full mt-12 lg:mt-0">
               <HeroEventSlider events={heroEvents} />
             </div>
           </div>
@@ -431,6 +431,35 @@ export default function Home() {
             <LiveShowsSlider shows={liveShows} />
           </div>
         </div>
+        </div>
+      </section>
+
+      {/* Multiple Events Section */}
+      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
+            {t.allEvents || 'ALL EVENTS'}
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.upcomingEvents || 'Upcoming Events'}</h2>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            {t.discoverAllEvents || 'Discover all our upcoming shows and book your tickets today'}
+          </p>
+        </div>
+
+        {/* Events Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {heroEvents.map((event) => (
+            <EventCard key={event.id} {...event} />
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Link
+            href="/events"
+            className="inline-block px-10 py-4 border-2 border-[#f0425f] text-[#f0425f] rounded-xl hover:bg-[#f0425f] hover:text-white transition-all font-semibold text-lg transform hover:scale-105"
+          >
+            {t.viewAllEvents || 'View All Events'}
+          </Link>
         </div>
       </section>
 
@@ -658,6 +687,43 @@ export default function Home() {
               {t.registerHere}
             </button>
           </form>
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
+            {t.ourPartners || 'OUR PARTNERS'}
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.ourPartners || 'Our Sponsors'}</h2>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            {t.proudPartners || 'We\'re proud to partner with these amazing brands'}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            { name: 'Amerika Liturk', logo: '/sponsors/amerikaliturknew.png' },
+            { name: 'Grape Law', logo: '/sponsors/grapeLaw2.jpg' },
+            { name: 'Turk of America', logo: '/sponsors/TurkOfAmerica.png' },
+          ].map((sponsor, idx) => (
+            <div
+              key={idx}
+              className="relative group"
+            >
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7] rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity blur-sm"></div>
+              <div className="relative glass-effect rounded-2xl p-8 flex items-center justify-center hover-lift min-h-[200px]">
+                <Image
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  width={200}
+                  height={100}
+                  className="object-contain max-w-full max-h-24 grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

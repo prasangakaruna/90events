@@ -111,10 +111,38 @@ export function ColorCustomizationProvider({ children }: { children: ReactNode }
   };
 
   const resetColors = () => {
-    setBackgroundColorState(DEFAULT_BACKGROUND);
-    setFontColorState(DEFAULT_FONT);
+    // Clear localStorage first
     localStorage.removeItem('customBackgroundColor');
     localStorage.removeItem('customFontColor');
+    
+    // Clear all inline styles that were applied before resetting state
+    // Reset body styles
+    document.body.style.backgroundColor = '';
+    document.body.style.color = '';
+    
+    // Reset CSS variables to empty (will use CSS defaults)
+    document.documentElement.style.setProperty('--custom-background', '');
+    document.documentElement.style.setProperty('--custom-foreground', '');
+    document.documentElement.style.setProperty('--background', '');
+    document.documentElement.style.setProperty('--foreground', '');
+    
+    // Remove inline styles from elements
+    const mainElements = document.querySelectorAll('main, section, div[class*="bg-black"], div[class*="bg-gray-900"]');
+    mainElements.forEach((el) => {
+      const element = el as HTMLElement;
+      element.style.backgroundColor = '';
+    });
+    
+    // Remove inline text colors
+    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, div, a, li, td, th, label');
+    textElements.forEach((el) => {
+      const element = el as HTMLElement;
+      element.style.color = '';
+    });
+    
+    // Reset state to defaults (this will trigger useEffect but with default values)
+    setBackgroundColorState(DEFAULT_BACKGROUND);
+    setFontColorState(DEFAULT_FONT);
   };
 
   return (

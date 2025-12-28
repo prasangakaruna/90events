@@ -76,6 +76,8 @@ export const es = {
   news: 'Noticias',
   allEvents: 'Todos los Eventos',
   legal: 'Legal',
+  upcomingEvents: 'Próximos Eventos',
+  discoverAllEvents: 'Descubre todos nuestros próximos espectáculos y reserva tus entradas hoy',
   termsConditions: 'Términos y Condiciones',
   privacyPolicy: 'Política de Privacidad',
   faq: 'Preguntas Frecuentes',
