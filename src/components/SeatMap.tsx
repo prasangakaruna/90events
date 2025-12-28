@@ -62,7 +62,7 @@ export default function SeatMap({ onSeatSelect, initialSeats = [] }: SeatMapProp
       if (s.id === seat.id) {
         return {
           ...s,
-          status: s.status === 'selected' ? 'available' : 'selected',
+          status: (s.status === 'selected' ? 'available' : 'selected') as 'available' | 'selected',
         };
       }
       return s;
@@ -70,7 +70,7 @@ export default function SeatMap({ onSeatSelect, initialSeats = [] }: SeatMapProp
 
     setSeats(newSeats);
 
-    const updatedSelectedSeats = newSeats.filter((s) => s.status === 'selected');
+    const updatedSelectedSeats = newSeats.filter((s) => s.status === 'selected') as Seat[];
     setSelectedSeats(updatedSelectedSeats);
     onSeatSelect?.(updatedSelectedSeats);
   };
