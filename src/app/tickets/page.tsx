@@ -167,6 +167,10 @@ export default function TicketsPage() {
   const [viewMode, setViewMode] = useState<'map' | 'section'>('map');
   const [showExtras, setShowExtras] = useState(false);
   const [selectedExtras, setSelectedExtras] = useState<any[]>([]);
+  const [merchandise, setMerchandise] = useState({
+    tshirt: { quantity: 0, size: 'M', color: 'Black' },
+    mug: { quantity: 0, style: 'Classic' }
+  });
   const [promoCode, setPromoCode] = useState('');
   const [appliedPromo, setAppliedPromo] = useState<any>(null);
   const [showCheckout, setShowCheckout] = useState(false);
@@ -846,6 +850,186 @@ export default function TicketsPage() {
                               </div>
                             );
                           })}
+                        </div>
+                        <div className="mt-6">
+                           <h2 className="text-2xl font-bold mb-6">Add To Cart</h2>
+                           <p className="text-gray-400 mb-6">Add the selected extras to your cart and proceed to checkout.</p>
+                           <div className="space-y-6">
+                             {/* T-Shirt Options */}
+                             <div className="bg-gray-900 rounded-lg p-6 border border-gray-700">
+                               <div className="flex items-start gap-6 mb-4">
+                                 <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden flex-shrink-0">
+                                   <Image
+                                     src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop"
+                                     alt="T-Shirt"
+                                     fill
+                                     className="object-cover"
+                                   />
+                                 </div>
+                                 <div className="flex-1">
+                                   <div className="flex items-start justify-between mb-2">
+                                     <div>
+                                       <h3 className="text-xl font-bold text-white mb-2">T-Shirt</h3>
+                                       <p className="text-gray-400 text-sm mb-2">Official event t-shirt with exclusive design</p>
+                                       <div className="text-[#f0425f] font-bold text-xl">$29.99</div>
+                                     </div>
+                                     <div className="w-6 h-6 rounded border-2 flex items-center justify-center border-gray-600 flex-shrink-0">
+                                       {merchandise.tshirt.quantity > 0 && (
+                                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                         </svg>
+                                       )}
+                                     </div>
+                                   </div>
+                                 </div>
+                               </div>
+                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                 <div>
+                                   <label className="block text-sm font-medium text-gray-300 mb-2">Size</label>
+                                   <select
+                                     value={merchandise.tshirt.size}
+                                     onChange={(e) => setMerchandise(prev => ({
+                                       ...prev,
+                                       tshirt: { ...prev.tshirt, size: e.target.value }
+                                     }))}
+                                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#f0425f]"
+                                   >
+                                     <option value="S">Small (S)</option>
+                                     <option value="M">Medium (M)</option>
+                                     <option value="L">Large (L)</option>
+                                     <option value="XL">Extra Large (XL)</option>
+                                     <option value="XXL">2X Large (XXL)</option>
+                                   </select>
+                                 </div>
+                                 <div>
+                                   <label className="block text-sm font-medium text-gray-300 mb-2">Color</label>
+                                   <select
+                                     value={merchandise.tshirt.color}
+                                     onChange={(e) => setMerchandise(prev => ({
+                                       ...prev,
+                                       tshirt: { ...prev.tshirt, color: e.target.value }
+                                     }))}
+                                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#f0425f]"
+                                   >
+                                     <option value="Black">Black</option>
+                                     <option value="White">White</option>
+                                     <option value="Red">Red</option>
+                                     <option value="Navy">Navy</option>
+                                   </select>
+                                 </div>
+                               </div>
+                               <div className="flex items-center justify-between">
+                                 <div className="flex items-center gap-3">
+                                   <button
+                                     onClick={() => setMerchandise(prev => ({
+                                       ...prev,
+                                       tshirt: { ...prev.tshirt, quantity: Math.max(0, prev.tshirt.quantity - 1) }
+                                     }))}
+                                     className="w-10 h-10 rounded-lg bg-gray-800 border border-gray-700 text-white hover:bg-gray-700 transition-colors"
+                                   >
+                                     -
+                                   </button>
+                                   <span className="text-white font-semibold w-12 text-center">{merchandise.tshirt.quantity}</span>
+                                   <button
+                                     onClick={() => setMerchandise(prev => ({
+                                       ...prev,
+                                       tshirt: { ...prev.tshirt, quantity: prev.tshirt.quantity + 1 }
+                                     }))}
+                                     className="w-10 h-10 rounded-lg bg-gray-800 border border-gray-700 text-white hover:bg-gray-700 transition-colors"
+                                   >
+                                     +
+                                   </button>
+                                 </div>
+                                 <button
+                                   onClick={() => setMerchandise(prev => ({
+                                     ...prev,
+                                     tshirt: { ...prev.tshirt, quantity: prev.tshirt.quantity + 1 }
+                                   }))}
+                                   className="px-6 py-2 border-2 border-red-500 text-white rounded-lg hover:bg-red-500 transition-colors text-sm font-semibold"
+                                 >
+                                   Add to Cart
+                                 </button>
+                               </div>
+                             </div>
+
+                             {/* Mug Options */}
+                             <div className="bg-gray-900 rounded-lg p-6 border border-gray-700">
+                               <div className="flex items-start gap-6 mb-4">
+                                 <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden flex-shrink-0">
+                                   <Image
+                                     src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop"
+                                     alt="Mug"
+                                     fill
+                                     className="object-cover"
+                                   />
+                                 </div>
+                                 <div className="flex-1">
+                                   <div className="flex items-start justify-between mb-2">
+                                     <div>
+                                       <h3 className="text-xl font-bold text-white mb-2">Mug</h3>
+                                       <p className="text-gray-400 text-sm mb-2">Collectible coffee mug with event branding</p>
+                                       <div className="text-[#f0425f] font-bold text-xl">$14.99</div>
+                                     </div>
+                                     <div className="w-6 h-6 rounded border-2 flex items-center justify-center border-gray-600 flex-shrink-0">
+                                       {merchandise.mug.quantity > 0 && (
+                                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                         </svg>
+                                       )}
+                                     </div>
+                                   </div>
+                                 </div>
+                               </div>
+                               <div className="mb-4">
+                                 <label className="block text-sm font-medium text-gray-300 mb-2">Style</label>
+                                 <select
+                                   value={merchandise.mug.style}
+                                   onChange={(e) => setMerchandise(prev => ({
+                                     ...prev,
+                                     mug: { ...prev.mug, style: e.target.value }
+                                   }))}
+                                   className="w-full md:w-1/2 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#f0425f]"
+                                 >
+                                   <option value="Classic">Classic</option>
+                                   <option value="Travel">Travel Mug</option>
+                                   <option value="Ceramic">Ceramic</option>
+                                   <option value="Stainless Steel">Stainless Steel</option>
+                                 </select>
+                               </div>
+                               <div className="flex items-center justify-between">
+                                 <div className="flex items-center gap-3">
+                                   <button
+                                     onClick={() => setMerchandise(prev => ({
+                                       ...prev,
+                                       mug: { ...prev.mug, quantity: Math.max(0, prev.mug.quantity - 1) }
+                                     }))}
+                                     className="w-10 h-10 rounded-lg bg-gray-800 border border-gray-700 text-white hover:bg-gray-700 transition-colors"
+                                   >
+                                     -
+                                   </button>
+                                   <span className="text-white font-semibold w-12 text-center">{merchandise.mug.quantity}</span>
+                                   <button
+                                     onClick={() => setMerchandise(prev => ({
+                                       ...prev,
+                                       mug: { ...prev.mug, quantity: prev.mug.quantity + 1 }
+                                     }))}
+                                     className="w-10 h-10 rounded-lg bg-gray-800 border border-gray-700 text-white hover:bg-gray-700 transition-colors"
+                                   >
+                                     +
+                                   </button>
+                                 </div>
+                                 <button
+                                   onClick={() => setMerchandise(prev => ({
+                                     ...prev,
+                                     mug: { ...prev.mug, quantity: prev.mug.quantity + 1 }
+                                   }))}
+                                   className="px-6 py-2 border-2 border-red-500 text-white rounded-lg hover:bg-red-500 transition-colors text-sm font-semibold"
+                                 >
+                                   Add to Cart
+                                 </button>
+                               </div>
+                             </div>
+                           </div>
                         </div>
                       </div>
                     </div>

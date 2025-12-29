@@ -459,6 +459,153 @@ export default function TourPage() {
         </div>
       </section>
 
+      {/* City Based Sponsors Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-1 bg-yellow-400 text-black text-sm font-semibold rounded-full mb-4">
+              Local Partners
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">City Based Sponsors</h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+              We partner with local businesses in each state to bring you exclusive prizes and experiences. Support local sponsors in your area!
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {/* New York Sponsors */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span className="text-3xl">🗽</span>
+                <span>New York, NY</span>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { name: 'Meta Studio', tier: 'Gold', value: '$1,500', description: 'Creative design studio', logo: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=200&h=200&fit=crop' },
+                  { name: 'Prime Fitness', tier: 'Silver', value: '$1,500', description: 'Premium fitness center', logo: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=200&h=200&fit=crop' },
+                  { name: 'Saka Restaurant', tier: 'Bronze', value: '$1,500', description: 'Authentic Turkish cuisine', logo: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=200&h=200&fit=crop' },
+                ].map((sponsor, idx) => (
+                  <div key={idx} className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-yellow-500/50 transition-all">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="relative w-16 h-16 bg-gray-800 rounded-lg overflow-hidden flex items-center justify-center">
+                        <Image
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        sponsor.tier === 'Gold' ? 'bg-yellow-500/20 text-yellow-400' :
+                        sponsor.tier === 'Silver' ? 'bg-gray-400/20 text-gray-400' :
+                        'bg-orange-500/20 text-orange-400'
+                      }`}>
+                        {sponsor.tier}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">{sponsor.name}</h4>
+                    <p className="text-gray-400 text-sm mb-3">{sponsor.description}</p>
+                    <div className="text-yellow-400 font-bold">{sponsor.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Illinois Sponsors */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span className="text-3xl">🏙️</span>
+                <span>Illinois (Chicago)</span>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { name: 'Dream Homes', tier: 'Platinum', value: '$1,500', description: 'Luxury real estate', logo: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=200&h=200&fit=crop' },
+                  { name: 'Tech Solutions', tier: 'Diamond', value: '$1,500', description: 'IT consulting services', logo: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200&h=200&fit=crop' },
+                  { name: 'Public Relations', tier: 'Gold', value: '$1,500', description: 'PR and marketing agency', logo: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop' },
+                ].map((sponsor, idx) => (
+                  <div key={idx} className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-yellow-500/50 transition-all">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="relative w-16 h-16 bg-gray-800 rounded-lg overflow-hidden flex items-center justify-center">
+                        <Image
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        sponsor.tier === 'Platinum' ? 'bg-purple-500/20 text-purple-400' :
+                        sponsor.tier === 'Diamond' ? 'bg-blue-500/20 text-blue-400' :
+                        'bg-yellow-500/20 text-yellow-400'
+                      }`}>
+                        {sponsor.tier}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">{sponsor.name}</h4>
+                    <p className="text-gray-400 text-sm mb-3">{sponsor.description}</p>
+                    <div className="text-yellow-400 font-bold">{sponsor.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* California Sponsors */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span className="text-3xl">🌴</span>
+                <span>California (Palo Alto)</span>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { name: 'Creative Agency', tier: 'Silver', value: '$1,500', description: 'Full-service creative agency', logo: 'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=200&h=200&fit=crop' },
+                  { name: 'IT Solutions', tier: 'Bronze', value: '$1,500', description: 'Technology solutions provider', logo: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop' },
+                  { name: 'Marketing Firm', tier: 'Platinum', value: '$1,500', description: 'Digital marketing experts', logo: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop' },
+                ].map((sponsor, idx) => (
+                  <div key={idx} className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-yellow-500/50 transition-all">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="relative w-16 h-16 bg-gray-800 rounded-lg overflow-hidden flex items-center justify-center">
+                        <Image
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        sponsor.tier === 'Platinum' ? 'bg-purple-500/20 text-purple-400' :
+                        sponsor.tier === 'Silver' ? 'bg-gray-400/20 text-gray-400' :
+                        'bg-orange-500/20 text-orange-400'
+                      }`}>
+                        {sponsor.tier}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">{sponsor.name}</h4>
+                    <p className="text-gray-400 text-sm mb-3">{sponsor.description}</p>
+                    <div className="text-yellow-400 font-bold">{sponsor.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* CTA for Sponsors */}
+          <div className="mt-12 text-center">
+            <div className="bg-gradient-to-r from-purple-900/50 via-pink-900/50 to-red-900/50 rounded-xl p-8 border border-purple-700/50 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-4">Become a City Sponsor</h3>
+              <p className="text-gray-300 mb-6">
+                Join our network of local sponsors and get your brand in front of thousands of event attendees in your state.
+              </p>
+              <Link
+                href="/sponsors"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-lg shadow-2xl hover:shadow-[#f0425f]/60"
+              >
+                Apply as City Sponsor
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900/50 to-black">
         <div className="container mx-auto max-w-7xl">

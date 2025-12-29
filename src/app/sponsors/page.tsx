@@ -232,9 +232,12 @@ export default function SponsorsPage() {
                 <p className="text-gray-600 text-sm mb-4">{partner.description}</p>
                 <div className="flex items-center justify-between">
                   <div className="text-2xl font-bold text-yellow-500">{partner.price}</div>
-                  <button className="px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60">
+                  <Link
+                    href={`/sponsors/${partner.id}`}
+                    className="px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
+                  >
                     View Details
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -265,9 +268,12 @@ export default function SponsorsPage() {
         </div>
                 <h3 className="text-xl font-bold mb-2">{sponsor.name}</h3>
                 <p className="text-gray-400 text-sm mb-4">{sponsor.description}</p>
-                <button className="w-full px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60">
+                <Link
+                  href={`/sponsors/${sponsor.id}`}
+                  className="block w-full px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 text-center"
+                >
                   View Details
-                </button>
+                </Link>
               </div>
             ))}
             </div>
@@ -312,9 +318,12 @@ export default function SponsorsPage() {
                     </div>
                 </div>
                 <p className="text-gray-400 text-sm mb-4">{sponsor.description}</p>
-                <button className="w-full px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60">
+                <Link
+                  href={`/sponsors/${sponsor.id}`}
+                  className="block w-full px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 text-center"
+                >
                   View Details
-                </button>
+                </Link>
               </div>
             ))}
           </div>

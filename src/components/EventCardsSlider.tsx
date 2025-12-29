@@ -156,7 +156,7 @@ export default function EventCardsSlider({ events }: EventCardsSliderProps) {
         <>
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-[#f0425f] hover:bg-[#d63852] rounded-full flex items-center justify-center border border-[#f0425f] transition-all duration-300 hover:scale-110 slider-nav-button"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-purple-900/80 hover:bg-purple-900 rounded-full flex items-center justify-center border border-purple-700/50 transition-all duration-300 hover:scale-110"
             aria-label="Previous events"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white">
@@ -165,7 +165,7 @@ export default function EventCardsSlider({ events }: EventCardsSliderProps) {
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-[#f0425f] hover:bg-[#d63852] rounded-full flex items-center justify-center border border-[#f0425f] transition-all duration-300 hover:scale-110 slider-nav-button"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-purple-900/80 hover:bg-purple-900 rounded-full flex items-center justify-center border border-purple-700/50 transition-all duration-300 hover:scale-110"
             aria-label="Next events"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white">

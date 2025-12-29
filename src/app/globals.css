@@ -369,46 +369,6 @@ body.theme-light .past-shows-section .text-gray-400 {
   color: #4b5563 !important;
 }
 
-/* Catch us live section - remove purple background in light mode */
-[data-theme="light"] .catch-us-live-section,
-body.theme-light .catch-us-live-section {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-[data-theme="light"] .catch-us-live-section .text-white,
-body.theme-light .catch-us-live-section .text-white,
-[data-theme="light"] .catch-us-live-section h2,
-body.theme-light .catch-us-live-section h2 {
-  color: #000000 !important;
-}
-
-[data-theme="light"] .catch-us-live-section .text-gray-300,
-body.theme-light .catch-us-live-section .text-gray-300 {
-  color: #4b5563 !important;
-}
-
-/* Slider navigation buttons should be red with white text in light mode */
-[data-theme="light"] .slider-nav-button,
-body.theme-light .slider-nav-button {
-  background-color: #dc2626 !important;
-  border-color: #dc2626 !important;
-  color: #ffffff !important;
-}
-
-[data-theme="light"] .slider-nav-button:hover,
-body.theme-light .slider-nav-button:hover {
-  background-color: #b91c1c !important;
-  border-color: #b91c1c !important;
-}
-
-[data-theme="light"] .slider-nav-button svg,
-body.theme-light .slider-nav-button svg,
-[data-theme="light"] .slider-nav-button .text-white,
-body.theme-light .slider-nav-button .text-white {
-  color: #ffffff !important;
-}
-
 /* All buttons should be red with white text in light mode */
 [data-theme="light"] button[class*="bg-gradient-to-r"],
 body.theme-light button[class*="bg-gradient-to-r"],
@@ -496,6 +456,19 @@ body.theme-light section:first-of-type a[class*="rounded-lg"] * {
 }
 
 /* Override all sections and main containers - Light theme */
+[data-theme="light"] section,
+body.theme-light section,
+[data-theme="light"] main,
+body.theme-light main,
+[data-theme="light"] div,
+body.theme-light div,
+[data-theme="light"] article,
+body.theme-light article,
+[data-theme="light"] aside,
+body.theme-light aside {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
 
 /* Header should have white background with black text when scrolled in light mode */
 [data-theme="light"] header[class*="bg-black"],
@@ -693,126 +666,4 @@ body.theme-light .text-gray-400,
 [data-theme="light"] .text-gray-500,
 body.theme-light .text-gray-500 {
   color: #6b7280 !important;
-}
-
-/* All tile/card backgrounds should be white in light mode */
-[data-theme="light"] .bg-purple-900\/30,
-body.theme-light .bg-purple-900\/30,
-[data-theme="light"] div[class*="bg-purple-900"],
-body.theme-light div[class*="bg-purple-900"] {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-}
-
-[data-theme="light"] .bg-gray-900,
-body.theme-light .bg-gray-900,
-[data-theme="light"] div[class*="bg-gray-900"],
-body.theme-light div[class*="bg-gray-900"] {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-}
-
-[data-theme="light"] div[class*="from-gray-900"][class*="to-black"],
-body.theme-light div[class*="from-gray-900"][class*="to-black"],
-[data-theme="light"] div[class*="from-gray-900"][class*="via"],
-body.theme-light div[class*="from-gray-900"][class*="via"],
-[data-theme="light"] .bg-gradient-to-br.from-gray-900,
-body.theme-light .bg-gradient-to-br.from-gray-900 {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-}
-
-[data-theme="light"] .bg-gradient-to-br.from-gray-900\/95.to-black\/95,
-body.theme-light .bg-gradient-to-br.from-gray-900\/95.to-black\/95,
-[data-theme="light"] div[class*="from-gray-900/95"][class*="to-black/95"],
-body.theme-light div[class*="from-gray-900/95"][class*="to-black/95"] {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-}
-
-[data-theme="light"] .bg-gradient-to-br.from-gray-900\/90.to-black\/90,
-body.theme-light .bg-gradient-to-br.from-gray-900\/90.to-black\/90,
-[data-theme="light"] div[class*="from-gray-900/90"][class*="to-black/90"],
-body.theme-light div[class*="from-gray-900/90"][class*="to-black/90"] {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-}
-
-/* Event card tiles */
-[data-theme="light"] .rounded-lg[class*="bg-gray-900"],
-body.theme-light .rounded-lg[class*="bg-gray-900"],
-[data-theme="light"] .rounded-xl[class*="bg-gray-900"],
-body.theme-light .rounded-xl[class*="bg-gray-900"],
-[data-theme="light"] .rounded-xl[class*="bg-purple-900"],
-body.theme-light .rounded-xl[class*="bg-purple-900"],
-[data-theme="light"] .rounded-2xl[class*="bg-gray-900"],
-body.theme-light .rounded-2xl[class*="bg-gray-900"],
-[data-theme="light"] .rounded-2xl[class*="bg-purple-900"],
-body.theme-light .rounded-2xl[class*="bg-purple-900"] {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-}
-
-/* Stats overlay tiles */
-[data-theme="light"] .backdrop-blur-sm[class*="bg-gray-900"],
-body.theme-light .backdrop-blur-sm[class*="bg-gray-900"] {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-}
-
-/* Tile borders should be light gray in light mode */
-[data-theme="light"] .border-gray-800,
-body.theme-light .border-gray-800,
-[data-theme="light"] .border-purple-800,
-body.theme-light .border-purple-800,
-[data-theme="light"] .border-gray-700,
-body.theme-light .border-gray-700,
-[data-theme="light"] div[class*="bg-gray-900"][class*="border"],
-body.theme-light div[class*="bg-gray-900"][class*="border"],
-[data-theme="light"] div[class*="bg-purple-900"][class*="border"],
-body.theme-light div[class*="bg-purple-900"][class*="border"] {
-  border-color: #e5e7eb !important;
-}
-
-/* Tile text colors in light mode */
-[data-theme="light"] div[class*="bg-gray-900"] .text-white,
-body.theme-light div[class*="bg-gray-900"] .text-white,
-[data-theme="light"] div[class*="bg-purple-900"] .text-white,
-body.theme-light div[class*="bg-purple-900"] .text-white,
-[data-theme="light"] div[class*="from-gray-900"] .text-white,
-body.theme-light div[class*="from-gray-900"] .text-white {
-  color: #000000 !important;
-}
-
-[data-theme="light"] div[class*="bg-gray-900"] .text-gray-400,
-body.theme-light div[class*="bg-gray-900"] .text-gray-400,
-[data-theme="light"] div[class*="bg-purple-900"] .text-gray-400,
-body.theme-light div[class*="bg-purple-900"] .text-gray-400,
-[data-theme="light"] div[class*="from-gray-900"] .text-gray-400,
-body.theme-light div[class*="from-gray-900"] .text-gray-400 {
-  color: #6b7280 !important;
-}
-
-/* Ready to test your love section should be white in light mode */
-[data-theme="light"] .ready-to-test-section,
-body.theme-light .ready-to-test-section {
-  background: #ffffff !important;
-}
-
-[data-theme="light"] .ready-to-test-section > div[class*="bg-gradient"],
-body.theme-light .ready-to-test-section > div[class*="bg-gradient"],
-[data-theme="light"] .ready-to-test-section > div[class*="bg-black"],
-body.theme-light .ready-to-test-section > div[class*="bg-black"] {
-  display: none !important;
-}
-
-[data-theme="light"] .ready-to-test-section h2,
-body.theme-light .ready-to-test-section h2 {
-  color: #dc2626 !important;
-}
-
-[data-theme="light"] .ready-to-test-section p,
-body.theme-light .ready-to-test-section p {
-  color: #000000 !important;
-  opacity: 0.8 !important;
 }

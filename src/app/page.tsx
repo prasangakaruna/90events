@@ -327,9 +327,34 @@ export default function Home() {
             {/* Right side - Artist Image and Next Show Countdown */}
             <div className="flex items-center justify-center lg:justify-end">
               <div className="w-full max-w-md space-y-4">
-                {/* Artist Image */}
-                 
                 
+                
+                {/* Win Prize Banner */}
+                <Link
+                  href="/prizes"
+                  className="block px-5 py-4 bg-[#1a0a2e] hover:bg-[#1f0f3a] border border-purple-900/40 rounded-xl transition-all duration-300 flex items-center justify-between gap-4 w-full"
+                >
+                  <div className="flex items-center gap-4 flex-1 min-w-0">
+                    {/* Trophy Icon */}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
+                      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                      <path d="M4 22h16"></path>
+                      <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                      <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                      <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                    </svg>
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="text-[#f0425f] font-bold text-base md:text-lg leading-tight whitespace-nowrap" style={{ fontFamily: 'Arial, sans-serif' }}>Win up to $10,000</span>
+                      <span className="text-[#9ca3af] text-xs md:text-sm leading-tight whitespace-nowrap" style={{ fontFamily: 'Arial, sans-serif' }}>Every ticket enters the draw</span>
+                    </div>
+                  </div>
+                  {/* Arrow Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 flex-shrink-0">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </Link>
                 <NextShowCountdown />
               </div>
             </div>
@@ -508,7 +533,7 @@ export default function Home() {
       </section>
 
       {/* Live Shows Section */}
-      <section className="py-24 bg-black relative overflow-hidden catch-us-live-section">
+      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">Catch us live</h2>
@@ -941,7 +966,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden ready-to-test-section">
+      <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7]"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
