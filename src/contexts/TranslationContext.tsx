@@ -2,9 +2,9 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { en } from '@/lib/translations/en';
-import { es } from '@/lib/translations/es';
+import { tr } from '@/lib/translations/tr';
 
-type Language = 'en' | 'es';
+type Language = 'en' | 'tr';
 
 type Translations = typeof en;
 
@@ -18,7 +18,7 @@ const TranslationContext = createContext<TranslationContextType | undefined>(und
 
 const translations = {
   en,
-  es,
+  tr,
 };
 
 export function TranslationProvider({ children }: { children: ReactNode }) {
@@ -27,13 +27,13 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Load language from localStorage or detect from browser
     const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) {
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
       setLanguageState(savedLanguage);
     } else {
       // Detect browser language
       const browserLang = navigator.language.split('-')[0];
-      if (browserLang === 'es') {
-        setLanguageState('es');
+      if (browserLang === 'tr') {
+        setLanguageState('tr');
       }
     }
   }, []);

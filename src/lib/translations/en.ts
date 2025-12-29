@@ -7,6 +7,12 @@ export const en = {
   sponsors: 'Sponsors',
   contact: 'Contact',
   buyTickets: 'Buy Tickets',
+  tickets: 'Tickets',
+  shop: 'Shop',
+  tour: 'Tour',
+  apply: 'Apply',
+  login: 'Login',
+  beAContestant: 'Be a Contestant',
   
   // Hero Section
   livePerformance: 'LIVE PERFORMANCE',
@@ -14,7 +20,7 @@ export const en = {
   gercekler: 'Gerçekler',
   acidir: 'Acıdır',
   uberAyrık: 'Über Ayrık',
-  heroDescription: 'This is a drama, comedy and illusion show. Are you ready to discover the truths of life? Love, truth and magic come together on stage.',
+  heroDescription: 'The ultimate test of love. How well do you really know your partner?',
   buyTicket: 'Buy Ticket',
   moreInfo: 'More Info',
   experience: 'Experience',

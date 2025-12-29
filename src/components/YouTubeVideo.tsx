@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface YouTubeVideoProps {
   videoId: string;
@@ -11,9 +12,13 @@ interface YouTubeVideoProps {
 
 export default function YouTubeVideo({ videoId, title, thumbnail, className = '' }: YouTubeVideoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const thumbnailUrl = thumbnail || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  
+  // Fallback to a local image if YouTube thumbnail fails
+  const fallbackImage = '/img/img16346_orig.webp';
 
   if (isPlaying) {
     return (
@@ -34,23 +39,34 @@ export default function YouTubeVideo({ videoId, title, thumbnail, className = ''
       className={`relative aspect-video rounded-lg overflow-hidden glass-effect group cursor-pointer hover-lift ${className}`}
       onClick={() => setIsPlaying(true)}
     >
-      <div 
-        className="w-full h-full bg-cover bg-center opacity-70 group-hover:opacity-100 transition-opacity"
-        style={{
-          backgroundImage: `url(${thumbnailUrl})`
-        }}
-      >
-        <div className="w-full h-full flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600/90 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-            <div className="w-0 h-0 border-l-[20px] md:border-l-[24px] border-l-white border-t-[12px] md:border-t-[14px] border-t-transparent border-b-[12px] md:border-b-[14px] border-b-transparent ml-1"></div>
-          </div>
+      {!imageError ? (
+        <Image
+          src={thumbnailUrl}
+          alt={title || 'YouTube video thumbnail'}
+          fill
+          className="object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+          onError={() => setImageError(true)}
+          unoptimized
+        />
+      ) : (
+        <Image
+          src={fallbackImage}
+          alt={title || 'Video thumbnail'}
+          fill
+          className="object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+          unoptimized
+        />
+      )}
+      <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
+        <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600/90 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+          <div className="w-0 h-0 border-l-[20px] md:border-l-[24px] border-l-white border-t-[12px] md:border-t-[14px] border-t-transparent border-b-[12px] md:border-b-[14px] border-b-transparent ml-1"></div>
         </div>
-        {title && (
-          <div className="absolute bottom-4 left-4 right-4">
-            <p className="text-white font-semibold text-sm md:text-base line-clamp-2">{title}</p>
-          </div>
-        )}
       </div>
+      {title && (
+        <div className="absolute bottom-4 left-4 right-4 z-10">
+          <p className="text-white font-semibold text-sm md:text-base line-clamp-2 drop-shadow-lg">{title}</p>
+        </div>
+      )}
     </div>
   );
 }

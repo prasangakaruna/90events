@@ -1,21 +1,30 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-black border-t-4 border-gray-200">
+    <footer className="bg-black text-white border-t-4 border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div>
-            <h3 className="text-3xl font-bold gradient-text mb-4">90</h3>
-            <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/img/logo2.png"
+                alt="90 Events Logo"
+                width={60}
+                height={60}
+                className="object-contain"
+              />
+            </Link>
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
               Your premier destination for discovering and booking amazing events. 
               Experience the magic of live entertainment.
             </p>
             <div className="flex gap-4">
               <a 
                 href="#" 
-                className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#f0425f] hover:text-white transition-all"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#f0425f] hover:text-white transition-all border border-gray-700"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -24,7 +33,7 @@ export default function Footer() {
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#f0425f] hover:text-white transition-all"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#f0425f] hover:text-white transition-all border border-gray-700"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -33,7 +42,7 @@ export default function Footer() {
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#f0425f] hover:text-white transition-all"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#f0425f] hover:text-white transition-all border border-gray-700"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -45,25 +54,25 @@ export default function Footer() {
           
           {/* Company Links */}
           <div>
-            <h4 className="text-black font-bold mb-4">Company</h4>
+            <h4 className="text-white font-bold mb-4">Company</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/about" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/contact" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/events" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   Our Shows
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/events" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   Sponsors
                 </Link>
               </li>
@@ -72,25 +81,25 @@ export default function Footer() {
           
           {/* Shows Links */}
           <div>
-            <h4 className="text-black font-bold mb-4">Shows</h4>
+            <h4 className="text-white font-bold mb-4">Shows</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/events" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/events" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   All Events
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/events" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   Live Shows
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/events" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   Past Shows
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/events" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   Buy Tickets
                 </Link>
               </li>
@@ -99,40 +108,40 @@ export default function Footer() {
           
           {/* Legal & Contact */}
           <div>
-            <h4 className="text-black font-bold mb-4">Legal</h4>
+            <h4 className="text-white font-bold mb-4">Legal</h4>
             <ul className="space-y-3 mb-6">
               <li>
-                <Link href="/terms" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/terms" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/privacy" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-gray-600 hover:text-[#f0425f] transition-colors text-sm">
+                <Link href="/faq" className="text-gray-400 hover:text-[#f0425f] transition-colors text-sm">
                   FAQ
                 </Link>
               </li>
             </ul>
             <div className="space-y-2 text-sm">
-              <p className="text-gray-600">
-                <span className="font-semibold">Email:</span> info@90events.com
+              <p className="text-gray-400">
+                <span className="font-semibold text-white">Email:</span> info@90events.com
               </p>
-              <p className="text-gray-600">
-                <span className="font-semibold">Phone:</span> +1 (555) 123-4567
+              <p className="text-gray-400">
+                <span className="font-semibold text-white">Phone:</span> +1 (555) 123-4567
               </p>
-              <p className="text-gray-600">
-                <span className="font-semibold">Address:</span> 123 Event Street, New York, NY 10001
+              <p className="text-gray-400">
+                <span className="font-semibold text-white">Address:</span> 123 Event Street, New York, NY 10001
               </p>
             </div>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-gray-200 text-center">
-          <p className="text-gray-600 text-sm">
+        <div className="pt-8 border-t border-gray-800 text-center">
+          <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} 90Events. All rights reserved.
           </p>
         </div>

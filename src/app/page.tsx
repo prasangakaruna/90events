@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import EventCard from '@/components/EventCard';
-import HeroEventSlider from '@/components/HeroEventSlider';
-import LiveShowsSlider from '@/components/LiveShowsSlider';
 import YouTubeVideo from '@/components/YouTubeVideo';
+import NextShowCountdown from '@/components/NextShowCountdown';
+import EventCardsSlider from '@/components/EventCardsSlider';
 import { useTranslation } from '@/contexts/TranslationContext';
 
 // Hero slider events data
@@ -66,56 +66,42 @@ const heroEvents = [
 const liveShows = [
   {
     id: '1',
+    date: 'Nov 7',
     city: 'New York, NY',
-    venue: 'Madison Square Garden',
-    date: 'March 15, 2025',
-    time: '8:00 PM',
-    status: 'SOLD OUT',
-    available: false,
+    venue: 'The Town Hall',
+    price: '$75',
+    available: true,
   },
   {
     id: '2',
-    city: 'Toronto, ON',
-    venue: 'Scotiabank Arena',
-    date: 'March 22, 2025',
-    time: '8:30 PM',
-    status: 'AVAILABLE',
+    date: 'Nov 14',
+    city: 'TBA',
+    venue: 'TBA',
+    price: '$55',
     available: true,
   },
   {
     id: '3',
+    date: 'Nov 15',
     city: 'Chicago, IL',
-    venue: 'United Center',
-    date: 'March 29, 2025',
-    time: '9:00 PM',
-    status: 'AVAILABLE',
+    venue: 'Copernicus Center',
+    price: '$45',
     available: true,
   },
   {
     id: '4',
-    city: 'Miami, FL',
-    venue: 'American Airlines Arena',
-    date: 'April 5, 2025',
-    time: '8:00 PM',
-    status: 'AVAILABLE',
+    date: 'Nov 22',
+    city: 'Palo Alto, CA',
+    venue: 'Spangenberg Theater',
+    price: '$40',
     available: true,
   },
   {
     id: '5',
-    city: 'Dallas, TX',
-    venue: 'American Airlines Center',
-    date: 'April 12, 2025',
-    time: '8:30 PM',
-    status: 'SOLD OUT',
-    available: false,
-  },
-  {
-    id: '6',
-    city: 'Los Angeles, CA',
-    venue: 'Staples Center',
-    date: 'April 19, 2025',
-    time: '9:00 PM',
-    status: 'AVAILABLE',
+    date: 'Nov 28',
+    city: 'TBA',
+    venue: 'TBA',
+    price: '$95',
     available: true,
   },
 ];
@@ -209,20 +195,22 @@ export default function Home() {
   const { t } = useTranslation();
   
   return (
-    <div className="min-h-[450px] bg-black text-white">
+    <div className="min-h-[450px] bg-black text-white banner-container">
       {/* Hero Section - Professional Banner */}
       <section className="relative min-h-[680px] flex items-center justify-center" style={{ marginTop: 0 }}>
-        {/* Professional Stage Background with Enhanced Lighting */}
-        <div className="absolute inset-0">
-          {/* Dynamic Reddish-orange glow from left side */}
-          <div className="absolute left-0 top-0 bottom-0 w-2/5 bg-gradient-to-r from-orange-600/70 via-red-600/50 to-transparent blur-3xl animate-pulse-glow"></div>
-          {/* Professional Dark stage background with depth */}
+        {/* Professional Dark stage background */}
           <div className="absolute inset-0 bg-gradient-to-br from-black via-black/98 to-black/95"></div>
-          {/* Artist Image Background - Transparent */}
-          <div className="absolute inset-0 opacity-30">
+        
+        {/* Background Image - Full Section */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Dynamic Reddish-orange glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-600/30 via-red-600/20 to-transparent blur-3xl animate-pulse-glow"></div>
+          
+          {/* Event Stage Image Background - Full Cover */}
+          <div className="absolute inset-0 opacity-50">
             <Image
-              src="/img/img16346_orig.webp"
-              alt="Über Ayrık on stage"
+              src="/img/event-stage-BBm4cEDz.webp"
+              alt="Event stage"
               fill
               className="object-cover"
               style={{ objectPosition: 'center center' }}
@@ -231,30 +219,32 @@ export default function Home() {
             />
           </div>
           
-          {/* Additional transparent artist image overlay for depth */}
-          <div className="absolute inset-0 opacity-20">
+          {/* Additional transparent image overlay for depth */}
+          <div className="absolute inset-0 opacity-30">
             <Image
-              src="/img/img16346_orig.webp"
-              alt="Über Ayrık on stage"
+              src="/img/event-stage-BBm4cEDz.webp"
+              alt="Event stage"
               fill
               className="object-cover blur-sm"
               style={{ objectPosition: 'center center' }}
               quality={80}
             />
           </div>
+          
           {/* Professional Spotlight effect */}
           <div className="absolute inset-0 bg-gradient-radial from-white/12 via-transparent to-transparent" style={{
             background: 'radial-gradient(ellipse at center 40%, rgba(255,255,255,0.18) 0%, transparent 65%)'
           }}></div>
+          
           {/* Subtle vignette effect */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
         
-        {/* ACIDIR Console Text Effect - Professional */}
-        <div className="absolute bottom-6 right-6 md:right-12 z-20 hidden lg:block">
+        {/* ACIDIR Console Text Effect - Professional - Moved to bottom */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 hidden lg:block acidir-text">
           <div className="relative">
             <div className="absolute inset-0 blur-lg bg-red-600/60 animate-pulse"></div>
-            <div className="relative text-4xl md:text-6xl font-black text-white tracking-wider" style={{
+            <div className="relative text-4xl md:text-6xl font-black text-white tracking-wider acidir-text-content" style={{
               textShadow: '0 0 25px rgba(239, 68, 68, 0.9), 0 0 50px rgba(239, 68, 68, 0.7), 0 0 75px rgba(239, 68, 68, 0.5)',
               fontFamily: 'Arial, sans-serif',
               letterSpacing: '0.15em',
@@ -273,20 +263,20 @@ export default function Home() {
               <div className="mb-2">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-bold rounded-full shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider">
                   <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                  {t.livePerformance}
+                  Hosted by İlker Ayrık
                 </span>
               </div>
+              
+              {/* Über Ayrık - Left Side */}
+              <p className="text-2xl md:text-3xl lg:text-4xl text-gray-200 mb-2 font-light italic tracking-wide">
+                Über Ayrık
+              </p>
               
               {/* Main Title - Professional Typography */}
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-[1.1] tracking-tight">
                 <span className="neon-text block mb-1">Gerçekler</span>
                 <span className="neon-text block">Acıdır</span>
           </h1>
-              
-              {/* Subtitle */}
-              <p className="text-2xl md:text-3xl lg:text-4xl text-gray-200 mb-4 font-light italic tracking-wide">
-                Über Ayrık
-              </p>
               
               {/* Description */}
               <p className="text-base md:text-lg text-gray-300 mb-6 max-w-xl leading-relaxed">
@@ -297,16 +287,23 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <Link
               href="/events"
-                  className="group relative px-8 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-xl hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 text-center overflow-hidden"
+              className="px-8 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 flex items-center justify-center gap-2"
             >
-                  <span className="relative z-10">{t.buyTicket}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#ec4899] to-[#a855f7] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span>{t.buyTicket || 'Get Tickets'}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
             </Link>
             <Link
-                  href="/about"
-                  className="px-8 py-3.5 border-2 border-white/40 text-white rounded-xl hover:bg-white/10 hover:border-white/60 transition-all duration-300 transform hover:scale-105 font-semibold text-base backdrop-blur-md text-center shadow-lg"
-                >
-                  {t.moreInfo}
+              href="/events"
+              className="px-8 py-3.5 bg-transparent hover:bg-white/10 text-white rounded-full transition-all duration-300 transform hover:scale-105 font-semibold text-base flex items-center justify-center gap-2 border border-white/40 hover:border-white/60"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>View All Dates</span>
                 </Link>
               </div>
               
@@ -327,9 +324,14 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Right side - Professional Event Slider */}
-            <div className="relative flex items-center justify-center h-full mt-12 lg:mt-0">
-              <HeroEventSlider events={heroEvents} />
+            {/* Right side - Artist Image and Next Show Countdown */}
+            <div className="flex items-center justify-center lg:justify-end">
+              <div className="w-full max-w-md space-y-4">
+                {/* Artist Image */}
+                 
+                
+                <NextShowCountdown />
+              </div>
             </div>
           </div>
         </div>
@@ -346,7 +348,7 @@ export default function Home() {
       </section>
 
       {/* About Shows Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8 bg-black">
         <div className="text-center mb-16 animate-slideInUp">
           <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
             {t.aboutShows}
@@ -374,7 +376,7 @@ export default function Home() {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7] rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity blur-sm"></div>
               
               {/* Main Card */}
-              <div className="relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-[#f0425f]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#f0425f]/20">
+              <div className="relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-[#f0425f]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#f0425f]/20 feature-box">
                 {/* Number Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="relative">
@@ -402,148 +404,368 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Live Shows Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-gray-900/50 to-black relative overflow-hidden">
-        {/* Artist Image Background - Transparent */}
-        <div className="absolute inset-0 opacity-25 pointer-events-none">
+      {/* İlker Ayrık Host Section */}
+      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Image with Stats */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden">
           <Image
             src="/img/img16346_orig.webp"
-            alt="Über Ayrık on stage"
-            fill
-            className="object-cover"
-            style={{ objectPosition: 'center center' }}
-            quality={90}
-          />
+                  alt="İlker Ayrık"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-cover rounded-2xl"
+                  quality={95}
+                />
+                {/* Stats Overlay */}
+                <div className="absolute bottom-6 left-6 flex gap-4">
+                  <div className="bg-gray-900/90 backdrop-blur-sm rounded-xl px-4 py-3 border border-gray-700/50">
+                    <div className="text-[#f0425f] font-bold text-lg">20+ Years</div>
+                    <div className="text-white text-sm">In Entertainment</div>
         </div>
-        {/* Black shade overlay on top */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30 pointer-events-none"></div>
-        <div className="relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-              {t.liveShows}
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">{t.catchUsLive}</h2>
-            <p className="text-lg text-gray-400">{t.liveShowsDescription}</p>
-          </div>
-          
-          <div className="max-w-7xl mx-auto">
-            <LiveShowsSlider shows={liveShows} />
-          </div>
-        </div>
-        </div>
-      </section>
-
-      {/* Multiple Events Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-            {t.allEvents || 'ALL EVENTS'}
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.upcomingEvents || 'Upcoming Events'}</h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            {t.discoverAllEvents || 'Discover all our upcoming shows and book your tickets today'}
-          </p>
-        </div>
-
-        {/* Events Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {heroEvents.map((event) => (
-            <EventCard key={event.id} {...event} />
-          ))}
-        </div>
-
-        <div className="text-center">
-          <Link
-            href="/events"
-            className="inline-block px-10 py-4 border-2 border-[#f0425f] text-[#f0425f] rounded-xl hover:bg-[#f0425f] hover:text-white transition-all font-semibold text-lg transform hover:scale-105"
-          >
-            {t.viewAllEvents || 'View All Events'}
-          </Link>
-        </div>
-      </section>
-
-      {/* Prizes Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-            {t.prizesSection}
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-            {t.amazingPrizes}
-          </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            {t.prizesDescription}
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-6xl mx-auto">
-          {prizes.map((prize, idx) => (
-            <div
-              key={idx}
-              className="relative group"
-            >
-              {/* Gradient Border Glow */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7] rounded-2xl opacity-30 group-hover:opacity-60 transition-opacity blur-sm"></div>
-              
-              {/* Prize Card */}
-              <div className="relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-[#f0425f]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#f0425f]/30">
-                {/* Prize Value - Prominent */}
-                <div className="mb-4">
-                  <p className="text-3xl md:text-4xl font-extrabold gradient-text mb-2">
-                    {prize.value}
-                  </p>
+                  <div className="bg-gray-900/90 backdrop-blur-sm rounded-xl px-4 py-3 border border-gray-700/50">
+                    <div className="text-[#f0425f] font-bold text-lg">50M+</div>
+                    <div className="text-white text-sm">Viewers Reached</div>
+                  </div>
                 </div>
-                
-                {/* Prize Title */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#f0425f] transition-colors">
-                  {prize.title}
-                </h3>
-                
-                {/* Decorative Line */}
-                <div className="h-1 w-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-full mb-4 group-hover:w-24 transition-all duration-300"></div>
-                
-                {/* Hover Indicator */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               </div>
             </div>
-          ))}
+
+            {/* Right Side - Content */}
+            <div className="space-y-6">
+              {/* Your Host Badge */}
+              <div className="inline-block px-4 py-1.5 bg-[#f0425f] rounded-lg">
+                <span className="text-white text-sm font-semibold">Your Host</span>
+              </div>
+
+              {/* Name */}
+              <h2 className="text-5xl md:text-6xl font-bold text-white">İlker Ayrık</h2>
+
+              {/* Subtitle */}
+              <p className="text-2xl md:text-3xl text-[#f0425f] font-semibold">Turkey's Beloved Entertainer</p>
+
+              {/* Biography */}
+              <p className="text-gray-300 text-lg leading-relaxed">
+                İlker Ayrık is one of Turkey's most recognized TV personalities with over 20 years of experience in entertainment. Known for his charismatic hosting style and quick wit, he has brought joy to millions of viewers across numerous hit shows.
+              </p>
+
+              {/* Feature Buttons Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
+                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                    <path d="M2 10h20"></path>
+                  </svg>
+                  <span className="text-white text-sm font-medium">Prime-time TV host</span>
+                </div>
+                <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                    <path d="M4 22h16"></path>
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                  </svg>
+                  <span className="text-white text-sm font-medium">Multiple award winner</span>
+                </div>
+                <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" x2="12" y1="19" y2="22"></line>
+                    <line x1="8" x2="16" y1="22" y2="22"></line>
+                  </svg>
+                  <span className="text-white text-sm font-medium">Stand-up comedian</span>
+                </div>
+                <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  <span className="text-white text-sm font-medium">Live event master</span>
+                </div>
+              </div>
+
+              {/* See İlker Live Button */}
+              <Link
+                href="/events"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
+              >
+                <span>See İlker Live</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Shows Section */}
+      <section className="py-24 bg-black relative overflow-hidden catch-us-live-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">Catch us live</h2>
+            <p className="text-lg text-gray-300">7 cities across North America. One unforgettable experience.</p>
+          </div>
+          
+          {/* Event Cards Slider */}
+          <div className="max-w-7xl mx-auto">
+            <EventCardsSlider events={liveShows} />
+        </div>
+        </div>
+      </section>
+
+      {/* Title Sponsors Section */}
+      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            <span className="text-yellow-400">★</span> Title Sponsors <span className="text-yellow-400">★</span>
+          </h2>
         </div>
         
-        {/* Every Ticket Wins - Enhanced */}
-        <div className="max-w-5xl mx-auto">
-          <div className="relative group">
-            {/* Gradient Glow Effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7] rounded-2xl opacity-30 group-hover:opacity-50 transition-opacity blur-xl"></div>
-            
-            {/* Main Card */}
-            <div className="relative bg-gradient-to-br from-gray-900/98 to-black/98 backdrop-blur-xl rounded-2xl p-8 md:p-10 border border-white/10">
+        {/* Main Sponsors Grid - 2x3 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-7xl mx-auto">
+          {/* Mint */}
+          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
+            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
+              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
+            </div>
+            <div className="relative w-full h-48 bg-gray-800">
+              <Image
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=400&fit=crop"
+                alt="Mint"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-white font-bold text-xl mb-2">Mint</h3>
+              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                Find Trusted Professionals for Any Job. Mint connects homeowners and property managers with verified service providers.
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-white text-xs">Prize Value</span>
+                <span className="text-yellow-400 font-bold text-lg">$2,500</span>
+              </div>
+            </div>
+        </div>
+        
+          {/* Doğtaş Furniture */}
+          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
+            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
+              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
+            </div>
+            <div className="relative w-full h-48 bg-gray-800">
+              <Image
+                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=400&fit=crop"
+                alt="Doğtaş Furniture"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-white font-bold text-xl mb-2">Doğtaş Furniture</h3>
+              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                Premium Turkish furniture brand offering elegant and modern home furnishings for every lifestyle.
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-white text-xs">Prize Value</span>
+                <span className="text-yellow-400 font-bold text-lg">$8,500</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Toyota Motors */}
+          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
+            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
+              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
+            </div>
+            <div className="relative w-full h-48 bg-gray-800 flex items-center justify-center">
+              <Image
+                src="/img/toyoto.jpg"
+                alt="Toyota Motors"
+                fill
+                className="cover"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-white font-bold text-xl mb-2">Toyota Motors</h3>
+              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                Official automotive partner of the 90s Tour. Providing luxury transportation for artists and crew.
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-white text-xs">Prize Value</span>
+                <span className="text-yellow-400 font-bold text-lg">$35,000</span>
+              </div>
+            </div>
+                </div>
+                
+          {/* Coca-Cola Company */}
+          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
+            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
+              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
+            </div>
+            <div className="relative w-full h-48 bg-gray-800">
+              <Image
+                src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400&h=400&fit=crop"
+                alt="Coca-Cola Company"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-white font-bold text-xl mb-2">Coca-Cola Company</h3>
+              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                Exclusive beverage sponsor. Refreshing fans at every venue with classic Coca-Cola products.
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-white text-xs">Prize Value</span>
+                <span className="text-yellow-400 font-bold text-lg">$5,000</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Samsung Electronics */}
+          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
+            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
+              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
+              </div>
+            <div className="relative w-full h-48 bg-gray-800">
+              <Image
+                src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=400&fit=crop"
+                alt="Samsung Electronics"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-white font-bold text-xl mb-2">Samsung Electronics</h3>
+              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                Technology partner providing state-of-the-art displays and mobile devices for the tour experience.
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-white text-xs">Prize Value</span>
+                <span className="text-yellow-400 font-bold text-lg">$8,000</span>
+              </div>
+            </div>
+        </div>
+        
+              </div>
+
+        {/* Local Sponsors Section */}
+        <div className="max-w-7xl mx-auto bg-purple-900/30 rounded-xl border border-purple-800/30 p-6 md:p-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <h3 className="text-white font-bold text-xl">Local Sponsors in Every City</h3>
+            </div>
+              <p className="text-gray-300 text-sm md:text-base">
+                Each show features unique local sponsors with exclusive prizes for that city. From New Jersey to California, discover amazing prizes from businesses in your area!
+              </p>
+        </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">NJ</span>
+              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">PA</span>
+              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">DC</span>
+              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">WA</span>
+              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">CA</span>
+              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">+2</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prize Cards & Every Ticket Wins Section */}
+      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Prize Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-7xl mx-auto">
+          {/* Annual Insurance Package */}
+          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
+            <h3 className="text-white font-bold text-lg mb-2">Annual Insurance Package</h3>
+            <p className="text-gray-400 text-sm mb-4">by State Farm Insurance</p>
+            <div className="text-[#f0425f] font-bold text-2xl">$2,500</div>
+          </div>
+
+          {/* Cash Prize */}
+          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
+            <h3 className="text-white font-bold text-lg mb-2">Cash Prize</h3>
+            <p className="text-gray-400 text-sm mb-4">by Bank of America</p>
+            <div className="text-[#f0425f] font-bold text-2xl">$10,000</div>
+          </div>
+
+          {/* Weekend Getaway Package */}
+          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
+            <h3 className="text-white font-bold text-lg mb-2">Weekend Getaway Package</h3>
+            <p className="text-gray-400 text-sm mb-4">by Marriott Hotels</p>
+            <div className="text-[#f0425f] font-bold text-2xl">$3,000</div>
+          </div>
+
+          {/* Dining Gift Cards */}
+          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
+            <h3 className="text-white font-bold text-lg mb-2">Dining Gift Cards</h3>
+            <p className="text-gray-400 text-sm mb-4">by Olive Garden</p>
+            <div className="text-[#f0425f] font-bold text-2xl">$500</div>
+          </div>
+        </div>
+
+        {/* Every Ticket Wins Banner */}
+        <div className="max-w-7xl mx-auto mb-8">
+          <div className="bg-gradient-to-r from-gray-900/95 via-purple-900/50 to-red-900/30 rounded-xl p-8 md:p-10 border border-purple-800/30">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1 text-center md:text-left">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-lg">
-                      ✓
+              <div className="flex items-center gap-6 flex-1">
+                {/* Star Icon */}
+                <div className="w-16 h-16 bg-[#f0425f] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">{t.everyTicketWins}</h3>
+                <div>
+                  <h3 className="text-white font-bold text-3xl md:text-4xl mb-2">Every Ticket Wins</h3>
+                  <p className="text-gray-300 text-base md:text-lg">Automatic entry into our grand prize draw at each show</p>
                   </div>
-                  <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                    {t.guaranteedPrizes || "Guaranteed prizes for all attendees. No matter which ticket you purchase, you're a winner!"}
-                  </p>
                 </div>
                 <Link
                   href="/events"
-                  className="px-10 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-xl hover:from-[#d63852] hover:to-[#db2777] transition-all font-bold text-lg shadow-2xl hover:shadow-[#f0425f]/50 transform hover:scale-105 whitespace-nowrap"
-                >
-                  {t.getYourTicketNow}
+                className="px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 flex items-center gap-2 whitespace-nowrap"
+              >
+                <span>Buy Tickets Now</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
                 </Link>
               </div>
             </div>
           </div>
+
+        {/* View All Sponsors & Prizes Link */}
+        <div className="text-center">
+          <Link
+            href="/prizes"
+            className="inline-flex items-center gap-2 text-white hover:text-[#f0425f] transition-colors font-medium text-lg"
+          >
+            <span>View All Sponsors & Prizes</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </Link>
         </div>
       </section>
 
       {/* Past Shows Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-gray-900/50 to-black">
+      <section className="py-24 bg-gradient-to-b from-black via-gray-900/50 to-black past-shows-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
@@ -552,12 +774,63 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.pastShows}</h2>
           </div>
           
-          <div className="max-w-5xl mx-auto">
-            <YouTubeVideo
-              videoId="sW-tn_cUZEk"
-              title="Über Ayrık - Past Shows Highlights"
-              className="rounded-2xl"
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            {/* Left Image */}
+            <div className="hidden lg:block relative group overflow-hidden rounded-xl aspect-video cursor-pointer">
+              <Image
+                src="/img/img16346_orig.webp"
+                alt="Past Show Performance 1"
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+            </div>
+            
+            {/* Center Video */}
+            <div className="lg:col-span-1">
+              <YouTubeVideo
+                videoId="sW-tn_cUZEk"
+                title="Über Ayrık - Past Shows Highlights"
+                className="rounded-2xl"
+              />
+            </div>
+            
+            {/* Right Image */}
+            <div className="hidden lg:block relative group overflow-hidden rounded-xl aspect-video cursor-pointer">
+              <Image
+                src="/img/event-stage-BBm4cEDz.webp"
+                alt="Past Show Performance 2"
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+            </div>
+          </div>
+          
+          {/* Additional Images Row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {[
+              { src: '/img/img16346_orig.webp', alt: 'Past Show 1' },
+              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Past Show 2' },
+              { src: '/img/img16346_orig.webp', alt: 'Past Show 3' },
+              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Past Show 4' },
+            ].map((image, idx) => (
+              <div
+                key={idx}
+                className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer bg-gray-900"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -576,19 +849,35 @@ export default function Home() {
           </p>
         </div>
         
-        {/* YouTube Video Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {/* Image Gallery */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
           {[
-            { videoId: 'sW-tn_cUZEk', title: 'Show Highlights - Episode 1' },
-            { videoId: 'sW-tn_cUZEk', title: 'Show Highlights - Episode 2' },
-            { videoId: 'sW-tn_cUZEk', title: 'Show Highlights - Episode 3' },
-            { videoId: 'sW-tn_cUZEk', title: 'Show Highlights - Episode 4' },
-          ].map((video, idx) => (
-            <YouTubeVideo
+            { src: '/img/img16346_orig.webp', alt: 'Show Performance 1' },
+            { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 2' },
+            { src: '/img/img16346_orig.webp', alt: 'Show Performance 3' },
+            { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 4' },
+            { src: '/img/img16346_orig.webp', alt: 'Show Performance 5' },
+            { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 6' },
+            { src: '/img/img16346_orig.webp', alt: 'Show Performance 7' },
+            { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 8' },
+          ].map((image, idx) => (
+            <div
               key={idx}
-              videoId={video.videoId}
-              title={video.title}
-            />
+              className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer bg-gray-900"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                unoptimized
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/img/img16346_orig.webp';
+                }}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+            </div>
           ))}
         </div>
         
@@ -610,45 +899,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-gray-900/50 to-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-              {t.whyChooseUs}
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.benefitsOf90Events}</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {benefits.map((benefit, idx) => (
-              <div
-                key={idx}
-                className="glass-effect rounded-2xl p-8 text-center hover-lift"
-              >
-                <div className="text-5xl mb-4">{benefit.icon}</div>
-                <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { value: '20+', label: t.yearsOfExperience || 'Years of Experience', icon: '⭐' },
-              { value: '70,000+', label: t.happyCustomers || 'Happy Customers', icon: '😊' },
-              { value: '40,000+', label: t.ticketsSold || 'Tickets Sold', icon: '🎫' },
-            ].map((stat, idx) => (
-              <div key={idx} className="text-center">
-                <div className="text-5xl mb-2">{stat.icon}</div>
-                <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -682,7 +932,7 @@ export default function Home() {
             </div>
             <button
               type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all font-semibold text-lg"
+              className="w-full px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
             >
               {t.registerHere}
             </button>
@@ -690,111 +940,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sponsors Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-            {t.ourPartners || 'OUR PARTNERS'}
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.ourPartners || 'Our Sponsors'}</h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            {t.proudPartners || 'We\'re proud to partner with these amazing brands'}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            { name: 'Amerika Liturk', logo: '/sponsors/amerikaliturknew.png' },
-            { name: 'Grape Law', logo: '/sponsors/grapeLaw2.jpg' },
-            { name: 'Turk of America', logo: '/sponsors/TurkOfAmerica.png' },
-          ].map((sponsor, idx) => (
-            <div
-              key={idx}
-              className="relative group"
-            >
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7] rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity blur-sm"></div>
-              <div className="relative glass-effect rounded-2xl p-8 flex items-center justify-center hover-lift min-h-[200px]">
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width={200}
-                  height={100}
-                  className="object-contain max-w-full max-h-24 grayscale group-hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Sponsorship Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-gray-900/50 to-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-              {t.sponsorship}
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.partnerWith90Events}</h2>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              {t.sponsorshipDescription}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {sponsorshipTiers.map((tier, idx) => (
-              <div
-                key={idx}
-                className={`glass-effect rounded-2xl p-6 hover-lift relative ${
-                  tier.popular ? 'ring-2 ring-[#f0425f]' : ''
-                }`}
-              >
-                {tier.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-semibold rounded-full">
-                    {t.popular}
-                  </div>
-                )}
-                <div className="text-4xl mb-4">{tier.icon}</div>
-                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                <div className="text-3xl font-bold gradient-text mb-6">{tier.price}</div>
-                <ul className="space-y-3 mb-6 text-sm text-gray-400">
-                  {tier.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#f0425f] mt-1">✓</span>
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button className="w-full px-4 py-2 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all font-semibold">
-                  {t.becomeSponsor}
-                </button>
-              </div>
-            ))}
-          </div>
-          
-          <div className="max-w-2xl mx-auto">
-            <div className="glass-effect rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">{t.customSponsorship}</h3>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="px-8 py-3 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all font-semibold"
-                >
-                  {t.contactUsHere}
-                </Link>
-                <Link
-                  href="/about"
-                  className="px-8 py-3 border-2 border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-semibold"
-                >
-                  {t.learnMore}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden ready-to-test-section">
         <div className="absolute inset-0 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7]"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -805,13 +952,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/events"
-              className="px-10 py-4 bg-white text-[#f0425f] rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 font-semibold text-lg shadow-2xl"
+              className="px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
             >
               {t.buyTickets}
             </Link>
             <Link
               href="/contact"
-              className="px-10 py-4 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all transform hover:scale-105 font-semibold text-lg"
+              className="px-6 py-3.5 bg-transparent hover:bg-white/10 text-white rounded-full transition-all duration-300 transform hover:scale-105 font-semibold text-base border border-white/40 hover:border-white/60"
             >
               {t.applyNow}
             </Link>

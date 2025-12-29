@@ -3,9 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ColorCustomizer from "@/components/ColorCustomizer";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { ColorCustomizationProvider } from "@/contexts/ColorCustomizationContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,12 +34,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <TranslationProvider>
-          <ColorCustomizationProvider>
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <ColorCustomizer />
-          </ColorCustomizationProvider>
+          <ThemeProvider>
+            <ColorCustomizationProvider>
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <ThemeSwitcher />
+            </ColorCustomizationProvider>
+          </ThemeProvider>
         </TranslationProvider>
       </body>
     </html>
