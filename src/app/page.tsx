@@ -308,7 +308,7 @@ export default function Home() {
               </div>
               
               {/* Statistics - Professional Cards */}
-              <div className="flex flex-wrap gap-6 md:gap-8">
+              <div className="flex flex-wrap gap-6 md:gap-8 mb-6">
                 <div className="text-left group">
                   <div className="text-3xl md:text-4xl font-extrabold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">7</div>
                   <div className="text-gray-400 text-sm font-medium uppercase tracking-wider">{t.shows}</div>
@@ -322,13 +322,9 @@ export default function Home() {
                   <div className="text-gray-400 text-sm font-medium uppercase tracking-wider">{t.experience}</div>
                 </div>
               </div>
-            </div>
-            
-            {/* Right side - Artist Image and Next Show Countdown */}
-            <div className="flex items-center justify-center lg:justify-end">
+
+              {/* Win Prize Banner and Next Show Countdown - Moved from right side */}
               <div className="w-full max-w-md space-y-4">
-                
-                
                 {/* Win Prize Banner */}
                 <Link
                   href="/prizes"
@@ -358,6 +354,11 @@ export default function Home() {
                 <NextShowCountdown />
               </div>
             </div>
+            
+            {/* Right side - Empty or can be used for image */}
+            <div className="flex items-center justify-center lg:justify-end">
+              {/* Right side can be used for additional content if needed */}
+            </div>
           </div>
         </div>
         
@@ -373,7 +374,7 @@ export default function Home() {
       </section>
 
       {/* About Shows Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8 bg-black">
+      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8 bg-gray-900/50">
         <div className="text-center mb-16 animate-slideInUp">
           <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
             {t.aboutShows}
@@ -430,7 +431,7 @@ export default function Home() {
       </section>
 
       {/* İlker Ayrık Host Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-black via-purple-900/30 to-gray-900/50 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Image with Stats */}
@@ -532,8 +533,181 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Three Steps to the Spotlight Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#f0425f] text-white text-xs font-bold rounded-lg shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider mb-6">
+              How It Works
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+              Three Steps to the Spotlight
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Join the most entertaining couples game show in just a few simple steps
+            </p>
+          </div>
+
+          {/* Three Steps Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-7xl mx-auto">
+            {/* Step 1: Get Your Tickets */}
+            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-[#f0425f] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                    <path d="M13 5v2"></path>
+                    <path d="M13 17v2"></path>
+                    <path d="M13 11v2"></path>
+                  </svg>
+                </div>
+                <div className="text-6xl font-bold text-gray-700 leading-none">01</div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Get Your Tickets</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Purchase tickets for your preferred city and date. Couples who want to compete on stage can apply during checkout.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">Choose your city</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">Select seats</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">Apply to compete (optional)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2: Come to the Show */}
+            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div className="text-6xl font-bold text-gray-700 leading-none">02</div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Come to the Show</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Arrive at the venue, enjoy the pre-show atmosphere, and get ready for an unforgettable evening of laughter and surprises.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">Doors open 1 hour early</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">Meet other couples</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">Enjoy refreshments</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3: Win Amazing Prizes */}
+            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                    <path d="M4 22h16"></path>
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                  </svg>
+                </div>
+                <div className="text-6xl font-bold text-gray-700 leading-none">03</div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Win Amazing Prizes</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Whether you're competing or in the audience, everyone has a chance to win. Contestants compete for the grand prize pool!
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">$50K+ in prizes</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">Audience giveaways</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                  <span className="text-gray-300 text-sm">VIP experiences</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Get Started Button */}
+          <div className="text-center mb-8">
+            <Link
+              href="/events"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-lg shadow-2xl hover:shadow-[#f0425f]/60"
+            >
+              <span>Get Started</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        {/* Sticky Footer */}
+        <div className="fixed bottom-0 right-0 left-0 md:left-auto z-50 p-4">
+          <div className="max-w-md ml-auto bg-gray-900/95 backdrop-blur-sm rounded-lg border border-gray-800 p-4 flex items-center justify-between gap-4 shadow-2xl">
+            <span className="text-white text-sm font-medium">Ready to join the fun?</span>
+            <div className="flex items-center gap-2">
+              <Link
+                href="/events"
+                className="px-4 py-2 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 font-semibold text-sm flex items-center gap-2"
+              >
+                <span>Get Tickets</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 6L6 18"></path>
+                  <path d="M6 6l12 12"></path>
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Live Shows Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-gray-900/60 via-purple-900/30 to-gray-900/60 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">Catch us live</h2>
@@ -548,13 +722,7 @@ export default function Home() {
       </section>
 
       {/* Title Sponsors Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-            <span className="text-yellow-400">★</span> Title Sponsors <span className="text-yellow-400">★</span>
-          </h2>
-        </div>
-        
+      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Sponsors Grid - 2x3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-7xl mx-auto">
           {/* Mint */}
@@ -712,7 +880,7 @@ export default function Home() {
       </section>
 
       {/* Prize Cards & Every Ticket Wins Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-to-b from-gray-800/60 via-purple-900/30 to-gray-800/60 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Prize Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-7xl mx-auto">
           {/* Annual Insurance Package */}
@@ -789,17 +957,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Past Shows Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-gray-900/50 to-black past-shows-section">
+      {/* Past Shows & Experience the Magic Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-900/70 via-black to-gray-900/70 past-shows-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
               {t.pastShows}
             </span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.pastShows}</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4">{t.pastShows}</h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+              {t.experienceTheMagic}
+            </p>
+            <p className="text-base text-gray-500 max-w-2xl mx-auto">
+              {t.highlightsDescription}
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          {/* Video and Featured Images */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
             {/* Left Image */}
             <div className="hidden lg:block relative group overflow-hidden rounded-xl aspect-video cursor-pointer">
               <Image
@@ -834,13 +1010,17 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Additional Images Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          {/* Image Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
             {[
-              { src: '/img/img16346_orig.webp', alt: 'Past Show 1' },
-              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Past Show 2' },
-              { src: '/img/img16346_orig.webp', alt: 'Past Show 3' },
-              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Past Show 4' },
+              { src: '/img/img16346_orig.webp', alt: 'Show Performance 1' },
+              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 2' },
+              { src: '/img/img16346_orig.webp', alt: 'Show Performance 3' },
+              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 4' },
+              { src: '/img/img16346_orig.webp', alt: 'Show Performance 5' },
+              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 6' },
+              { src: '/img/img16346_orig.webp', alt: 'Show Performance 7' },
+              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 8' },
             ].map((image, idx) => (
               <div
                 key={idx}
@@ -852,76 +1032,33 @@ export default function Home() {
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   unoptimized
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/img/img16346_orig.webp';
+                  }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Experience the Magic Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-            {t.highlights}
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            {t.experienceTheMagic}
-          </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            {t.highlightsDescription}
-          </p>
-        </div>
-        
-        {/* Image Gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-          {[
-            { src: '/img/img16346_orig.webp', alt: 'Show Performance 1' },
-            { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 2' },
-            { src: '/img/img16346_orig.webp', alt: 'Show Performance 3' },
-            { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 4' },
-            { src: '/img/img16346_orig.webp', alt: 'Show Performance 5' },
-            { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 6' },
-            { src: '/img/img16346_orig.webp', alt: 'Show Performance 7' },
-            { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 8' },
-          ].map((image, idx) => (
-            <div
-              key={idx}
-              className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer bg-gray-900"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-110"
-                unoptimized
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = '/img/img16346_orig.webp';
-                }}
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Testimonials */}
-        <div className="max-w-3xl mx-auto">
-          <div className="glass-effect rounded-2xl p-8 md:p-12">
-            <div className="text-5xl text-[#f0425f] mb-6">"</div>
-            <p className="text-xl md:text-2xl text-gray-300 mb-6 leading-relaxed">
-              {testimonials[0].quote}
-            </p>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-bold text-lg">{testimonials[0].author}</p>
-                <p className="text-gray-400 text-sm">{testimonials[0].role}</p>
-              </div>
-              <div className="flex gap-1">
-                {[...Array(testimonials[0].rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-xl">★</span>
-                ))}
+          
+          {/* Testimonials */}
+          <div className="max-w-3xl mx-auto">
+            <div className="glass-effect rounded-2xl p-8 md:p-12">
+              <div className="text-5xl text-[#f0425f] mb-6">"</div>
+              <p className="text-xl md:text-2xl text-gray-300 mb-6 leading-relaxed">
+                {testimonials[0].quote}
+              </p>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="font-bold text-lg">{testimonials[0].author}</p>
+                  <p className="text-gray-400 text-sm">{testimonials[0].role}</p>
+                </div>
+                <div className="flex gap-1">
+                  {[...Array(testimonials[0].rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-xl">★</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -929,7 +1066,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-to-b from-gray-900/50 via-purple-900/20 to-gray-900/50 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.beFirstToHear}</h2>
           <p className="text-lg text-gray-400 mb-8">{t.newsletterDescription}</p>
