@@ -632,11 +632,11 @@ export default function TourPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black dark:bg-black">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Ready for the Experience of a Lifetime?</h2>
-          <p className="text-lg text-gray-400 mb-8">
-            Don't just watch the show - be part of the adventure. Limited spots available for each experience.
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Ready to test your love?</h2>
+          <p className="text-lg text-white mb-8">
+            Join thousands of others who have experienced the magic. Get your tickets now and be part of an unforgettable journey.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

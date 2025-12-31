@@ -373,7 +373,7 @@ body.theme-light section:first-of-type div[class*="opacity-30"]:has(img) {
 body.theme-light .acidir-text .acidir-text-content,
 [data-theme="light"] .acidir-text .text-white,
 body.theme-light .acidir-text .text-white {
-  color: #dc2626 !important;
+  color: #fff !important;
   text-shadow: 0 0 25px rgba(220, 38, 38, 0.9), 0 0 50px rgba(220, 38, 38, 0.7), 0 0 75px rgba(220, 38, 38, 0.5) !important;
 }
 
@@ -633,7 +633,7 @@ body.theme-light * {
   color: inherit;
 }
 
-/* Headings should be red in light theme */
+/* Headings should be white in light theme */
 [data-theme="light"] h1,
 body.theme-light h1,
 [data-theme="light"] h2,
@@ -658,7 +658,7 @@ body.theme-light .text-3xl,
 body.theme-light .text-2xl,
 [data-theme="light"] .text-xl,
 body.theme-light .text-xl {
-  color: #dc2626 !important;
+  color: #ffffff !important;
 }
 
 /* Regular text should be black in light theme */
@@ -807,4 +807,22 @@ body.theme-light a[href="/prizes"].text-white {
 [data-theme="light"] a[href="/prizes"].text-white:hover,
 body.theme-light a[href="/prizes"].text-white:hover {
   color: #b91c1c !important;
+}
+
+/* Final CTA Section - Keep text white in light mode */
+[data-theme="light"] section.bg-black h2,
+body.theme-light section.bg-black h2,
+[data-theme="light"] section.bg-black h2.text-4xl,
+body.theme-light section.bg-black h2.text-4xl,
+[data-theme="light"] section.bg-black h2.text-5xl,
+body.theme-light section.bg-black h2.text-5xl,
+[data-theme="light"] section.bg-black h2.text-white,
+body.theme-light section.bg-black h2.text-white,
+[data-theme="light"] section.bg-black p,
+body.theme-light section.bg-black p,
+[data-theme="light"] section.bg-black p.text-lg,
+body.theme-light section.bg-black p.text-lg,
+[data-theme="light"] section.bg-black p.text-white,
+body.theme-light section.bg-black p.text-white {
+  color: #ffffff !important;
 }
