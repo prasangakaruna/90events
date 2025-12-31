@@ -260,17 +260,15 @@ body.theme-light div[class*="from-black"][class*="via-black"][class*="to-black"]
   background: linear-gradient(to bottom right, #ffffff, #f9fafb) !important;
 }
 
-/* Main banner section should be white in light mode */
+/* Main banner section should be transparent in light mode to show background image */
 [data-theme="light"] section:first-of-type,
 body.theme-light section:first-of-type {
-  background: linear-gradient(to bottom right, #ffffff, #f9fafb) !important;
+  background: transparent !important;
 }
 
 [data-theme="light"] section:first-of-type > div[class*="bg-gradient"],
-body.theme-light section:first-of-type > div[class*="bg-gradient"],
-[data-theme="light"] section:first-of-type div[class*="from-black"],
-body.theme-light section:first-of-type div[class*="from-black"] {
-  background: linear-gradient(to bottom right, #ffffff, #f9fafb) !important;
+body.theme-light section:first-of-type > div[class*="bg-gradient"] {
+  background: transparent !important;
 }
 
 /* Main banner overlay effects should be lighter in light mode */
@@ -281,18 +279,27 @@ body.theme-light section:first-of-type div[class*="bg-gradient-to-t"][class*="fr
   background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent) !important;
 }
 
-/* Main banner text should be black/red in light mode */
+/* Main banner text should stay white in light mode */
 [data-theme="light"] section:first-of-type .text-white,
-body.theme-light section:first-of-type .text-white,
+body.theme-light section:first-of-type .text-white {
+  color: #ffffff !important;
+}
+
 [data-theme="light"] section:first-of-type h1,
 body.theme-light section:first-of-type h1,
 [data-theme="light"] section:first-of-type h1 span,
-body.theme-light section:first-of-type h1 span,
+body.theme-light section:first-of-type h1 span {
+  color: #ffffff !important;
+}
+
 [data-theme="light"] section:first-of-type p,
-body.theme-light section:first-of-type p,
-[data-theme="light"] section:first-of-type span:not([class*="gradient"]),
-body.theme-light section:first-of-type span:not([class*="gradient"]) {
-  color: #000000 !important;
+body.theme-light section:first-of-type p {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] section:first-of-type span:not([class*="gradient"]):not([class*="text-"]),
+body.theme-light section:first-of-type span:not([class*="gradient"]):not([class*="text-"]) {
+  color: #ffffff !important;
 }
 
 [data-theme="light"] section:first-of-type .text-gray-200,
@@ -301,7 +308,7 @@ body.theme-light section:first-of-type .text-gray-200,
 body.theme-light section:first-of-type .text-gray-300,
 [data-theme="light"] section:first-of-type .text-gray-400,
 body.theme-light section:first-of-type .text-gray-400 {
-  color: #4b5563 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* ACIDIR text should be red in light mode - handled by .acidir-text class */
@@ -323,17 +330,51 @@ body.theme-light section:first-of-type .gradient-text {
   background-clip: unset !important;
 }
 
-/* Banner container should be white in light mode */
+/* Banner container should be transparent in light mode */
 [data-theme="light"] .banner-container,
 body.theme-light .banner-container {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   color: #000000 !important;
 }
 
-/* Banner image overlays should be lighter in light mode */
+/* Banner background images and effects in light mode - remove all overlays */
+[data-theme="light"] section:first-of-type > div[class*="bg-gradient-to-br"][class*="from-black"],
+body.theme-light section:first-of-type > div[class*="bg-gradient-to-br"][class*="from-black"] {
+  display: none !important;
+}
+
 [data-theme="light"] section:first-of-type img,
 body.theme-light section:first-of-type img {
-  opacity: 0.3 !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+[data-theme="light"] section:first-of-type div[class*="absolute"][class*="inset-0"][class*="bg-gradient-to-r"][class*="from-orange-600"],
+body.theme-light section:first-of-type div[class*="absolute"][class*="inset-0"][class*="bg-gradient-to-r"][class*="from-orange-600"],
+[data-theme="light"] section:first-of-type div[class*="absolute"][class*="inset-0"][class*="bg-gradient-to-r"][class*="blur-3xl"],
+body.theme-light section:first-of-type div[class*="absolute"][class*="inset-0"][class*="bg-gradient-to-r"][class*="blur-3xl"] {
+  display: none !important;
+}
+
+[data-theme="light"] section:first-of-type div[class*="bg-gradient-radial"],
+body.theme-light section:first-of-type div[class*="bg-gradient-radial"],
+[data-theme="light"] section:first-of-type div[style*="radial-gradient"][style*="rgba(255,255,255"],
+body.theme-light section:first-of-type div[style*="radial-gradient"][style*="rgba(255,255,255"] {
+  display: none !important;
+}
+
+[data-theme="light"] section:first-of-type div[class*="bg-gradient-to-t"][class*="from-black"],
+body.theme-light section:first-of-type div[class*="bg-gradient-to-t"][class*="from-black"],
+[data-theme="light"] section:first-of-type div[class*="bg-gradient-to-t"][class*="vignette"],
+body.theme-light section:first-of-type div[class*="bg-gradient-to-t"][class*="vignette"] {
+  display: none !important;
+}
+
+[data-theme="light"] section:first-of-type div[class*="opacity-50"]:has(img),
+body.theme-light section:first-of-type div[class*="opacity-50"]:has(img),
+[data-theme="light"] section:first-of-type div[class*="opacity-30"]:has(img),
+body.theme-light section:first-of-type div[class*="opacity-30"]:has(img) {
+  opacity: 1 !important;
 }
 
 /* ACIDIR text styling in light mode */
@@ -466,7 +507,7 @@ body.theme-light div,
 body.theme-light article,
 [data-theme="light"] aside,
 body.theme-light aside {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   color: #000000 !important;
 }
 
@@ -666,4 +707,198 @@ body.theme-light .text-gray-400,
 [data-theme="light"] .text-gray-500,
 body.theme-light .text-gray-500 {
   color: #6b7280 !important;
+}
+
+/* Prize Cards Section - Light mode */
+[data-theme="light"] section[class*="from-gray-800"][class*="via-purple-900"],
+body.theme-light section[class*="from-gray-800"][class*="via-purple-900"] {
+  background: linear-gradient(to bottom, #f9fafb, #f3f4f6, #f9fafb) !important;
+}
+
+[data-theme="light"] .bg-purple-900\/30,
+body.theme-light .bg-purple-900\/30,
+[data-theme="light"] div[class*="bg-purple-900"][class*="30"],
+body.theme-light div[class*="bg-purple-900"][class*="30"] {
+  background-color: #f3f4f6 !important;
+  border-color: #e5e7eb !important;
+}
+
+[data-theme="light"] .bg-purple-900\/30 .text-white,
+body.theme-light .bg-purple-900\/30 .text-white,
+[data-theme="light"] .bg-purple-900\/30 h3,
+body.theme-light .bg-purple-900\/30 h3 {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .bg-purple-900\/30 .text-gray-400,
+body.theme-light .bg-purple-900\/30 .text-gray-400,
+[data-theme="light"] .bg-purple-900\/30 p,
+body.theme-light .bg-purple-900\/30 p {
+  color: #4b5563 !important;
+}
+
+/* Every Ticket Wins Banner - Light mode */
+[data-theme="light"] div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"],
+body.theme-light div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] {
+  background: linear-gradient(to right, #ffffff, #fef2f2, #fee2e2) !important;
+  border-color: #e5e7eb !important;
+}
+
+[data-theme="light"] div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] .text-white,
+body.theme-light div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] .text-white,
+[data-theme="light"] div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] h3,
+body.theme-light div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] h3 {
+  color: #000000 !important;
+}
+
+[data-theme="light"] div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] .text-gray-300,
+body.theme-light div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] .text-gray-300,
+[data-theme="light"] div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] p,
+body.theme-light div[class*="from-gray-900"][class*="via-purple-900"][class*="to-red-900"] p {
+  color: #374151 !important;
+}
+
+/* Section backgrounds with gray-900/50 - Light mode */
+[data-theme="light"] .bg-gray-900\/50,
+body.theme-light .bg-gray-900\/50,
+[data-theme="light"] section[class*="bg-gray-900"][class*="50"],
+body.theme-light section[class*="bg-gray-900"][class*="50"] {
+  background-color: #f9fafb !important;
+}
+
+/* Purple gradient backgrounds - Light mode */
+[data-theme="light"] .bg-gradient-to-b[class*="from-gray-900"][class*="via-purple-900"],
+body.theme-light .bg-gradient-to-b[class*="from-gray-900"][class*="via-purple-900"],
+[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"],
+body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] {
+  background: linear-gradient(to bottom, #ffffff, #f9fafb, #ffffff) !important;
+}
+
+/* Border colors for light mode */
+[data-theme="light"] .border-purple-800\/30,
+body.theme-light .border-purple-800\/30,
+[data-theme="light"] .border-white\/10,
+body.theme-light .border-white\/10 {
+  border-color: #e5e7eb !important;
+}
+
+/* Links in light mode */
+[data-theme="light"] a.text-white:hover,
+body.theme-light a.text-white:hover {
+  color: #dc2626 !important;
+}
+
+/* Ensure all sections have proper background in light mode */
+[data-theme="light"] section[class*="bg-gradient"],
+body.theme-light section[class*="bg-gradient"] {
+  background-color: #ffffff !important;
+}
+
+/* Text visibility improvements for light mode */
+[data-theme="light"] .text-gray-300,
+body.theme-light .text-gray-300 {
+  color: #374151 !important;
+}
+
+/* Sponsor cards in light mode */
+[data-theme="light"] .bg-purple-900\/30[class*="rounded-xl"],
+body.theme-light .bg-purple-900\/30[class*="rounded-xl"] {
+  background-color: #f3f4f6 !important;
+  border-color: #d1d5db !important;
+}
+
+/* View All Sponsors link - Light mode */
+[data-theme="light"] a[href="/prizes"].text-white,
+body.theme-light a[href="/prizes"].text-white {
+  color: #dc2626 !important;
+}
+
+[data-theme="light"] a[href="/prizes"].text-white:hover,
+body.theme-light a[href="/prizes"].text-white:hover {
+  color: #b91c1c !important;
+}
+
+/* Catch us live section arrows - white background with red color in light mode */
+[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"],
+body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"],
+[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="rounded-full"][class*="bg-purple-900"],
+body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="rounded-full"][class*="bg-purple-900"] {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #dc2626 !important;
+}
+
+[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"]:hover,
+body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"]:hover,
+[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="rounded-full"][class*="bg-purple-900"]:hover,
+body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="rounded-full"][class*="bg-purple-900"]:hover {
+  background-color: #fee2e2 !important;
+  border-color: #dc2626 !important;
+}
+
+[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"] svg,
+body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"] svg,
+[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"] svg[class*="text-white"],
+body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"] svg[class*="text-white"] {
+  color: #dc2626 !important;
+  stroke: #dc2626 !important;
+  fill: none !important;
+}
+
+[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"]:hover svg,
+body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"]:hover svg {
+  color: #b91c1c !important;
+  stroke: #b91c1c !important;
+}
+
+/* CTA Section - Keep white text in light mode */
+[data-theme="light"] section[class*="from-[#f0425f]"][class*="via-[#ec4899]"] .text-white,
+body.theme-light section[class*="from-[#f0425f]"][class*="via-[#ec4899]"] .text-white,
+[data-theme="light"] section:last-of-type .text-white,
+body.theme-light section:last-of-type .text-white,
+[data-theme="light"] section:last-of-type h2,
+body.theme-light section:last-of-type h2,
+[data-theme="light"] section:last-of-type p,
+body.theme-light section:last-of-type p {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] section:last-of-type .opacity-90,
+body.theme-light section:last-of-type .opacity-90 {
+  opacity: 0.9 !important;
+  color: #ffffff !important;
+}
+
+/* Footer social media icons - red in light mode */
+[data-theme="light"] footer a[class*="rounded-full"][class*="bg-gray-800"] svg,
+body.theme-light footer a[class*="rounded-full"][class*="bg-gray-800"] svg,
+[data-theme="light"] footer a[aria-label*="Facebook"] svg,
+body.theme-light footer a[aria-label*="Facebook"] svg,
+[data-theme="light"] footer a[aria-label*="Instagram"] svg,
+body.theme-light footer a[aria-label*="Instagram"] svg,
+[data-theme="light"] footer a[aria-label*="Twitter"] svg,
+body.theme-light footer a[aria-label*="Twitter"] svg {
+  color: #dc2626 !important;
+  fill: #dc2626 !important;
+}
+
+[data-theme="light"] footer a[class*="rounded-full"][class*="bg-gray-800"]:hover svg,
+body.theme-light footer a[class*="rounded-full"][class*="bg-gray-800"]:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Stats overlay in İlker Ayrık section - keep white text in light mode */
+[data-theme="light"] div[class*="bg-gray-900/90"][class*="backdrop-blur-sm"] .text-white,
+body.theme-light div[class*="bg-gray-900/90"][class*="backdrop-blur-sm"] .text-white,
+[data-theme="light"] div[class*="bg-gray-900/90"] .text-white,
+body.theme-light div[class*="bg-gray-900/90"] .text-white {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] div[class*="bg-gray-900/90"] .text-\[#f0425f\],
+body.theme-light div[class*="bg-gray-900/90"] .text-\[#f0425f\],
+[data-theme="light"] div[class*="bg-gray-900/90"] div[class*="font-bold"][class*="text-lg"],
+body.theme-light div[class*="bg-gray-900/90"] div[class*="font-bold"][class*="text-lg"] {
+  color: #ffffff !important;
 }

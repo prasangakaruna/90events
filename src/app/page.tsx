@@ -345,7 +345,7 @@ export default function Home() {
       </section>
 
       {/* Prize Cards & Every Ticket Wins Section */}
-      <section className="py-24   via-purple-900/30 to-gray-800/60 container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-to-b from-gray-800/60 via-purple-900/30 to-gray-800/60 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Prize Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-7xl mx-auto">
           {/* Annual Insurance Package */}
@@ -422,60 +422,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Shows Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-        <div className="text-center mb-16 animate-slideInUp">
-          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-            {t.aboutShows}
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            {t.loveOnStage}<span className="gradient-text"> {t.truthRevealed}</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            {t.aboutShowsDescription}
-          </p>
+     
+       {/* Live Shows Section */}
+       <section className="py-24 bg-gradient-to-b from-gray-900/60 via-purple-900/30 to-gray-900/60 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">Catch us live</h2>
+            <p className="text-lg text-gray-300">7 cities across North America. One unforgettable experience.</p>
+          </div>
+          
+          {/* Event Cards Slider */}
+          <div className="max-w-7xl mx-auto">
+            <EventCardsSlider events={liveShows} />
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {[
-            { num: '01', title: 'Gerçekçi Deneyim', desc: 'Realistic experiences that mirror life\'s most profound moments', icon: '🎭' },
-            { num: '02', title: 'Hayatın Her Anı', desc: 'Every moment of life captured in stunning performances', icon: '✨' },
-            { num: '03', title: 'Amazing Prizes', desc: 'Win incredible prizes worth over $50,000 at every show', icon: '🎁' },
-            { num: '04', title: 'Unforgettable Experience', desc: 'Create memories that will last a lifetime', icon: '🌟' },
-          ].map((feature, idx) => (
-            <div 
-              key={idx}
-              className="relative group"
-            >
-              {/* Gradient Border Effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7] rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity blur-sm"></div>
-              
-              {/* Main Card */}
-              <div className="relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-[#f0425f]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#f0425f]/20 feature-box">
-                {/* Number Badge */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-lg blur-md opacity-50"></div>
-                    <div className="relative w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-lg flex items-center justify-center">
-                      <span className="text-2xl font-extrabold text-white">{feature.num}</span>
-                    </div>
-                  </div>
-                  <div className="text-3xl">{feature.icon}</div>
-                </div>
-                
-                {/* Content */}
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#f0425f] transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {feature.desc}
-                </p>
-                
-                {/* Hover Indicator */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -582,6 +541,62 @@ export default function Home() {
         </div>
       </section>
 
+ {/* About Shows Section */}
+      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+        <div className="text-center mb-16 animate-slideInUp">
+          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
+            {t.aboutShows}
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            {t.loveOnStage}<span className="gradient-text"> {t.truthRevealed}</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            {t.aboutShowsDescription}
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {[
+            { num: '01', title: 'Gerçekçi Deneyim', desc: 'Realistic experiences that mirror life\'s most profound moments', icon: '🎭' },
+            { num: '02', title: 'Hayatın Her Anı', desc: 'Every moment of life captured in stunning performances', icon: '✨' },
+            { num: '03', title: 'Amazing Prizes', desc: 'Win incredible prizes worth over $50,000 at every show', icon: '🎁' },
+            { num: '04', title: 'Unforgettable Experience', desc: 'Create memories that will last a lifetime', icon: '🌟' },
+          ].map((feature, idx) => (
+            <div 
+              key={idx}
+              className="relative group"
+            >
+              {/* Gradient Border Effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7] rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity blur-sm"></div>
+              
+              {/* Main Card */}
+              <div className="relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-[#f0425f]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#f0425f]/20 feature-box">
+                {/* Number Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-lg blur-md opacity-50"></div>
+                    <div className="relative w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-lg flex items-center justify-center">
+                      <span className="text-2xl font-extrabold text-white">{feature.num}</span>
+                    </div>
+                  </div>
+                  <div className="text-3xl">{feature.icon}</div>
+                </div>
+                
+                {/* Content */}
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#f0425f] transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {feature.desc}
+                </p>
+                
+                {/* Hover Indicator */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* Three Steps to the Spotlight Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -755,20 +770,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Live Shows Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-900/60 via-purple-900/30 to-gray-900/60 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">Catch us live</h2>
-            <p className="text-lg text-gray-300">7 cities across North America. One unforgettable experience.</p>
-          </div>
-          
-          {/* Event Cards Slider */}
-          <div className="max-w-7xl mx-auto">
-            <EventCardsSlider events={liveShows} />
-        </div>
-        </div>
-      </section>
+    
 
       {/* Title Sponsors Section */}
       <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
