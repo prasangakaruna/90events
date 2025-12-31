@@ -295,8 +295,37 @@ export default function TourPage() {
         </div>
       </section>
 
-      {/* Catch İlker Live Section */}
-      <section id="shows" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+   
+
+      {/* More Than Just a Tour Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900/50 to-black">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">More Than Just a Tour - It's an Experience</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800">
+                <div className="text-4xl mb-4">❤️</div>
+                <h3 className="text-xl font-bold mb-3">Personal Connection</h3>
+                <p className="text-gray-400">Small groups mean real conversations and genuine moments with İlker.</p>
+              </div>
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800">
+                <div className="text-4xl mb-4">📸</div>
+                <h3 className="text-xl font-bold mb-3">Captured Moments</h3>
+                <p className="text-gray-400">Professional photos and videos to relive your adventure forever.</p>
+              </div>
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800">
+                <div className="text-4xl mb-4">⭐</div>
+                <h3 className="text-xl font-bold mb-3">Exclusive Access</h3>
+                <p className="text-gray-400">Behind the scenes stories and experiences you won't find anywhere else.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+         {/* Catch İlker Live Section */}
+         <section id="shows" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Catch İlker Live</h2>
@@ -390,32 +419,6 @@ export default function TourPage() {
                 <div className="text-lg font-bold text-[#f0425f]">{show.price}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* More Than Just a Tour Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900/50 to-black">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">More Than Just a Tour - It's an Experience</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800">
-                <div className="text-4xl mb-4">❤️</div>
-                <h3 className="text-xl font-bold mb-3">Personal Connection</h3>
-                <p className="text-gray-400">Small groups mean real conversations and genuine moments with İlker.</p>
-              </div>
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800">
-                <div className="text-4xl mb-4">📸</div>
-                <h3 className="text-xl font-bold mb-3">Captured Moments</h3>
-                <p className="text-gray-400">Professional photos and videos to relive your adventure forever.</p>
-              </div>
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800">
-                <div className="text-4xl mb-4">⭐</div>
-                <h3 className="text-xl font-bold mb-3">Exclusive Access</h3>
-                <p className="text-gray-400">Behind the scenes stories and experiences you won't find anywhere else.</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

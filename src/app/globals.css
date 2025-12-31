@@ -279,27 +279,18 @@ body.theme-light section:first-of-type div[class*="bg-gradient-to-t"][class*="fr
   background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent) !important;
 }
 
-/* Main banner text should stay white in light mode */
+/* Main banner text should be black/red in light mode */
 [data-theme="light"] section:first-of-type .text-white,
-body.theme-light section:first-of-type .text-white {
-  color: #ffffff !important;
-}
-
+body.theme-light section:first-of-type .text-white,
 [data-theme="light"] section:first-of-type h1,
 body.theme-light section:first-of-type h1,
 [data-theme="light"] section:first-of-type h1 span,
-body.theme-light section:first-of-type h1 span {
-  color: #ffffff !important;
-}
-
+body.theme-light section:first-of-type h1 span,
 [data-theme="light"] section:first-of-type p,
-body.theme-light section:first-of-type p {
-  color: #ffffff !important;
-}
-
-[data-theme="light"] section:first-of-type span:not([class*="gradient"]):not([class*="text-"]),
-body.theme-light section:first-of-type span:not([class*="gradient"]):not([class*="text-"]) {
-  color: #ffffff !important;
+body.theme-light section:first-of-type p,
+[data-theme="light"] section:first-of-type span:not([class*="gradient"]),
+body.theme-light section:first-of-type span:not([class*="gradient"]) {
+  color: #000000 !important;
 }
 
 [data-theme="light"] section:first-of-type .text-gray-200,
@@ -308,7 +299,7 @@ body.theme-light section:first-of-type .text-gray-200,
 body.theme-light section:first-of-type .text-gray-300,
 [data-theme="light"] section:first-of-type .text-gray-400,
 body.theme-light section:first-of-type .text-gray-400 {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #4b5563 !important;
 }
 
 /* ACIDIR text should be red in light mode - handled by .acidir-text class */
@@ -816,89 +807,4 @@ body.theme-light a[href="/prizes"].text-white {
 [data-theme="light"] a[href="/prizes"].text-white:hover,
 body.theme-light a[href="/prizes"].text-white:hover {
   color: #b91c1c !important;
-}
-
-/* Catch us live section arrows - white background with red color in light mode */
-[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"],
-body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"],
-[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="rounded-full"][class*="bg-purple-900"],
-body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="rounded-full"][class*="bg-purple-900"] {
-  background-color: #ffffff !important;
-  background-image: none !important;
-  border-color: #dc2626 !important;
-}
-
-[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"]:hover,
-body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"]:hover,
-[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="rounded-full"][class*="bg-purple-900"]:hover,
-body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="rounded-full"][class*="bg-purple-900"]:hover {
-  background-color: #fee2e2 !important;
-  border-color: #dc2626 !important;
-}
-
-[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"] svg,
-body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"] svg,
-[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"] svg[class*="text-white"],
-body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"] svg[class*="text-white"] {
-  color: #dc2626 !important;
-  stroke: #dc2626 !important;
-  fill: none !important;
-}
-
-[data-theme="light"] section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"]:hover svg,
-body.theme-light section[class*="from-gray-900"][class*="via-purple-900"] button[class*="bg-purple-900"]:hover svg {
-  color: #b91c1c !important;
-  stroke: #b91c1c !important;
-}
-
-/* CTA Section - Keep white text in light mode */
-[data-theme="light"] section[class*="from-[#f0425f]"][class*="via-[#ec4899]"] .text-white,
-body.theme-light section[class*="from-[#f0425f]"][class*="via-[#ec4899]"] .text-white,
-[data-theme="light"] section:last-of-type .text-white,
-body.theme-light section:last-of-type .text-white,
-[data-theme="light"] section:last-of-type h2,
-body.theme-light section:last-of-type h2,
-[data-theme="light"] section:last-of-type p,
-body.theme-light section:last-of-type p {
-  color: #ffffff !important;
-}
-
-[data-theme="light"] section:last-of-type .opacity-90,
-body.theme-light section:last-of-type .opacity-90 {
-  opacity: 0.9 !important;
-  color: #ffffff !important;
-}
-
-/* Footer social media icons - red in light mode */
-[data-theme="light"] footer a[class*="rounded-full"][class*="bg-gray-800"] svg,
-body.theme-light footer a[class*="rounded-full"][class*="bg-gray-800"] svg,
-[data-theme="light"] footer a[aria-label*="Facebook"] svg,
-body.theme-light footer a[aria-label*="Facebook"] svg,
-[data-theme="light"] footer a[aria-label*="Instagram"] svg,
-body.theme-light footer a[aria-label*="Instagram"] svg,
-[data-theme="light"] footer a[aria-label*="Twitter"] svg,
-body.theme-light footer a[aria-label*="Twitter"] svg {
-  color: #dc2626 !important;
-  fill: #dc2626 !important;
-}
-
-[data-theme="light"] footer a[class*="rounded-full"][class*="bg-gray-800"]:hover svg,
-body.theme-light footer a[class*="rounded-full"][class*="bg-gray-800"]:hover svg {
-  color: #ffffff !important;
-  fill: #ffffff !important;
-}
-
-/* Stats overlay in İlker Ayrık section - keep white text in light mode */
-[data-theme="light"] div[class*="bg-gray-900/90"][class*="backdrop-blur-sm"] .text-white,
-body.theme-light div[class*="bg-gray-900/90"][class*="backdrop-blur-sm"] .text-white,
-[data-theme="light"] div[class*="bg-gray-900/90"] .text-white,
-body.theme-light div[class*="bg-gray-900/90"] .text-white {
-  color: #ffffff !important;
-}
-
-[data-theme="light"] div[class*="bg-gray-900/90"] .text-\[#f0425f\],
-body.theme-light div[class*="bg-gray-900/90"] .text-\[#f0425f\],
-[data-theme="light"] div[class*="bg-gray-900/90"] div[class*="font-bold"][class*="text-lg"],
-body.theme-light div[class*="bg-gray-900/90"] div[class*="font-bold"][class*="text-lg"] {
-  color: #ffffff !important;
 }
