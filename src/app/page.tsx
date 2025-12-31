@@ -323,36 +323,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Win Prize Banner and Next Show Countdown - Moved from right side */}
-              <div className="w-full max-w-md space-y-4">
-                {/* Win Prize Banner */}
-                <Link
-                  href="/prizes"
-                  className="block px-5 py-4 bg-[#1a0a2e] hover:bg-[#1f0f3a] border border-purple-900/40 rounded-xl transition-all duration-300 flex items-center justify-between gap-4 w-full"
-                >
-                  <div className="flex items-center gap-4 flex-1 min-w-0">
-                    {/* Trophy Icon */}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
-                      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                      <path d="M4 22h16"></path>
-                      <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-                      <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-                      <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-                    </svg>
-                    <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-[#f0425f] font-bold text-base md:text-lg leading-tight whitespace-nowrap" style={{ fontFamily: 'Arial, sans-serif' }}>Win up to $10,000</span>
-                      <span className="text-[#9ca3af] text-xs md:text-sm leading-tight whitespace-nowrap" style={{ fontFamily: 'Arial, sans-serif' }}>Every ticket enters the draw</span>
-                    </div>
-                  </div>
-                  {/* Arrow Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 flex-shrink-0">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </Link>
-                <NextShowCountdown />
-              </div>
+             
             </div>
             
             {/* Right side - Empty or can be used for image */}
@@ -370,6 +341,84 @@ export default function Home() {
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
             <div className="w-1.5 h-1.5 bg-white/50 rounded-full"></div>
           </div>
+        </div>
+      </section>
+
+      {/* Prize Cards & Every Ticket Wins Section */}
+      <section className="py-24   via-purple-900/30 to-gray-800/60 container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Prize Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-7xl mx-auto">
+          {/* Annual Insurance Package */}
+          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
+            <h3 className="text-white font-bold text-lg mb-2">Annual Insurance Package</h3>
+            <p className="text-gray-400 text-sm mb-4">by State Farm Insurance</p>
+            <div className="text-[#f0425f] font-bold text-2xl">$2,500</div>
+          </div>
+
+          {/* Cash Prize */}
+          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
+            <h3 className="text-white font-bold text-lg mb-2">Cash Prize</h3>
+            <p className="text-gray-400 text-sm mb-4">by Bank of America</p>
+            <div className="text-[#f0425f] font-bold text-2xl">$10,000</div>
+          </div>
+
+          {/* Weekend Getaway Package */}
+          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
+            <h3 className="text-white font-bold text-lg mb-2">Weekend Getaway Package</h3>
+            <p className="text-gray-400 text-sm mb-4">by Marriott Hotels</p>
+            <div className="text-[#f0425f] font-bold text-2xl">$3,000</div>
+          </div>
+
+          {/* Dining Gift Cards */}
+          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
+            <h3 className="text-white font-bold text-lg mb-2">Dining Gift Cards</h3>
+            <p className="text-gray-400 text-sm mb-4">by Olive Garden</p>
+            <div className="text-[#f0425f] font-bold text-2xl">$500</div>
+          </div>
+        </div>
+
+        {/* Every Ticket Wins Banner */}
+        <div className="max-w-7xl mx-auto mb-8">
+          <div className="bg-gradient-to-r from-gray-900/95 via-purple-900/50 to-red-900/30 rounded-xl p-8 md:p-10 border border-purple-800/30">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-6 flex-1">
+                {/* Star Icon */}
+                <div className="w-16 h-16 bg-[#f0425f] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                    </div>
+                <div>
+                  <h3 className="text-white font-bold text-3xl md:text-4xl mb-2">Every Ticket Wins</h3>
+                  <p className="text-gray-300 text-base md:text-lg">Automatic entry into our grand prize draw at each show</p>
+                  </div>
+                </div>
+                <Link
+                  href="/events"
+                className="px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 flex items-center gap-2 whitespace-nowrap"
+              >
+                <span>Buy Tickets Now</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+        {/* View All Sponsors & Prizes Link */}
+        <div className="text-center">
+          <Link
+            href="/prizes"
+            className="inline-flex items-center gap-2 text-white hover:text-[#f0425f] transition-colors font-medium text-lg"
+          >
+            <span>View All Sponsors & Prizes</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </Link>
         </div>
       </section>
 
@@ -879,84 +928,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Prize Cards & Every Ticket Wins Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-800/60 via-purple-900/30 to-gray-800/60 container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Prize Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-7xl mx-auto">
-          {/* Annual Insurance Package */}
-          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
-            <h3 className="text-white font-bold text-lg mb-2">Annual Insurance Package</h3>
-            <p className="text-gray-400 text-sm mb-4">by State Farm Insurance</p>
-            <div className="text-[#f0425f] font-bold text-2xl">$2,500</div>
-          </div>
-
-          {/* Cash Prize */}
-          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
-            <h3 className="text-white font-bold text-lg mb-2">Cash Prize</h3>
-            <p className="text-gray-400 text-sm mb-4">by Bank of America</p>
-            <div className="text-[#f0425f] font-bold text-2xl">$10,000</div>
-          </div>
-
-          {/* Weekend Getaway Package */}
-          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
-            <h3 className="text-white font-bold text-lg mb-2">Weekend Getaway Package</h3>
-            <p className="text-gray-400 text-sm mb-4">by Marriott Hotels</p>
-            <div className="text-[#f0425f] font-bold text-2xl">$3,000</div>
-          </div>
-
-          {/* Dining Gift Cards */}
-          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
-            <h3 className="text-white font-bold text-lg mb-2">Dining Gift Cards</h3>
-            <p className="text-gray-400 text-sm mb-4">by Olive Garden</p>
-            <div className="text-[#f0425f] font-bold text-2xl">$500</div>
-          </div>
-        </div>
-
-        {/* Every Ticket Wins Banner */}
-        <div className="max-w-7xl mx-auto mb-8">
-          <div className="bg-gradient-to-r from-gray-900/95 via-purple-900/50 to-red-900/30 rounded-xl p-8 md:p-10 border border-purple-800/30">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-6 flex-1">
-                {/* Star Icon */}
-                <div className="w-16 h-16 bg-[#f0425f] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                    </div>
-                <div>
-                  <h3 className="text-white font-bold text-3xl md:text-4xl mb-2">Every Ticket Wins</h3>
-                  <p className="text-gray-300 text-base md:text-lg">Automatic entry into our grand prize draw at each show</p>
-                  </div>
-                </div>
-                <Link
-                  href="/events"
-                className="px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 flex items-center gap-2 whitespace-nowrap"
-              >
-                <span>Buy Tickets Now</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-        {/* View All Sponsors & Prizes Link */}
-        <div className="text-center">
-          <Link
-            href="/prizes"
-            className="inline-flex items-center gap-2 text-white hover:text-[#f0425f] transition-colors font-medium text-lg"
-          >
-            <span>View All Sponsors & Prizes</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </Link>
-        </div>
-      </section>
-
+   
       {/* Past Shows & Experience the Magic Section */}
       <section className="py-24 bg-gradient-to-b from-gray-900/70 via-black to-gray-900/70 past-shows-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
