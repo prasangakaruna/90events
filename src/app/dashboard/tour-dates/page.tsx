@@ -16,7 +16,7 @@ export default function TourDatesPage() {
             <h1 className="text-3xl font-bold mb-2 text-white">Tour Dates</h1>
             <p className="text-gray-400">Manage tour schedule and dates</p>
           </div>
-          <button className="px-6 py-3 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all">
+          <button className="btn-gradient">
             + Add Tour Date
           </button>
         </div>

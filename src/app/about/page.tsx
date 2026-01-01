@@ -207,13 +207,13 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/events"
-                className="px-10 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-xl hover:from-[#d63852] hover:to-[#db2777] transition-all font-semibold text-lg shadow-2xl hover:shadow-[#f0425f]/50 transform hover:scale-105"
+                className="btn-gradient-lg"
               >
                 Browse Events
               </Link>
               <Link
                 href="/contact"
-                className="px-10 py-4 border-2 border-white/40 text-white rounded-xl hover:bg-white/10 hover:border-white/60 transition-all font-semibold text-lg"
+                className="btn-secondary-lg"
               >
                 Contact Us
               </Link>

@@ -449,7 +449,7 @@ export default function SponsorDetailsPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/sponsors"
-              className="px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-lg shadow-2xl hover:shadow-[#f0425f]/60"
+              className="btn-gradient-lg"
             >
               Apply Now
             </Link>

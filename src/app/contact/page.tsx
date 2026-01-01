@@ -220,7 +220,7 @@ export default function ContactPage() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full px-6 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all font-semibold text-lg shadow-lg hover:shadow-[#f0425f]/50 transform hover:scale-105"
+                      className="btn-gradient-lg w-full"
                     >
                       Send Message
                     </button>

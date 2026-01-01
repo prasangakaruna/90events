@@ -69,13 +69,13 @@ export default function Header() {
             <LanguageSwitcher />
             <Link
               href="/login"
-              className="hidden md:block px-6 py-3.5 bg-transparent hover:bg-white/10 text-white rounded-full transition-all duration-300 transform hover:scale-105 font-semibold text-base flex items-center justify-center gap-2 border border-white/40 hover:border-white/60"
+              className="hidden md:block btn-secondary flex items-center justify-center gap-2"
             >
               {t.login || 'Login'}
             </Link>
             <Link
               href="/apply"
-              className="hidden md:block px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 flex items-center justify-center gap-2 whitespace-nowrap"
+              className="hidden md:block btn-gradient flex items-center justify-center gap-2 whitespace-nowrap"
             >
               {t.beAContestant || 'Be a Contestant'}
             </Link>

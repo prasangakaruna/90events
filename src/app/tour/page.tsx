@@ -235,13 +235,13 @@ export default function TourPage() {
               <div className="flex flex-wrap gap-4 mb-8">
                 <Link
                   href="#shows"
-                  className="px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
+                  className="btn-gradient"
                 >
                   View Tour Dates
                 </Link>
                 <Link
                   href="#packages"
-                  className="px-6 py-3.5 bg-transparent hover:bg-white/10 text-white rounded-full transition-all duration-300 transform hover:scale-105 font-semibold text-base border border-white/40 hover:border-white/60"
+                  className="btn-secondary"
                 >
                   Experience Packages
                 </Link>
@@ -453,7 +453,7 @@ export default function TourPage() {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60">
+                <button className="btn-gradient w-full">
                   Book This Experience
                 </button>
               </div>
@@ -600,7 +600,7 @@ export default function TourPage() {
               </p>
               <Link
                 href="/sponsors"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-lg shadow-2xl hover:shadow-[#f0425f]/60"
+                className="btn-gradient-lg inline-block"
               >
                 Apply as City Sponsor
               </Link>
@@ -641,13 +641,13 @@ export default function TourPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="#packages"
-              className="px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
+              className="btn-gradient"
             >
               View All Packages
             </Link>
             <Link
               href="/tickets"
-              className="px-6 py-3.5 bg-transparent hover:bg-white/10 text-white rounded-full transition-all duration-300 transform hover:scale-105 font-semibold text-base border border-white/40 hover:border-white/60"
+              className="btn-secondary"
             >
               Get Show Tickets
             </Link>
