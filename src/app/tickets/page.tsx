@@ -313,9 +313,9 @@ export default function TicketsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px]">
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section - Professional */}
+      <section className="relative h-[500px] md:h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/img/img16346_orig.webp"
@@ -324,161 +324,160 @@ export default function TicketsPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/85 to-black/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          {/* Subtle glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f0425f]/10 via-transparent to-[#ec4899]/10"></div>
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-          <div className="mb-4">
-            <span className="text-gray-300 text-sm font-medium">NOVEMBER 2026</span>
-            <div className="flex gap-2 mt-2">
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  language === 'en'
-                    ? 'bg-[#f0425f] text-white'
-                    : 'bg-white/10 text-white hover:bg-white/20'
-                }`}
-              >
-                English
-              </button>
-              <button
-                onClick={() => setLanguage('tr')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  language === 'tr'
-                    ? 'bg-[#f0425f] text-white'
-                    : 'bg-white/10 text-white hover:bg-white/20'
-                }`}
-              >
-                Türkçe
-              </button>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center max-w-7xl">
+          <div className="mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-bold rounded-full shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider mb-4">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+              NOVEMBER 2026
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">Get Your Tickets</h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">Get Your Tickets</h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed">
             Secure your seats for the ultimate couples game show experience.
           </p>
         </div>
       </section>
 
-      {/* Buy Tickets Section */}
-      <section className="py-12 bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Buy Tickets Section - Professional */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left Side - Buy Tickets */}
               <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Buy Tickets</h2>
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-bold rounded-full shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider mb-4">
+                  <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                  Ticket Selection
+                </div>
+                <h2 className="text-4xl md:text-5xl font-extrabold">Buy Tickets</h2>
+              </div>
               
-              {/* Progress Indicator */}
-              <div className="flex items-center gap-2 mb-8">
+              {/* Progress Indicator - Professional */}
+              <div className="flex items-center gap-2 mb-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-4 border border-gray-800 shadow-lg">
                 {/* Step 1: Select Show */}
                 <div className="flex items-center gap-2">
-                  <div className={`w-8 h-8 rounded-full font-bold flex items-center justify-center text-sm ${
+                  <div className={`w-10 h-10 rounded-full font-bold flex items-center justify-center text-sm transition-all ${
                     !selectedEvent 
-                      ? 'bg-white text-gray-900' 
-                      : 'bg-green-600 text-white'
+                      ? 'bg-gradient-to-br from-white to-gray-200 text-gray-900 shadow-lg' 
+                      : 'bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-lg shadow-green-500/30'
                   }`}>
                     {!selectedEvent ? (
                       '1'
                     ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M20 6L9 17l-5-5"></path>
                       </svg>
                     )}
                 </div>
-                  <span className={`text-sm ${!selectedEvent ? 'font-medium' : 'text-gray-400'}`}>Select Show</span>
+                  <span className={`text-sm font-semibold ${!selectedEvent ? 'text-white' : 'text-gray-400'}`}>Select Show</span>
                 </div>
-                <div className={`flex-1 h-0.5 ${selectedEvent ? 'bg-green-600' : 'bg-gray-700'}`}></div>
+                <div className={`flex-1 h-1 rounded-full ${selectedEvent ? 'bg-gradient-to-r from-green-500 to-emerald-600' : 'bg-gray-800'}`}></div>
                 
                 {/* Step 2: Choose Seats */}
                 <div className="flex items-center gap-2">
-                  <div className={`w-8 h-8 rounded-full font-bold flex items-center justify-center text-sm ${
+                  <div className={`w-10 h-10 rounded-full font-bold flex items-center justify-center text-sm transition-all ${
                     selectedEvent && !showExtras
-                      ? 'bg-white text-gray-900'
+                      ? 'bg-gradient-to-br from-white to-gray-200 text-gray-900 shadow-lg'
                       : showExtras
-                      ? 'bg-green-600 text-white'
-                      : 'bg-gray-700 text-gray-400'
+                      ? 'bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-lg shadow-green-500/30'
+                      : 'bg-gray-800 text-gray-500 border border-gray-700'
                   }`}>
                     {selectedEvent && !showExtras ? (
                       '2'
                     ) : showExtras ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M20 6L9 17l-5-5"></path>
                       </svg>
                     ) : (
                       '2'
                     )}
                 </div>
-                  <span className={`text-sm ${selectedEvent && !showExtras ? 'font-medium' : selectedEvent ? 'text-gray-400' : 'text-gray-400'}`}>Choose Seats</span>
+                  <span className={`text-sm font-semibold ${selectedEvent && !showExtras ? 'text-white' : 'text-gray-400'}`}>Choose Seats</span>
                 </div>
-                <div className={`flex-1 h-0.5 ${showExtras ? 'bg-green-600' : selectedEvent ? 'bg-gray-700' : 'bg-gray-700'}`}></div>
+                <div className={`flex-1 h-1 rounded-full ${showExtras ? 'bg-gradient-to-r from-green-500 to-emerald-600' : selectedEvent ? 'bg-gray-800' : 'bg-gray-800'}`}></div>
                 
                 {/* Step 3: Add Extras */}
                 <div className="flex items-center gap-2">
-                  <div className={`w-8 h-8 rounded-full font-bold flex items-center justify-center text-sm ${
+                  <div className={`w-10 h-10 rounded-full font-bold flex items-center justify-center text-sm transition-all ${
                     showExtras && !showCheckout
-                      ? 'bg-white text-gray-900'
+                      ? 'bg-gradient-to-br from-white to-gray-200 text-gray-900 shadow-lg'
                       : showCheckout
-                      ? 'bg-green-600 text-white'
+                      ? 'bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-lg shadow-green-500/30'
                       : selectedEvent
-                      ? 'bg-gray-700 text-gray-400'
-                      : 'bg-gray-700 text-gray-400'
+                      ? 'bg-gray-800 text-gray-500 border border-gray-700'
+                      : 'bg-gray-800 text-gray-500 border border-gray-700'
                   }`}>
                     {showExtras && !showCheckout ? (
                       '3'
                     ) : showCheckout ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M20 6L9 17l-5-5"></path>
                       </svg>
                     ) : (
                       '3'
                     )}
                 </div>
-                  <span className={`text-sm ${showExtras && !showCheckout ? 'font-medium' : 'text-gray-400'}`}>Add Extras</span>
+                  <span className={`text-sm font-semibold ${showExtras && !showCheckout ? 'text-white' : 'text-gray-400'}`}>Add Extras</span>
                 </div>
-                <div className={`flex-1 h-0.5 ${showCheckout ? 'bg-green-600' : showExtras ? 'bg-gray-700' : 'bg-gray-700'}`}></div>
+                <div className={`flex-1 h-1 rounded-full ${showCheckout ? 'bg-gradient-to-r from-green-500 to-emerald-600' : showExtras ? 'bg-gray-800' : 'bg-gray-800'}`}></div>
                 
                 {/* Step 4: Checkout */}
                 <div className="flex items-center gap-2">
-                  <div className={`w-8 h-8 rounded-full font-bold flex items-center justify-center text-sm ${
+                  <div className={`w-10 h-10 rounded-full font-bold flex items-center justify-center text-sm transition-all ${
                     showCheckout
-                      ? 'bg-white text-gray-900'
-                      : 'bg-gray-700 text-gray-400'
+                      ? 'bg-gradient-to-br from-white to-gray-200 text-gray-900 shadow-lg'
+                      : 'bg-gray-800 text-gray-500 border border-gray-700'
                   }`}>4</div>
-                  <span className={`text-sm ${showCheckout ? 'font-medium' : 'text-gray-400'}`}>Checkout</span>
+                  <span className={`text-sm font-semibold ${showCheckout ? 'text-white' : 'text-gray-400'}`}>Checkout</span>
                 </div>
               </div>
 
-              {/* Show Starts In */}
-              <div className="bg-gray-800 rounded-xl p-6 mb-6">
-                <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">SHOW STARTS IN</h3>
-                <div className="flex items-center gap-4">
-                  <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold">{String(countdown.days).padStart(3, '0')}</div>
-                    <div className="text-xs text-gray-400 uppercase mt-1">DAYS</div>
+              {/* Show Starts In - Professional */}
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 mb-6 border border-gray-800 shadow-xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-[#f0425f]/20 to-[#ec4899]/20 text-[#f0425f] text-xs font-bold rounded-full mb-4 uppercase tracking-wider">
+                  <span className="w-1.5 h-1.5 bg-[#f0425f] rounded-full animate-pulse"></span>
+                  SHOW STARTS IN
+                </div>
+                <div className="flex items-center gap-3 md:gap-6">
+                  <div className="text-center flex-1">
+                    <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent mb-2">{String(countdown.days).padStart(3, '0')}</div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider font-semibold">DAYS</div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-600">:</div>
-                  <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold">{String(countdown.hours).padStart(2, '0')}</div>
-                    <div className="text-xs text-gray-400 uppercase mt-1">HOURS</div>
+                  <div className="text-3xl font-bold text-[#f0425f]">:</div>
+                  <div className="text-center flex-1">
+                    <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent mb-2">{String(countdown.hours).padStart(2, '0')}</div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider font-semibold">HOURS</div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-600">:</div>
-                  <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold">{String(countdown.minutes).padStart(2, '0')}</div>
-                    <div className="text-xs text-gray-400 uppercase mt-1">MINS</div>
+                  <div className="text-3xl font-bold text-[#f0425f]">:</div>
+                  <div className="text-center flex-1">
+                    <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent mb-2">{String(countdown.minutes).padStart(2, '0')}</div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider font-semibold">MINS</div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-600">:</div>
-                  <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold">{String(countdown.seconds).padStart(2, '0')}</div>
-                    <div className="text-xs text-gray-400 uppercase mt-1">SECS</div>
+                  <div className="text-3xl font-bold text-[#f0425f]">:</div>
+                  <div className="text-center flex-1">
+                    <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent mb-2">{String(countdown.seconds).padStart(2, '0')}</div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider font-semibold">SECS</div>
                   </div>
                 </div>
               </div>
 
-              {/* Info Stats */}
+              {/* Info Stats - Professional */}
               <div className="space-y-2 text-sm text-gray-400 pb-5">
-                <p>9 people viewing this show</p>
-                <p>6 tickets sold in the last hour</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <p>9 people viewing this show</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#f0425f] rounded-full"></div>
+                  <p>6 tickets sold in the last hour</p>
+                </div>
               </div>
             </div>
 
@@ -492,15 +491,15 @@ export default function TicketsPage() {
                   <div className="flex flex-row gap-8">
                     {/* Left Side - Payment Form */}
                     <div className="flex-1">
-                      {/* Selected Event Card */}
-                      <div className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 mb-6">
+                      {/* Selected Event Card - Professional */}
+                      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden border border-gray-800 shadow-xl mb-6">
                         <div className="p-6">
                           <div className="flex flex-row gap-6 items-start">
-                            {/* Date Square */}
+                            {/* Date Square - Professional */}
                             <div className="flex-shrink-0">
-                              <div className="w-20 h-20 bg-gray-700 rounded-lg flex flex-col items-center justify-center">
-                                <div className="text-3xl font-bold">{selectedEvent.dateNumber}</div>
-                                <div className="text-xs text-gray-400">{selectedEvent.month} {selectedEvent.year}</div>
+                              <div className="w-20 h-20 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex flex-col items-center justify-center border border-gray-700 shadow-lg">
+                                <div className="text-3xl font-extrabold text-white">{selectedEvent.dateNumber}</div>
+                                <div className="text-xs text-gray-400 font-semibold uppercase">{selectedEvent.month} {selectedEvent.year}</div>
                               </div>
                             </div>
 
@@ -527,9 +526,9 @@ export default function TicketsPage() {
                         </div>
                       </div>
 
-                      {/* Payment Details Form */}
-                      <div className="bg-gray-800 rounded-xl p-6">
-                        <h2 className="text-2xl font-bold mb-6">Payment Details</h2>
+                      {/* Payment Details Form - Professional */}
+                      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 shadow-xl">
+                        <h2 className="text-2xl font-bold mb-6 text-white">Payment Details</h2>
 
                         <div className="space-y-6">
                           {/* Card Information */}
@@ -544,7 +543,7 @@ export default function TicketsPage() {
                                   onChange={(e) => setPaymentDetails({...paymentDetails, cardNumber: e.target.value})}
                                   placeholder="1234 5678 9012 3456"
                                   maxLength={19}
-                                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                 />
                               </div>
                               <div className="grid grid-cols-2 gap-4">
@@ -556,7 +555,7 @@ export default function TicketsPage() {
                                     onChange={(e) => setPaymentDetails({...paymentDetails, expiryDate: e.target.value})}
                                     placeholder="MM/YY"
                                     maxLength={5}
-                                    className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                   />
                                 </div>
                                 <div>
@@ -567,7 +566,7 @@ export default function TicketsPage() {
                                     onChange={(e) => setPaymentDetails({...paymentDetails, cvv: e.target.value})}
                                     placeholder="123"
                                     maxLength={4}
-                                    className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                   />
                                 </div>
                               </div>
@@ -578,7 +577,7 @@ export default function TicketsPage() {
                                   value={paymentDetails.cardholderName}
                                   onChange={(e) => setPaymentDetails({...paymentDetails, cardholderName: e.target.value})}
                                   placeholder="John Doe"
-                                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                 />
                               </div>
                             </div>
@@ -595,7 +594,7 @@ export default function TicketsPage() {
                                   value={paymentDetails.email}
                                   onChange={(e) => setPaymentDetails({...paymentDetails, email: e.target.value})}
                                   placeholder="your.email@example.com"
-                                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                 />
                               </div>
                               <div>
@@ -605,7 +604,7 @@ export default function TicketsPage() {
                                   value={paymentDetails.phone}
                                   onChange={(e) => setPaymentDetails({...paymentDetails, phone: e.target.value})}
                                   placeholder="+1 (555) 123-4567"
-                                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                 />
                               </div>
                             </div>
@@ -622,7 +621,7 @@ export default function TicketsPage() {
                                   value={paymentDetails.billingAddress}
                                   onChange={(e) => setPaymentDetails({...paymentDetails, billingAddress: e.target.value})}
                                   placeholder="123 Main Street"
-                                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                 />
                               </div>
                               <div className="grid grid-cols-2 gap-4">
@@ -633,7 +632,7 @@ export default function TicketsPage() {
                                     value={paymentDetails.city}
                                     onChange={(e) => setPaymentDetails({...paymentDetails, city: e.target.value})}
                                     placeholder="New York"
-                                    className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                   />
                                 </div>
                                 <div>
@@ -643,7 +642,7 @@ export default function TicketsPage() {
                                     value={paymentDetails.state}
                                     onChange={(e) => setPaymentDetails({...paymentDetails, state: e.target.value})}
                                     placeholder="NY"
-                                    className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                   />
                                 </div>
                               </div>
@@ -655,15 +654,15 @@ export default function TicketsPage() {
                                   onChange={(e) => setPaymentDetails({...paymentDetails, zipCode: e.target.value})}
                                   placeholder="10001"
                                   maxLength={10}
-                                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+                                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] focus:ring-2 focus:ring-[#f0425f]/20 transition-all"
                                 />
                               </div>
                             </div>
                           </div>
 
                           {/* Complete Purchase Button */}
-                          <div className="pt-6 border-t border-gray-700">
-                            <button className="w-full px-6 py-4 bg-[#f0425f] hover:bg-[#d63852] text-white rounded-lg font-semibold text-lg transition-all">
+                          <div className="pt-6 border-t border-gray-800">
+                            <button className="w-full btn-gradient-lg text-lg">
                               Complete Purchase
                             </button>
                             <p className="text-xs text-gray-500 text-center mt-3">
@@ -674,10 +673,10 @@ export default function TicketsPage() {
                       </div>
                     </div>
 
-                    {/* Right Side - Order Summary */}
+                    {/* Right Side - Order Summary - Professional */}
                     <div className="w-80">
-                      <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 sticky top-24">
-                        <h3 className="text-xl font-bold mb-6">Order Summary</h3>
+                      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 shadow-xl sticky top-24">
+                        <h3 className="text-xl font-bold mb-6 text-white">Order Summary</h3>
                         <div className="space-y-4">
                           {/* Selected Seats */}
                           <div>
@@ -745,15 +744,15 @@ export default function TicketsPage() {
                   <div className="flex flex-row gap-8">
                     {/* Left Side - Extras Selection */}
                     <div className="flex-1">
-                      {/* Selected Event Card */}
-                      <div className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 mb-6">
+                      {/* Selected Event Card - Professional */}
+                      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden border border-gray-800 shadow-xl mb-6">
                         <div className="p-6">
                           <div className="flex flex-row gap-6 items-start">
-                            {/* Date Square */}
+                            {/* Date Square - Professional */}
                             <div className="flex-shrink-0">
-                              <div className="w-20 h-20 bg-gray-700 rounded-lg flex flex-col items-center justify-center">
-                                <div className="text-3xl font-bold">{selectedEvent.dateNumber}</div>
-                                <div className="text-xs text-gray-400">{selectedEvent.month} {selectedEvent.year}</div>
+                              <div className="w-20 h-20 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex flex-col items-center justify-center border border-gray-700 shadow-lg">
+                                <div className="text-3xl font-extrabold text-white">{selectedEvent.dateNumber}</div>
+                                <div className="text-xs text-gray-400 font-semibold uppercase">{selectedEvent.month} {selectedEvent.year}</div>
                               </div>
                             </div>
 
@@ -780,9 +779,9 @@ export default function TicketsPage() {
                         </div>
                       </div>
 
-                      {/* Add Extras Section */}
-                      <div className="bg-gray-800 rounded-xl p-6">
-                        <h2 className="text-2xl font-bold mb-6">Add Extras</h2>
+                      {/* Add Extras Section - Professional */}
+                      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 shadow-xl">
+                        <h2 className="text-2xl font-bold mb-6 text-white">Add Extras</h2>
                         <p className="text-gray-400 mb-6">Enhance your experience with these optional add-ons</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -792,10 +791,10 @@ export default function TicketsPage() {
                               <div
                                 key={extra.id}
                                 onClick={() => handleExtraToggle(extra)}
-                                className={`bg-gray-900 rounded-lg p-4 border-2 cursor-pointer transition-all ${
+                                className={`bg-gray-900/50 rounded-xl p-4 border-2 cursor-pointer transition-all ${
                                   isSelected
-                                    ? 'border-[#f0425f] bg-[#f0425f]/10'
-                                    : 'border-gray-700 hover:border-gray-600'
+                                    ? 'border-[#f0425f] bg-gradient-to-br from-[#f0425f]/20 to-[#ec4899]/20 shadow-lg shadow-[#f0425f]/20'
+                                    : 'border-gray-800 hover:border-gray-700 hover:bg-gray-900/70'
                                 }`}
                               >
                                 <div className="flex items-start justify-between mb-2">
@@ -1034,10 +1033,10 @@ export default function TicketsPage() {
                       </div>
                     </div>
 
-                    {/* Right Side - Order Summary */}
+                    {/* Right Side - Order Summary - Professional */}
                     <div className="w-80">
-                      <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 sticky top-24">
-                        <h3 className="text-xl font-bold mb-6">Order Summary</h3>
+                      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 shadow-xl sticky top-24">
+                        <h3 className="text-xl font-bold mb-6 text-white">Order Summary</h3>
                         <div className="space-y-4">
                           {/* Selected Seats */}
                           <div>
@@ -1155,15 +1154,15 @@ export default function TicketsPage() {
                   <div className="flex flex-row gap-8">
                   {/* Left Side - Seat Selection */}
                   <div className="flex-1">
-                    {/* Selected Event Card */}
-                    <div className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 mb-6">
+                    {/* Selected Event Card - Professional */}
+                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden border border-gray-800 shadow-xl mb-6">
                       <div className="p-6">
                         <div className="flex flex-row gap-6 items-start">
-                          {/* Date Square */}
+                          {/* Date Square - Professional */}
                           <div className="flex-shrink-0">
-                            <div className="w-20 h-20 bg-gray-700 rounded-lg flex flex-col items-center justify-center">
-                              <div className="text-3xl font-bold">{selectedEvent.dateNumber}</div>
-                              <div className="text-xs text-gray-400">{selectedEvent.month} {selectedEvent.year}</div>
+                            <div className="w-20 h-20 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex flex-col items-center justify-center border border-gray-700 shadow-lg">
+                              <div className="text-3xl font-extrabold text-white">{selectedEvent.dateNumber}</div>
+                              <div className="text-xs text-gray-400 font-semibold uppercase">{selectedEvent.month} {selectedEvent.year}</div>
                             </div>
                           </div>
 
@@ -1171,12 +1170,12 @@ export default function TicketsPage() {
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-3">
                               <div>
-                                <h3 className="text-xl font-bold mb-1">{selectedEvent.title}</h3>
+                                <h3 className="text-xl font-bold mb-1 text-white">{selectedEvent.title}</h3>
                                 <p className="text-gray-400 text-sm">{selectedEvent.date}</p>
                               </div>
                               <button
                                 onClick={() => setSelectedEvent(null)}
-                                className="px-4 py-2 text-[#f0425f] hover:bg-[#f0425f]/10 rounded-lg transition-all text-sm font-medium"
+                                className="btn-secondary text-sm"
                               >
                                 Change
                               </button>
@@ -1195,8 +1194,8 @@ export default function TicketsPage() {
                       </div>
                     </div>
 
-                    {/* Select Your Tickets Section */}
-                    <div className="bg-gray-800 rounded-xl p-6 mb-6">
+                    {/* Select Your Tickets Section - Professional */}
+                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 mb-6 border border-gray-800 shadow-xl">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-4">
                           <div className="flex items-center gap-2">
@@ -1215,41 +1214,41 @@ export default function TicketsPage() {
                         </div>
                       </div>
 
-                      {/* View Mode Tabs */}
+                      {/* View Mode Tabs - Professional */}
                       <div className="flex gap-2 mb-6">
                         <button
                           onClick={() => setViewMode('map')}
-                          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
                             viewMode === 'map'
-                              ? 'bg-[#f0425f] text-white'
-                              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                              ? 'bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white shadow-lg shadow-[#f0425f]/30'
+                              : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700'
                           }`}
                         >
                           Seat Map View
                         </button>
                         <button
                           onClick={() => setViewMode('section')}
-                          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
                             viewMode === 'section'
-                              ? 'bg-[#f0425f] text-white'
-                              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                              ? 'bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white shadow-lg shadow-[#f0425f]/30'
+                              : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700'
                           }`}
                         >
                           Section View
                         </button>
                       </div>
 
-                      {/* Seat Map */}
+                      {/* Seat Map - Professional */}
                       {viewMode === 'map' && (
-                        <div className="bg-gray-900 rounded-lg p-6 border border-gray-700">
+                        <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800 shadow-inner">
                           <SeatMap onSeatSelect={handleSeatSelect} initialSeats={selectedSeats} />
                         </div>
                       )}
 
-                      {/* Price Tiers Legend */}
+                      {/* Price Tiers Legend - Professional */}
                       <div className="mt-6 grid grid-cols-2 gap-4">
-                        <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-                          <h4 className="text-sm font-semibold text-gray-300 mb-3">Price Tiers</h4>
+                        <div className="bg-gray-900/50 rounded-xl p-4 border border-gray-800">
+                          <h4 className="text-sm font-bold text-gray-300 mb-3 uppercase tracking-wider">Price Tiers</h4>
                           <div className="space-y-2 text-sm">
                             <div className="flex items-center gap-2">
                               <div className="w-4 h-4 bg-blue-900 rounded"></div>
@@ -1273,8 +1272,8 @@ export default function TicketsPage() {
                             </div>
                           </div>
                         </div>
-                        <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-                          <h4 className="text-sm font-semibold text-gray-300 mb-3">Seat Status</h4>
+                        <div className="bg-gray-900/50 rounded-xl p-4 border border-gray-800">
+                          <h4 className="text-sm font-bold text-gray-300 mb-3 uppercase tracking-wider">Seat Status</h4>
                           <div className="space-y-2 text-sm">
                             <div className="flex items-center gap-2">
                               <div className="w-4 h-4 bg-blue-600 rounded border border-blue-500"></div>
@@ -1302,7 +1301,7 @@ export default function TicketsPage() {
                       <div className="mt-6">
                         <Link
                           href="/prizes"
-                          className="inline-flex items-center gap-2 px-6 py-3 bg-[#f0425f] hover:bg-[#d63852] text-white rounded-lg font-semibold transition-all"
+                          className="btn-primary-lg inline-flex items-center gap-2"
                         >
                           View Prizes
                         </Link>
@@ -1310,9 +1309,9 @@ export default function TicketsPage() {
                     </div>
                   </div>
 
-                  {/* Right Side - Order Summary */}
+                  {/* Right Side - Order Summary - Professional */}
                   <div className="w-80">
-                    <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 sticky top-24">
+                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 shadow-xl sticky top-24">
                       <h3 className="text-xl font-bold mb-6">Order Summary</h3>
                       {selectedSeats.length > 0 ? (
                         <div className="space-y-4">
@@ -1344,7 +1343,7 @@ export default function TicketsPage() {
                           <button
                             onClick={handleProceedToExtras}
                             disabled={selectedSeats.length === 0}
-                            className="w-full px-6 py-3 bg-[#f0425f] hover:bg-[#d63852] disabled:bg-gray-700 disabled:cursor-not-allowed text-white rounded-lg font-semibold transition-all"
+                            className="w-full btn-gradient-lg disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             Add Extras
                           </button>
@@ -1360,86 +1359,92 @@ export default function TicketsPage() {
                 </div>
                 )
               ) : (
-                /* Event Selection View */
-                <div className="space-y-6">
+                /* Event Selection View - Professional & Compact */
+                <div className="space-y-4">
               {events.map((event) => (
                 <div
                   key={event.id}
-                  className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-[#f0425f]/50 transition-all"
+                  className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden border border-gray-800 hover:border-[#f0425f]/50 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#f0425f]/10"
                 >
-                  {/* Early Bird Banner */}
-                  <div className="bg-green-600 px-4 py-2 flex items-center justify-between text-sm">
-                    <div>
-                      <span className="font-semibold">Early Bird - Save ${event.earlyBirdDiscount} per ticket</span>
+                  {/* Early Bird Banner - Compact */}
+                  <div className="bg-gradient-to-r from-green-600 to-emerald-600 px-4 py-1.5 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <span className="font-bold">Early Bird - Save ${event.earlyBirdDiscount} per ticket</span>
                     </div>
-                    <div className="text-white/90">{event.earlyBirdTime}</div>
+                    <div className="text-white/95 font-medium">{event.earlyBirdTime}</div>
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex flex-row gap-6">
-                      {/* Date Square */}
+                  <div className="p-4">
+                    <div className="flex flex-row gap-4">
+                      {/* Date Square - Compact */}
                       <div className="flex-shrink-0">
-                        <div className="w-20 h-20 bg-gray-700 rounded-lg flex flex-col items-center justify-center">
-                          <div className="text-3xl font-bold">{event.dateNumber}</div>
-                          <div className="text-xs text-gray-400">{event.month} {event.year}</div>
+                        <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex flex-col items-center justify-center border border-gray-700 shadow-md">
+                          <div className="text-2xl font-extrabold text-white">{event.dateNumber}</div>
+                          <div className="text-[10px] text-gray-400 font-semibold uppercase leading-tight">{event.month} {event.year}</div>
                         </div>
                       </div>
 
-                      {/* Main Content */}
-                      <div className="flex-1">
-                        <div className="flex flex-wrap items-center gap-2 mb-3">
-                          <h3 className="text-xl font-bold">{event.title}</h3>
+                      {/* Main Content - Compact */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <h3 className="text-lg font-bold text-white">{event.title}</h3>
                           {event.soldPercentage > 0 && (
-                            <span className="px-3 py-1 bg-[#f0425f] text-white text-xs font-semibold rounded-full">
+                            <span className="px-2 py-0.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-[10px] font-bold rounded-full shadow-md">
                               {event.soldPercentage}% sold
                             </span>
                           )}
                           {event.isTrending && (
-                            <span className="px-3 py-1 bg-[#f0425f] text-white text-xs font-semibold rounded-full">
+                            <span className="px-2 py-0.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-[10px] font-bold rounded-full shadow-md flex items-center gap-1">
+                              <span className="w-1 h-1 bg-white rounded-full animate-pulse"></span>
                               Trending
                             </span>
                           )}
                         </div>
-                        <p className="text-gray-400 mb-4">{event.location}</p>
+                        <p className="text-gray-400 text-sm mb-3">{event.location}</p>
 
-                        {/* Price and Button */}
-                        <div className="flex items-center justify-between mb-4">
+                        {/* Price and Button - Compact */}
+                        <div className="flex items-center justify-between mb-3">
                           <div>
-                            <div className="text-2xl font-bold">From ${event.currentPrice}</div>
-                            <div className="text-sm text-gray-500 line-through">${event.originalPrice}</div>
+                            <div className="text-xl font-extrabold text-white">From ${event.currentPrice}</div>
+                            <div className="text-xs text-gray-500 line-through">${event.originalPrice}</div>
                           </div>
                           <button
                             onClick={() => handleEventSelect(event)}
-                            className="px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 flex items-center gap-2"
+                            className="btn-gradient-lg flex items-center gap-2 text-sm px-4 py-2"
                           >
                             Select Seats
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <path d="M5 12h14"></path>
                               <path d="m12 5 7 7-7 7"></path>
                             </svg>
                           </button>
                         </div>
 
-                        {/* Expandable Details - Always visible based on design */}
-                        <div className="flex flex-col gap-6 pt-4 border-t border-gray-700 mt-4">
-                          {/* Venue Information */}
+                        {/* Compact Details */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-3 border-t border-gray-800">
+                          {/* Venue Information - Compact */}
                           <div>
-                            <h4 className="font-semibold mb-3 text-gray-300">Venue Information</h4>
-                            <p className="text-gray-300 mb-2 font-medium">{event.venue.name}</p>
-                            <p className="text-sm text-gray-400 mb-2">{event.venue.address}</p>
-                            <p className="text-sm text-gray-400 mb-4">Capacity: {event.venue.capacity}</p>
-                            <div className="flex gap-4 text-sm">
-                              <button className="text-[#f0425f] hover:underline">View on Map</button>
-                              <button className="text-[#f0425f] hover:underline">Get Directions</button>
+                            <h4 className="font-bold mb-1.5 text-gray-300 text-xs uppercase tracking-wider">Venue</h4>
+                            <p className="text-gray-300 text-sm font-medium mb-1">{event.venue.name}</p>
+                            <p className="text-xs text-gray-400 mb-1">{event.venue.address}</p>
+                            <p className="text-xs text-gray-500 mb-2">Capacity: {event.venue.capacity}</p>
+                            <div className="flex gap-3 text-xs">
+                              <button className="text-[#f0425f] hover:underline font-medium">View Map</button>
+                              <button className="text-[#f0425f] hover:underline font-medium">Directions</button>
                             </div>
                           </div>
 
-                          {/* Event Details */}
+                          {/* Event Details - Compact */}
                           <div>
-                            <h4 className="font-semibold mb-3 text-gray-300">Event Details</h4>
-                            <p className="text-sm text-gray-400 mb-2">Doors Open: {event.eventDetails.doorsOpen}</p>
-                            <p className="text-sm text-gray-400 mb-4">Show Starts: {event.eventDetails.showStarts}</p>
-                            <p className="text-sm text-gray-300">{event.eventDetails.description}</p>
+                            <h4 className="font-bold mb-1.5 text-gray-300 text-xs uppercase tracking-wider">Event Details</h4>
+                            <div className="space-y-1 text-xs text-gray-400 mb-2">
+                              <p>Doors: <span className="text-gray-300 font-medium">{event.eventDetails.doorsOpen}</span></p>
+                              <p>Show: <span className="text-gray-300 font-medium">{event.eventDetails.showStarts}</span></p>
+                            </div>
+                            <p className="text-xs text-gray-400 line-clamp-2">{event.eventDetails.description}</p>
                           </div>
                         </div>
                       </div>
