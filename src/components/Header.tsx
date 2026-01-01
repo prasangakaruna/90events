@@ -23,7 +23,7 @@ export default function Header() {
     <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
       scrolled ? 'bg-black/98 backdrop-blur-md shadow-lg text-white' : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="relative hover:scale-105 transition-transform">
             <Image
