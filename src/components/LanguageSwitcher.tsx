@@ -9,8 +9,8 @@ export default function LanguageSwitcher() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const languages = [
-    { code: 'en', label: 'English', flag: '🇬🇧' },
-    { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
+    { code: 'en', label: 'English' },
+    { code: 'tr', label: 'Türkçe' },
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
@@ -45,7 +45,6 @@ export default function LanguageSwitcher() {
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <span className="text-lg">{currentLanguage.flag}</span>
         <span className="hidden sm:inline">{currentLanguage.code.toUpperCase()}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +64,7 @@ export default function LanguageSwitcher() {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-black/95 backdrop-blur-md border border-white/20 rounded-lg shadow-xl overflow-hidden z-50 animate-fadeIn">
+        <div className="absolute right-0 mt-2 w-48 bg-black/95 backdrop-blur-md border border-white/20 rounded-lg shadow-xl overflow-hidden z-50 animate-fadeIn" style={{ right: 0 }}>
           {languages.map((lang) => (
             <button
               key={lang.code}
@@ -76,7 +75,6 @@ export default function LanguageSwitcher() {
                   : 'text-gray-300 hover:text-white hover:bg-white/10'
               }`}
             >
-              <span className="text-lg">{lang.flag}</span>
               <span className="flex-1 text-left">{lang.label}</span>
               {language === lang.code && (
                 <svg

@@ -66,7 +66,6 @@ export default function Header() {
           
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
-            <LanguageSwitcher />
             <Link
               href="/login"
               className="hidden md:block btn-secondary flex items-center justify-center gap-2"
@@ -79,6 +78,7 @@ export default function Header() {
             >
               {t.beAContestant || 'Be a Contestant'}
             </Link>
+            <LanguageSwitcher />
             
             {/* Mobile Menu Button */}
             <button

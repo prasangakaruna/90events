@@ -383,7 +383,7 @@ export default function Home2() {
               {/* CTA Buttons - Professional */}
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <Link
-                  href="/events"
+                  href="/tickets"
                   className="btn-gradient-lg flex items-center justify-center gap-2"
                 >
                   <span>{t.buyTicket || 'Get Tickets'}</span>
@@ -393,7 +393,7 @@ export default function Home2() {
                   </svg>
                 </Link>
                 <Link
-                  href="/events"
+                  href="/tickets"
                   className="btn-secondary-lg flex items-center justify-center gap-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -611,7 +611,7 @@ export default function Home2() {
                 </div>
               </div>
               <Link
-                href="/events"
+                href="/tickets"
                 className="btn-primary-lg flex items-center gap-2 whitespace-nowrap"
               >
                 <span>Buy Tickets Now</span>
@@ -764,7 +764,7 @@ export default function Home2() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/events"
+              href="/tickets"
               className="btn-secondary-dark-lg"
             >
               {t.buyTickets}
