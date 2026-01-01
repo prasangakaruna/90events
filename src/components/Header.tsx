@@ -146,6 +146,9 @@ export default function Header() {
                 {t.apply || 'Apply'}
               </Link>
               <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+                <div className="px-2">
+                  <LanguageSwitcher />
+                </div>
                 <Link 
                   href="/login" 
                   onClick={() => setMobileMenuOpen(false)}
