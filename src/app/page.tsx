@@ -287,7 +287,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <Link
               href="/events"
-              className="px-8 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 flex items-center justify-center gap-2"
+              className="btn-gradient-lg flex items-center justify-center gap-2"
             >
               <span>{t.buyTicket || 'Get Tickets'}</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -297,7 +297,7 @@ export default function Home() {
             </Link>
             <Link
               href="/events"
-              className="px-8 py-3.5 bg-transparent hover:bg-white/10 text-white rounded-full transition-all duration-300 transform hover:scale-105 font-semibold text-base flex items-center justify-center gap-2 border border-white/40 hover:border-white/60"
+              className="btn-secondary-lg flex items-center justify-center gap-2"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
@@ -344,157 +344,175 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Prize Cards & Every Ticket Wins Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-800/60 via-purple-900/30 to-gray-800/60 container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Prize Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-7xl mx-auto">
-          {/* Annual Insurance Package */}
-          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
-            <h3 className="text-white font-bold text-lg mb-2">Annual Insurance Package</h3>
-            <p className="text-gray-400 text-sm mb-4">by State Farm Insurance</p>
-            <div className="text-[#f0425f] font-bold text-2xl">$2,500</div>
+      {/* Benefits Section - Clean & Modern */}
+      <section className="py-24 bg-white text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Us</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Experience the perfect blend of entertainment and unforgettable moments.
+            </p>
           </div>
-
-          {/* Cash Prize */}
-          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
-            <h3 className="text-white font-bold text-lg mb-2">Cash Prize</h3>
-            <p className="text-gray-400 text-sm mb-4">by Bank of America</p>
-            <div className="text-[#f0425f] font-bold text-2xl">$10,000</div>
-          </div>
-
-          {/* Weekend Getaway Package */}
-          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
-            <h3 className="text-white font-bold text-lg mb-2">Weekend Getaway Package</h3>
-            <p className="text-gray-400 text-sm mb-4">by Marriott Hotels</p>
-            <div className="text-[#f0425f] font-bold text-2xl">$3,000</div>
-          </div>
-
-          {/* Dining Gift Cards */}
-          <div className="bg-purple-900/30 rounded-xl p-6 border border-purple-800/30">
-            <h3 className="text-white font-bold text-lg mb-2">Dining Gift Cards</h3>
-            <p className="text-gray-400 text-sm mb-4">by Olive Garden</p>
-            <div className="text-[#f0425f] font-bold text-2xl">$500</div>
-          </div>
-        </div>
-
-        {/* Every Ticket Wins Banner */}
-        <div className="max-w-7xl mx-auto mb-8">
-          <div className="bg-gradient-to-r from-gray-900/95 via-purple-900/50 to-red-900/30 rounded-xl p-8 md:p-10 border border-purple-800/30">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-6 flex-1">
-                {/* Star Icon */}
-                <div className="w-16 h-16 bg-[#f0425f] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                    </div>
-                <div>
-                  <h3 className="text-white font-bold text-3xl md:text-4xl mb-2">Every Ticket Wins</h3>
-                  <p className="text-gray-300 text-base md:text-lg">Automatic entry into our grand prize draw at each show</p>
-                  </div>
-                </div>
-                <Link
-                  href="/events"
-                className="px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60 flex items-center gap-2 whitespace-nowrap"
-              >
-                <span>Buy Tickets Now</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-                </Link>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, idx) => (
+              <div key={idx} className="text-center space-y-4">
+                <div className="text-5xl mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-bold">{benefit.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
               </div>
-            </div>
+            ))}
           </div>
-
-        {/* View All Sponsors & Prizes Link */}
-        <div className="text-center">
-          <Link
-            href="/prizes"
-            className="inline-flex items-center gap-2 text-white hover:text-[#f0425f] transition-colors font-medium text-lg"
-          >
-            <span>View All Sponsors & Prizes</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </Link>
         </div>
       </section>
 
-     
-       {/* Live Shows Section */}
-       <section className="py-24 bg-gradient-to-b from-gray-900/60 via-purple-900/30 to-gray-900/60 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Prize Cards Section */}
+      <section className="py-24 bg-black text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">Catch us live</h2>
-            <p className="text-lg text-gray-300">7 cities across North America. One unforgettable experience.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Amazing Prizes</h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              Every ticket is a chance to win incredible prizes worth over $50,000 at every show!
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
+              <h3 className="text-white font-bold text-lg mb-2">Annual Insurance Package</h3>
+              <p className="text-gray-400 text-sm mb-4">by State Farm Insurance</p>
+              <div className="text-[#f0425f] font-bold text-2xl">$2,500</div>
+            </div>
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
+              <h3 className="text-white font-bold text-lg mb-2">Cash Prize</h3>
+              <p className="text-gray-400 text-sm mb-4">by Bank of America</p>
+              <div className="text-[#f0425f] font-bold text-2xl">$10,000</div>
+            </div>
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
+              <h3 className="text-white font-bold text-lg mb-2">Weekend Getaway Package</h3>
+              <p className="text-gray-400 text-sm mb-4">by Marriott Hotels</p>
+              <div className="text-[#f0425f] font-bold text-2xl">$3,000</div>
+            </div>
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
+              <h3 className="text-white font-bold text-lg mb-2">Dining Gift Cards</h3>
+              <p className="text-gray-400 text-sm mb-4">by Olive Garden</p>
+              <div className="text-[#f0425f] font-bold text-2xl">$500</div>
+            </div>
+          </div>
+
+          {/* Every Ticket Wins Banner */}
+          <div className="bg-gray-900 rounded-lg p-8 border border-gray-800">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 bg-[#f0425f] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-3xl mb-2">Every Ticket Wins</h3>
+                  <p className="text-gray-300">Automatic entry into our grand prize draw at each show</p>
+                </div>
+              </div>
+              <Link
+                href="/events"
+                className="btn-primary-lg flex items-center gap-2 whitespace-nowrap"
+              >
+                <span>Buy Tickets Now</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Shows Section - Professional */}
+      <section className="py-24 bg-white text-black relative overflow-hidden">
+        {/* Subtle Background Effects */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#f0425f] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#ec4899] rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-bold rounded-full shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider mb-6">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+              Tour Dates
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+              Catch us live
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              7 cities across North America. One unforgettable experience.
+            </p>
           </div>
           
           {/* Event Cards Slider */}
           <div className="max-w-7xl mx-auto">
             <EventCardsSlider events={liveShows} />
-        </div>
+          </div>
+          
+          {/* View All Link */}
+          <div className="text-center mt-12">
+            <Link
+              href="/events"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0425f] hover:bg-[#d63852] text-white rounded-lg transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl"
+            >
+              <span>View All Tour Dates</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* İlker Ayrık Host Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-purple-900/30 to-gray-900/50 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-black text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Image with Stats */}
+            {/* Left Side - Image */}
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden">
-          <Image
-            src="/img/img16346_orig.webp"
+              <div className="relative rounded-lg overflow-hidden">
+                <Image
+                  src="/img/img16346_orig.webp"
                   alt="İlker Ayrık"
                   width={600}
                   height={800}
-                  className="w-full h-auto object-cover rounded-2xl"
+                  className="w-full h-auto object-cover"
                   quality={95}
                 />
-                {/* Stats Overlay */}
-                <div className="absolute bottom-6 left-6 flex gap-4">
-                  <div className="bg-gray-900/90 backdrop-blur-sm rounded-xl px-4 py-3 border border-gray-700/50">
-                    <div className="text-[#f0425f] font-bold text-lg">20+ Years</div>
-                    <div className="text-white text-sm">In Entertainment</div>
-        </div>
-                  <div className="bg-gray-900/90 backdrop-blur-sm rounded-xl px-4 py-3 border border-gray-700/50">
-                    <div className="text-[#f0425f] font-bold text-lg">50M+</div>
-                    <div className="text-white text-sm">Viewers Reached</div>
-                  </div>
-                </div>
               </div>
             </div>
 
             {/* Right Side - Content */}
             <div className="space-y-6">
-              {/* Your Host Badge */}
-              <div className="inline-block px-4 py-1.5 bg-[#f0425f] rounded-lg">
+              <div className="inline-block px-4 py-2 bg-[#f0425f] rounded-lg">
                 <span className="text-white text-sm font-semibold">Your Host</span>
               </div>
 
-              {/* Name */}
-              <h2 className="text-5xl md:text-6xl font-bold text-white">İlker Ayrık</h2>
+              <h2 className="text-4xl md:text-5xl font-bold">İlker Ayrık</h2>
 
-              {/* Subtitle */}
-              <p className="text-2xl md:text-3xl text-[#f0425f] font-semibold">Turkey's Beloved Entertainer</p>
+              <p className="text-xl text-[#f0425f] font-semibold">Turkey's Beloved Entertainer</p>
 
-              {/* Biography */}
               <p className="text-gray-300 text-lg leading-relaxed">
                 İlker Ayrık is one of Turkey's most recognized TV personalities with over 20 years of experience in entertainment. Known for his charismatic hosting style and quick wit, he has brought joy to millions of viewers across numerous hit shows.
               </p>
 
-              {/* Feature Buttons Grid */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 flex items-center gap-3">
+                <div className="bg-gray-900 rounded-lg p-4 border border-gray-800 flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
                     <rect width="20" height="14" x="2" y="5" rx="2"></rect>
                     <path d="M2 10h20"></path>
                   </svg>
                   <span className="text-white text-sm font-medium">Prime-time TV host</span>
                 </div>
-                <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 flex items-center gap-3">
+                <div className="bg-gray-900 rounded-lg p-4 border border-gray-800 flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
                     <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
                     <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
@@ -505,7 +523,7 @@ export default function Home() {
                   </svg>
                   <span className="text-white text-sm font-medium">Multiple award winner</span>
                 </div>
-                <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 flex items-center gap-3">
+                <div className="bg-gray-900 rounded-lg p-4 border border-gray-800 flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
                     <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
                     <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
@@ -514,7 +532,7 @@ export default function Home() {
                   </svg>
                   <span className="text-white text-sm font-medium">Stand-up comedian</span>
                 </div>
-                <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 flex items-center gap-3">
+                <div className="bg-gray-900 rounded-lg p-4 border border-gray-800 flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                     <circle cx="9" cy="7" r="4"></circle>
@@ -525,10 +543,9 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* See İlker Live Button */}
               <Link
                 href="/events"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0425f] hover:bg-[#d63852] text-white rounded-lg transition-all duration-300 font-semibold text-base"
               >
                 <span>See İlker Live</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -541,82 +558,60 @@ export default function Home() {
         </div>
       </section>
 
- {/* About Shows Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-        <div className="text-center mb-16 animate-slideInUp">
-          <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
-            {t.aboutShows}
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            {t.loveOnStage}<span className="gradient-text"> {t.truthRevealed}</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            {t.aboutShowsDescription}
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {[
-            { num: '01', title: 'Gerçekçi Deneyim', desc: 'Realistic experiences that mirror life\'s most profound moments', icon: '🎭' },
-            { num: '02', title: 'Hayatın Her Anı', desc: 'Every moment of life captured in stunning performances', icon: '✨' },
-            { num: '03', title: 'Amazing Prizes', desc: 'Win incredible prizes worth over $50,000 at every show', icon: '🎁' },
-            { num: '04', title: 'Unforgettable Experience', desc: 'Create memories that will last a lifetime', icon: '🌟' },
-          ].map((feature, idx) => (
-            <div 
-              key={idx}
-              className="relative group"
-            >
-              {/* Gradient Border Effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7] rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity blur-sm"></div>
-              
-              {/* Main Card */}
-              <div className="relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-[#f0425f]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#f0425f]/20 feature-box">
-                {/* Number Badge */}
+      {/* About Shows Section */}
+      <section className="py-24 bg-white text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-[#f0425f] text-white text-sm font-semibold rounded-lg mb-4">
+              {t.aboutShows}
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              {t.loveOnStage} <span className="text-[#f0425f]">{t.truthRevealed}</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {t.aboutShowsDescription}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { num: '01', title: 'Gerçekçi Deneyim', desc: 'Realistic experiences that mirror life\'s most profound moments', icon: '🎭' },
+              { num: '02', title: 'Hayatın Her Anı', desc: 'Every moment of life captured in stunning performances', icon: '✨' },
+              { num: '03', title: 'Amazing Prizes', desc: 'Win incredible prizes worth over $50,000 at every show', icon: '🎁' },
+              { num: '04', title: 'Unforgettable Experience', desc: 'Create memories that will last a lifetime', icon: '🌟' },
+            ].map((feature, idx) => (
+              <div key={idx} className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#f0425f] transition-all duration-300">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-lg blur-md opacity-50"></div>
-                    <div className="relative w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-lg flex items-center justify-center">
-                      <span className="text-2xl font-extrabold text-white">{feature.num}</span>
-                    </div>
+                  <div className="w-16 h-16 bg-[#f0425f] rounded-lg flex items-center justify-center">
+                    <span className="text-2xl font-bold text-white">{feature.num}</span>
                   </div>
                   <div className="text-3xl">{feature.icon}</div>
                 </div>
-                
-                {/* Content */}
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#f0425f] transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {feature.desc}
-                </p>
-                
-                {/* Hover Indicator */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
-      {/* Three Steps to the Spotlight Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
+      {/* How It Works Section */}
+      <section className="py-24 bg-black text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#f0425f] text-white text-xs font-bold rounded-lg shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider mb-6">
+            <div className="inline-block px-4 py-2 bg-[#f0425f] text-white text-sm font-semibold rounded-lg mb-6">
               How It Works
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Three Steps to the Spotlight
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Join the most entertaining couples game show in just a few simple steps
             </p>
           </div>
 
-          {/* Three Steps Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-7xl mx-auto">
-            {/* Step 1: Get Your Tickets */}
-            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Step 1 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 bg-[#f0425f] rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -626,7 +621,7 @@ export default function Home() {
                     <path d="M13 11v2"></path>
                   </svg>
                 </div>
-                <div className="text-6xl font-bold text-gray-700 leading-none">01</div>
+                <div className="text-5xl font-bold text-gray-700 leading-none">01</div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Get Your Tickets</h3>
               <p className="text-gray-400 mb-6 leading-relaxed">
@@ -634,19 +629,19 @@ export default function Home() {
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">Choose your city</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">Select seats</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">Apply to compete (optional)</span>
@@ -654,8 +649,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Step 2: Come to the Show */}
-            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300">
+            {/* Step 2 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -665,7 +660,7 @@ export default function Home() {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                   </svg>
                 </div>
-                <div className="text-6xl font-bold text-gray-700 leading-none">02</div>
+                <div className="text-5xl font-bold text-gray-700 leading-none">02</div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Come to the Show</h3>
               <p className="text-gray-400 mb-6 leading-relaxed">
@@ -673,19 +668,19 @@ export default function Home() {
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">Doors open 1 hour early</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">Meet other couples</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">Enjoy refreshments</span>
@@ -693,8 +688,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Step 3: Win Amazing Prizes */}
-            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300">
+            {/* Step 3 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -706,7 +701,7 @@ export default function Home() {
                     <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
                   </svg>
                 </div>
-                <div className="text-6xl font-bold text-gray-700 leading-none">03</div>
+                <div className="text-5xl font-bold text-gray-700 leading-none">03</div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Win Amazing Prizes</h3>
               <p className="text-gray-400 mb-6 leading-relaxed">
@@ -714,19 +709,19 @@ export default function Home() {
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">$50K+ in prizes</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">Audience giveaways</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0425f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
                   <span className="text-gray-300 text-sm">VIP experiences</span>
@@ -735,211 +730,178 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Get Started Button */}
-          <div className="text-center mb-8">
+          <div className="text-center">
             <Link
               href="/events"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-lg shadow-2xl hover:shadow-[#f0425f]/60"
+              className="btn-primary-lg inline-flex items-center gap-2"
             >
               <span>Get Started</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
             </Link>
           </div>
         </div>
-
-        {/* Sticky Footer */}
-        <div className="fixed bottom-0 right-0 left-0 md:left-auto z-50 p-4">
-          <div className="max-w-md ml-auto bg-gray-900/95 backdrop-blur-sm rounded-lg border border-gray-800 p-4 flex items-center justify-between gap-4 shadow-2xl">
-            <span className="text-white text-sm font-medium">Ready to join the fun?</span>
-            <div className="flex items-center gap-2">
-              <Link
-                href="/events"
-                className="px-4 py-2 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 font-semibold text-sm flex items-center gap-2"
-              >
-                <span>Get Tickets</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 6L6 18"></path>
-                  <path d="M6 6l12 12"></path>
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
       </section>
 
     
 
-      {/* Title Sponsors Section */}
-      <section className="py-24 container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Sponsors Grid - 2x3 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-7xl mx-auto">
-          {/* Mint */}
-          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
-            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
-              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
-            </div>
-            <div className="relative w-full h-48 bg-gray-800">
-              <Image
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=400&fit=crop"
-                alt="Mint"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="text-white font-bold text-xl mb-2">Mint</h3>
-              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                Find Trusted Professionals for Any Job. Mint connects homeowners and property managers with verified service providers.
-              </p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-white text-xs">Prize Value</span>
-                <span className="text-yellow-400 font-bold text-lg">$2,500</span>
-              </div>
-            </div>
-        </div>
-        
-          {/* Doğtaş Furniture */}
-          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
-            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
-              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
-            </div>
-            <div className="relative w-full h-48 bg-gray-800">
-              <Image
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=400&fit=crop"
-                alt="Doğtaş Furniture"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="text-white font-bold text-xl mb-2">Doğtaş Furniture</h3>
-              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                Premium Turkish furniture brand offering elegant and modern home furnishings for every lifestyle.
-              </p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-white text-xs">Prize Value</span>
-                <span className="text-yellow-400 font-bold text-lg">$8,500</span>
-              </div>
-            </div>
+      {/* Sponsors Section */}
+      <section className="py-24 bg-white text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Sponsors</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Proudly supported by leading brands
+            </p>
           </div>
-
-          {/* Toyota Motors */}
-          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
-            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
-              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
-            </div>
-            <div className="relative w-full h-48 bg-gray-800 flex items-center justify-center">
-              <Image
-                src="/img/toyoto.jpg"
-                alt="Toyota Motors"
-                fill
-                className="cover"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="text-white font-bold text-xl mb-2">Toyota Motors</h3>
-              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                Official automotive partner of the 90s Tour. Providing luxury transportation for artists and crew.
-              </p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-white text-xs">Prize Value</span>
-                <span className="text-yellow-400 font-bold text-lg">$35,000</span>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:border-[#f0425f] transition-all duration-300">
+              <div className="relative w-full h-48 bg-gray-200">
+                <Image
+                  src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=400&fit=crop"
+                  alt="Mint"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </div>
+              <div className="p-5">
+                <div className="inline-block px-2 py-1 bg-yellow-500 text-white text-xs font-semibold rounded mb-2">MAIN SPONSOR</div>
+                <h3 className="font-bold text-xl mb-2">Mint</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Find Trusted Professionals for Any Job. Mint connects homeowners and property managers with verified service providers.
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-gray-600 text-xs">Prize Value</span>
+                  <span className="text-[#f0425f] font-bold text-lg">$2,500</span>
                 </div>
-                
-          {/* Coca-Cola Company */}
-          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
-            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
-              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
+              </div>
             </div>
-            <div className="relative w-full h-48 bg-gray-800">
-              <Image
-                src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400&h=400&fit=crop"
-                alt="Coca-Cola Company"
-                fill
-                className="object-cover"
-              />
+        
+            <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:border-[#f0425f] transition-all duration-300">
+              <div className="relative w-full h-48 bg-gray-200">
+                <Image
+                  src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=400&fit=crop"
+                  alt="Doğtaş Furniture"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <div className="inline-block px-2 py-1 bg-yellow-500 text-white text-xs font-semibold rounded mb-2">MAIN SPONSOR</div>
+                <h3 className="font-bold text-xl mb-2">Doğtaş Furniture</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Premium Turkish furniture brand offering elegant and modern home furnishings for every lifestyle.
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-gray-600 text-xs">Prize Value</span>
+                  <span className="text-[#f0425f] font-bold text-lg">$8,500</span>
+                </div>
+              </div>
             </div>
-            <div className="p-5">
-              <h3 className="text-white font-bold text-xl mb-2">Coca-Cola Company</h3>
-              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                Exclusive beverage sponsor. Refreshing fans at every venue with classic Coca-Cola products.
-              </p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-white text-xs">Prize Value</span>
-                <span className="text-yellow-400 font-bold text-lg">$5,000</span>
+            <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:border-[#f0425f] transition-all duration-300">
+              <div className="relative w-full h-48 bg-gray-200 flex items-center justify-center">
+                <Image
+                  src="/img/toyoto.jpg"
+                  alt="Toyota Motors"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <div className="inline-block px-2 py-1 bg-yellow-500 text-white text-xs font-semibold rounded mb-2">MAIN SPONSOR</div>
+                <h3 className="font-bold text-xl mb-2">Toyota Motors</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Official automotive partner of the 90s Tour. Providing luxury transportation for artists and crew.
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-gray-600 text-xs">Prize Value</span>
+                  <span className="text-[#f0425f] font-bold text-lg">$35,000</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:border-[#f0425f] transition-all duration-300">
+              <div className="relative w-full h-48 bg-gray-200">
+                <Image
+                  src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400&h=400&fit=crop"
+                  alt="Coca-Cola Company"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <div className="inline-block px-2 py-1 bg-yellow-500 text-white text-xs font-semibold rounded mb-2">MAIN SPONSOR</div>
+                <h3 className="font-bold text-xl mb-2">Coca-Cola Company</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Exclusive beverage sponsor. Refreshing fans at every venue with classic Coca-Cola products.
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-gray-600 text-xs">Prize Value</span>
+                  <span className="text-[#f0425f] font-bold text-lg">$5,000</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:border-[#f0425f] transition-all duration-300">
+              <div className="relative w-full h-48 bg-gray-200">
+                <Image
+                  src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=400&fit=crop"
+                  alt="Samsung Electronics"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <div className="inline-block px-2 py-1 bg-yellow-500 text-white text-xs font-semibold rounded mb-2">MAIN SPONSOR</div>
+                <h3 className="font-bold text-xl mb-2">Samsung Electronics</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Technology partner providing state-of-the-art displays and mobile devices for the tour experience.
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-gray-600 text-xs">Prize Value</span>
+                  <span className="text-[#f0425f] font-bold text-lg">$8,000</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Samsung Electronics */}
-          <div className="bg-purple-900/30 rounded-xl overflow-hidden border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 relative">
-            <div className="absolute top-3 right-3 z-10 bg-yellow-500 rounded-lg px-2 py-1">
-              <span className="text-white text-xs font-semibold">MAIN SPONSOR</span>
+          <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 md:p-8">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <h3 className="font-bold text-xl">Local Sponsors in Every City</h3>
+                </div>
+                <p className="text-gray-600 text-sm md:text-base">
+                  Each show features unique local sponsors with exclusive prizes for that city. From New Jersey to California, discover amazing prizes from businesses in your area!
+                </p>
               </div>
-            <div className="relative w-full h-48 bg-gray-800">
-              <Image
-                src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=400&fit=crop"
-                alt="Samsung Electronics"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="text-white font-bold text-xl mb-2">Samsung Electronics</h3>
-              <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                Technology partner providing state-of-the-art displays and mobile devices for the tour experience.
-              </p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-white text-xs">Prize Value</span>
-                <span className="text-yellow-400 font-bold text-lg">$8,000</span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">NJ</span>
+                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">PA</span>
+                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">DC</span>
+                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">WA</span>
+                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">CA</span>
+                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">+2</span>
               </div>
-            </div>
-        </div>
-        
-              </div>
-
-        {/* Local Sponsors Section */}
-        <div className="max-w-7xl mx-auto bg-purple-900/30 rounded-xl border border-purple-800/30 p-6 md:p-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <h3 className="text-white font-bold text-xl">Local Sponsors in Every City</h3>
-            </div>
-              <p className="text-gray-300 text-sm md:text-base">
-                Each show features unique local sponsors with exclusive prizes for that city. From New Jersey to California, discover amazing prizes from businesses in your area!
-              </p>
-        </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">NJ</span>
-              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">PA</span>
-              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">DC</span>
-              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">WA</span>
-              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">CA</span>
-              <span className="bg-gray-700/50 text-white px-3 py-1 rounded-lg text-sm font-medium">+2</span>
             </div>
           </div>
         </div>
       </section>
 
    
-      {/* Past Shows & Experience the Magic Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-900/70 via-black to-gray-900/70 past-shows-section">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
+      {/* Past Shows & Testimonials Section */}
+      <section className="py-24 bg-black text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#f0425f] text-white text-sm font-semibold rounded-lg mb-4">
               {t.pastShows}
             </span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">{t.pastShows}</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.pastShows}</h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
               {t.experienceTheMagic}
             </p>
@@ -1018,14 +980,14 @@ export default function Home() {
           
           {/* Testimonials */}
           <div className="max-w-3xl mx-auto">
-            <div className="glass-effect rounded-2xl p-8 md:p-12">
+            <div className="bg-gray-900 rounded-lg p-8 md:p-12 border border-gray-800">
               <div className="text-5xl text-[#f0425f] mb-6">"</div>
               <p className="text-xl md:text-2xl text-gray-300 mb-6 leading-relaxed">
                 {testimonials[0].quote}
               </p>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-bold text-lg">{testimonials[0].author}</p>
+                  <p className="font-bold text-lg text-white">{testimonials[0].author}</p>
                   <p className="text-gray-400 text-sm">{testimonials[0].role}</p>
                 </div>
                 <div className="flex gap-1">
@@ -1040,21 +1002,23 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-900/50 via-purple-900/20 to-gray-900/50 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.beFirstToHear}</h2>
-          <p className="text-lg text-gray-400 mb-8">{t.newsletterDescription}</p>
+      <section className="py-24 bg-white text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.beFirstToHear}</h2>
+            <p className="text-lg text-gray-600 mb-8">{t.newsletterDescription}</p>
+          </div>
           
-          <form className="glass-effect rounded-2xl p-8 space-y-4">
+          <form className="bg-gray-50 rounded-lg p-8 space-y-4 border border-gray-200">
             <input
               type="text"
               placeholder={t.yourName}
-              className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
             />
             <input
               type="email"
               placeholder={t.yourEmail}
-              className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#f0425f] transition-colors"
             />
             <div className="flex items-center gap-2">
               <input
@@ -1062,13 +1026,13 @@ export default function Home() {
                 id="terms"
                 className="w-5 h-5 accent-[#f0425f]"
               />
-              <label htmlFor="terms" className="text-gray-400 text-sm">
+              <label htmlFor="terms" className="text-gray-600 text-sm">
                 {t.agreeTerms}
               </label>
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
+              className="btn-primary w-full"
             >
               {t.registerHere}
             </button>
@@ -1077,24 +1041,22 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f0425f] via-[#ec4899] to-[#a855f7]"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.readyToTest}</h2>
+      <section className="py-24 bg-[#f0425f] text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t.readyToTest}</h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
             {t.readyDescription}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/events"
-              className="px-6 py-3.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
+              className="btn-secondary-dark-lg"
             >
               {t.buyTickets}
             </Link>
             <Link
               href="/contact"
-              className="px-6 py-3.5 bg-transparent hover:bg-white/10 text-white rounded-full transition-all duration-300 transform hover:scale-105 font-semibold text-base border border-white/40 hover:border-white/60"
+              className="btn-secondary-lg"
             >
               {t.applyNow}
             </Link>

@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { ColorCustomizationProvider } from "@/contexts/ColorCustomizationContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
@@ -39,7 +38,6 @@ export default function RootLayout({
               <Header />
               <main className="flex-1">{children}</main>
               <Footer />
-              <ThemeSwitcher />
             </ColorCustomizationProvider>
           </ThemeProvider>
         </TranslationProvider>
