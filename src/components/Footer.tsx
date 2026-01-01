@@ -142,7 +142,7 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} 90Events. All rights reserved.
+            &copy; {new Date().getFullYear()} 90events.com. All rights reserved.
           </p>
         </div>
       </div>

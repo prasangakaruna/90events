@@ -362,9 +362,9 @@ export default function Home2() {
                 </span>
               </div>
               
-              {/* Über Ayrık - Left Side */}
+              {/* ILKER AYRIK - Left Side */}
               <p className="text-2xl md:text-3xl lg:text-4xl text-gray-200 mb-2 font-light italic tracking-wide">
-                Über Ayrık
+                ILKER AYRIK
               </p>
               
               {/* Main Title - Professional Typography */}
@@ -596,7 +596,7 @@ export default function Home2() {
             </div>
           </div>
 
-          {/* Every Ticket Wins Banner */}
+          {/* Every Ticket has a chance Win Banner */}
           <div className="bg-gray-900 rounded-lg p-8 border border-gray-800">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-6">
@@ -606,7 +606,7 @@ export default function Home2() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-3xl mb-2">Every Ticket Wins</h3>
+                  <h3 className="text-white font-bold text-3xl mb-2">Every Ticket has a chance Win</h3>
                   <p className="text-gray-300">Automatic entry into our grand prize draw at each show</p>
                 </div>
               </div>

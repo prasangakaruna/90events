@@ -13,7 +13,7 @@ export const es = {
   truthIsBitter: 'La Verdad Duele',
   gercekler: 'Gerçekler',
   acidir: 'Acıdır',
-  uberAyrık: 'Über Ayrık',
+  uberAyrık: 'ILKER AYRIK',
   heroDescription: 'Este es un espectáculo de drama, comedia e ilusión. ¿Estás listo para descubrir las verdades de la vida? El amor, la verdad y la magia se unen en el escenario.',
   buyTicket: 'Comprar Entrada',
   moreInfo: 'Más Información',

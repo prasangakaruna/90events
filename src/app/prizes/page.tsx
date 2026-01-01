@@ -126,7 +126,7 @@ export default function PrizesPage() {
         </div>
       </section>
 
-      {/* Every Ticket Wins */}
+      {/* Every Ticket has a chance Win */}
       <section className="py-24 bg-gradient-to-b from-black via-gray-900/50 to-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
@@ -139,7 +139,7 @@ export default function PrizesPage() {
                       <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-full flex items-center justify-center text-3xl font-bold text-white shadow-lg">
                         ✓
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-bold text-white">Every Ticket Wins</h3>
+                      <h3 className="text-3xl md:text-4xl font-bold text-white">Every Ticket has a chance Win</h3>
                     </div>
                     <p className="text-gray-300 text-lg leading-relaxed">
                       Guaranteed prizes for all attendees. No matter which ticket you purchase, you're a winner! 

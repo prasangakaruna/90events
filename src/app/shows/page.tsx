@@ -279,7 +279,7 @@ export default function ShowsPage() {
           <div className="max-w-5xl mx-auto">
             <YouTubeVideo
               videoId="sW-tn_cUZEk"
-              title="Über Ayrık - Past Shows Highlights"
+              title="ILKER AYRIK - Past Shows Highlights"
               className="rounded-2xl"
             />
           </div>

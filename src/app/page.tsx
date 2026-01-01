@@ -267,9 +267,9 @@ export default function Home() {
                 </span>
               </div>
               
-              {/* Über Ayrık - Left Side */}
+              {/* ILKER AYRIK - Left Side */}
               <p className="text-2xl md:text-3xl lg:text-4xl text-gray-200 mb-2 font-light italic tracking-wide">
-                Über Ayrık
+                ILKER AYRIK
               </p>
               
               {/* Main Title - Professional Typography */}
@@ -377,7 +377,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Every Ticket Wins Banner */}
+          {/* Every Ticket has a chance Win Banner */}
           <div className="bg-gray-900 rounded-lg p-8 border border-gray-800">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-6">
@@ -387,7 +387,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-3xl mb-2">Every Ticket Wins</h3>
+                  <h3 className="text-white font-bold text-3xl mb-2">Every Ticket has a chance Win</h3>
                   <p className="text-gray-300">Automatic entry into our grand prize draw at each show</p>
                 </div>
               </div>
@@ -906,7 +906,7 @@ export default function Home() {
             <div className="lg:col-span-1">
               <YouTubeVideo
                 videoId="sW-tn_cUZEk"
-                title="Über Ayrık - Past Shows Highlights"
+                title="ILKER AYRIK - Past Shows Highlights"
                 className="rounded-2xl"
               />
             </div>
@@ -924,17 +924,13 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Image Gallery */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+          {/* Image Gallery - Limited to 2 rows */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-12">
             {[
               { src: '/img/img16346_orig.webp', alt: 'Show Performance 1' },
               { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 2' },
               { src: '/img/img16346_orig.webp', alt: 'Show Performance 3' },
-              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 4' },
-              { src: '/img/img16346_orig.webp', alt: 'Show Performance 5' },
-              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 6' },
-              { src: '/img/img16346_orig.webp', alt: 'Show Performance 7' },
-              { src: '/img/event-stage-BBm4cEDz.webp', alt: 'Show Performance 8' },
+            
             ].map((image, idx) => (
               <div
                 key={idx}

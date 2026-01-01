@@ -19,7 +19,7 @@ export const en = {
   truthIsBitter: 'Truth is Bitter',
   gercekler: 'Gerçekler',
   acidir: 'Acıdır',
-  uberAyrık: 'Über Ayrık',
+  uberAyrık: 'ILKER AYRIK',
   heroDescription: 'The ultimate test of love. How well do you really know your partner?',
   buyTicket: 'Buy Ticket',
   moreInfo: 'More Info',
@@ -41,7 +41,7 @@ export const en = {
   prizesSection: 'PRIZES',
   amazingPrizes: '$50,000+ in Amazing Prizes',
   prizesDescription: 'Every ticket is a chance to win incredible prizes. From luxury cars to fine jewelry, we\'re giving away over $50,000 in prizes at every show!',
-  everyTicketWins: 'Every Ticket Wins',
+  everyTicketWins: 'Every Ticket has a chance Win',
   getYourTicketNow: 'Get Your Ticket Now',
   
   pastShows: 'PAST SHOWS',

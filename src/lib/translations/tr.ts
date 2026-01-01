@@ -19,7 +19,7 @@ export const tr = {
   truthIsBitter: 'Gerçekler Acıdır',
   gercekler: 'Gerçekler',
   acidir: 'Acıdır',
-  uberAyrık: 'Über Ayrık',
+  uberAyrık: 'ILKER AYRIK',
   heroDescription: 'Aşkın nihai testi. Partnerinizi gerçekten ne kadar iyi tanıyorsunuz?',
   buyTicket: 'Bilet Al',
   moreInfo: 'Daha Fazla Bilgi',
