@@ -344,28 +344,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Section - Clean & Modern */}
-      <section className="py-24 bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Us</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Experience the perfect blend of entertainment and unforgettable moments.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, idx) => (
-              <div key={idx} className="text-center space-y-4">
-                <div className="text-5xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-bold">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Prize Cards Section */}
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
