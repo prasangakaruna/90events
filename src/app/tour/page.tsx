@@ -218,8 +218,50 @@ export default function TourPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section - Professional */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900/50 to-black overflow-hidden">
-        <div className="container mx-auto max-w-7xl">
+      <section className="relative min-h-[680px] flex items-center justify-center" style={{ marginTop: 0 }}>
+        {/* Professional Dark stage background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/98 to-black/95"></div>
+        
+        {/* Background Image - Full Section */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Dynamic Reddish-orange glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-600/30 via-red-600/20 to-transparent blur-3xl animate-pulse-glow"></div>
+          
+          {/* Event Stage Image Background - Full Cover */}
+          <div className="absolute inset-0 opacity-50">
+            <Image
+              src="/img/event-stage-BBm4cEDz.webp"
+              alt="Event stage"
+              fill
+              className="object-cover"
+              style={{ objectPosition: 'center center' }}
+              priority
+              quality={95}
+            />
+          </div>
+          
+          {/* Additional transparent image overlay for depth */}
+          <div className="absolute inset-0 opacity-30">
+            <Image
+              src="/img/event-stage-BBm4cEDz.webp"
+              alt="Event stage"
+              fill
+              className="object-cover blur-sm"
+              style={{ objectPosition: 'center center' }}
+              quality={80}
+            />
+          </div>
+          
+          {/* Professional Spotlight effect */}
+          <div className="absolute inset-0 bg-gradient-radial from-white/12 via-transparent to-transparent" style={{
+            background: 'radial-gradient(ellipse at center 40%, rgba(255,255,255,0.18) 0%, transparent 65%)'
+          }}></div>
+          
+          {/* Subtle vignette effect */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Side - Content */}
             <div>
@@ -227,10 +269,10 @@ export default function TourPage() {
                 <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                 Exclusive Experiences
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+              <h1 className="mb-6">
                 Create Lifetime Memories with İlker
               </h1>
-              <p className="text-xl text-gray-300 mb-6 max-w-2xl leading-relaxed">
+              <p className="body-text-lg text-gray-300 mb-6 max-w-2xl">
                 Go beyond the show. Join İlker Ayrık on exclusive adventures that combine entertainment, exploration, and unforgettable moments you'll treasure forever.
               </p>
               <div className="flex flex-wrap gap-4 mb-6">
@@ -321,7 +363,7 @@ export default function TourPage() {
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
               Why Choose Us
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">More Than Just a Tour</h2>
+            <h2 className="mb-4">More Than Just a Tour</h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
               It's an Experience - Every moment is crafted to create unforgettable memories
             </p>
@@ -330,21 +372,21 @@ export default function TourPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
                   ❤️
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Personal Connection</h3>
+                <h3 className="mb-4">Personal Connection</h3>
                 <p className="text-gray-400 leading-relaxed">Small groups mean real conversations and genuine moments with İlker that create lasting bonds.</p>
               </div>
               <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#f0425f]/50 transition-all group">
                 <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
                   📸
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Captured Moments</h3>
+                <h3 className="mb-4">Captured Moments</h3>
                 <p className="text-gray-400 leading-relaxed">Professional photos and videos to relive your adventure forever and share with loved ones.</p>
               </div>
               <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#f0425f]/50 transition-all group">
                 <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
                   ⭐
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Exclusive Access</h3>
+                <h3 className="mb-4">Exclusive Access</h3>
                 <p className="text-gray-400 leading-relaxed">Behind the scenes stories and experiences you won't find anywhere else in the world.</p>
               </div>
             </div>
@@ -367,7 +409,7 @@ export default function TourPage() {
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
               Tour Dates
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">Catch İlker Live</h2>
+            <h2 className="mb-4 text-black">Catch İlker Live</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">Find a show near you and secure your tickets today</p>
           </div>
           
@@ -375,7 +417,7 @@ export default function TourPage() {
             {/* Next Show Info */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="text-2xl font-bold mb-6 text-black">Next Show In</h3>
+                <h3 className="mb-6 text-black">Next Show In</h3>
                 <div className="mb-4">
                   <div className="text-2xl font-bold text-[#f0425f] mb-2">{currentShow.city}</div>
                   <div className="text-gray-600">
@@ -470,7 +512,7 @@ export default function TourPage() {
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
               Experience Packages
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Choose Your Adventure</h2>
+            <h2 className="mb-4">Choose Your Adventure</h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-3 leading-relaxed">
               Every package is designed to create unforgettable memories. Pick the experience that speaks to you.
             </p>
@@ -490,7 +532,7 @@ export default function TourPage() {
                     {pkg.price}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 pr-24 text-white group-hover:text-[#f0425f] transition-colors">{pkg.title}</h3>
+                <h3 className="mb-4 pr-24 text-white group-hover:text-[#f0425f] transition-colors">{pkg.title}</h3>
                 <p className="text-gray-400 mb-6 leading-relaxed">{pkg.description}</p>
                 <ul className="space-y-2 mb-6">
                   {pkg.features.map((feature, index) => (
@@ -523,7 +565,7 @@ export default function TourPage() {
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
               Local Partners
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">City Based Sponsors</h2>
+            <h2 className="mb-4 text-black">City Based Sponsors</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               We partner with local businesses in each state to bring you exclusive prizes and experiences. Support local sponsors in your area!
             </p>
@@ -532,7 +574,7 @@ export default function TourPage() {
           <div className="space-y-12">
             {/* New York Sponsors */}
             <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <h3 className="mb-6 flex items-center gap-2">
                 <span className="text-3xl">🗽</span>
                 <span>New York, NY</span>
               </h3>
@@ -560,7 +602,7 @@ export default function TourPage() {
                         {sponsor.tier}
                       </span>
                     </div>
-                    <h4 className="text-lg font-bold text-black mb-2">{sponsor.name}</h4>
+                    <h4 className="text-black mb-2">{sponsor.name}</h4>
                     <p className="text-gray-600 text-sm mb-3">{sponsor.description}</p>
                     <div className="text-yellow-600 font-bold">{sponsor.value}</div>
                   </div>
@@ -570,7 +612,7 @@ export default function TourPage() {
 
             {/* Illinois Sponsors */}
             <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <h3 className="mb-6 flex items-center gap-2">
                 <span className="text-3xl">🏙️</span>
                 <span>Illinois (Chicago)</span>
               </h3>
@@ -598,7 +640,7 @@ export default function TourPage() {
                         {sponsor.tier}
                       </span>
                     </div>
-                    <h4 className="text-lg font-bold text-black mb-2">{sponsor.name}</h4>
+                    <h4 className="text-black mb-2">{sponsor.name}</h4>
                     <p className="text-gray-600 text-sm mb-3">{sponsor.description}</p>
                     <div className="text-yellow-600 font-bold">{sponsor.value}</div>
                   </div>
@@ -608,7 +650,7 @@ export default function TourPage() {
 
             {/* California Sponsors */}
             <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <h3 className="mb-6 flex items-center gap-2">
                 <span className="text-3xl">🌴</span>
                 <span>California (Palo Alto)</span>
               </h3>
@@ -636,7 +678,7 @@ export default function TourPage() {
                         {sponsor.tier}
                       </span>
                     </div>
-                    <h4 className="text-lg font-bold text-black mb-2">{sponsor.name}</h4>
+                    <h4 className="text-black mb-2">{sponsor.name}</h4>
                     <p className="text-gray-600 text-sm mb-3">{sponsor.description}</p>
                     <div className="text-yellow-600 font-bold">{sponsor.value}</div>
                   </div>

@@ -315,30 +315,58 @@ export default function TicketsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section - Professional */}
-      <section className="relative h-[500px] md:h-[600px] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/img/img16346_orig.webp"
-            alt="Hero"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/85 to-black/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-          {/* Subtle glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f0425f]/10 via-transparent to-[#ec4899]/10"></div>
+      <section className="relative min-h-[680px] flex items-center justify-center" style={{ marginTop: 0 }}>
+        {/* Professional Dark stage background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/98 to-black/95"></div>
+        
+        {/* Background Image - Full Section */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Dynamic Reddish-orange glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-600/30 via-red-600/20 to-transparent blur-3xl animate-pulse-glow"></div>
+          
+          {/* Event Stage Image Background - Full Cover */}
+          <div className="absolute inset-0 opacity-50">
+            <Image
+              src="/img/event-stage-BBm4cEDz.webp"
+              alt="Event stage"
+              fill
+              className="object-cover"
+              style={{ objectPosition: 'center center' }}
+              priority
+              quality={95}
+            />
+          </div>
+          
+          {/* Additional transparent image overlay for depth */}
+          <div className="absolute inset-0 opacity-30">
+            <Image
+              src="/img/event-stage-BBm4cEDz.webp"
+              alt="Event stage"
+              fill
+              className="object-cover blur-sm"
+              style={{ objectPosition: 'center center' }}
+              quality={80}
+            />
+          </div>
+          
+          {/* Professional Spotlight effect */}
+          <div className="absolute inset-0 bg-gradient-radial from-white/12 via-transparent to-transparent" style={{
+            background: 'radial-gradient(ellipse at center 40%, rgba(255,255,255,0.18) 0%, transparent 65%)'
+          }}></div>
+          
+          {/* Subtle vignette effect */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center max-w-7xl">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col justify-center max-w-7xl">
           <div className="mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-bold rounded-full shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider mb-4">
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
               NOVEMBER 2026
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">Get Your Tickets</h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed">
+          <h1 className="mb-6">Get Your Tickets</h1>
+          <p className="body-text-lg text-gray-300 max-w-2xl">
             Secure your seats for the ultimate couples game show experience.
           </p>
         </div>
@@ -356,7 +384,7 @@ export default function TicketsPage() {
                   <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                   Ticket Selection
                 </div>
-                <h2 className="text-4xl md:text-5xl font-extrabold">Buy Tickets</h2>
+                <h2>Buy Tickets</h2>
               </div>
               
               {/* Progress Indicator - Professional */}
@@ -507,7 +535,7 @@ export default function TicketsPage() {
                             <div className="flex-1">
                               <div className="flex items-center justify-between mb-3">
                                 <div>
-                                  <h3 className="text-xl font-bold mb-1">{selectedEvent.title}</h3>
+                                  <h3 className="mb-1">{selectedEvent.title}</h3>
                                   <p className="text-gray-400 text-sm">{selectedEvent.date}</p>
                                 </div>
                                 <button
@@ -528,12 +556,12 @@ export default function TicketsPage() {
 
                       {/* Payment Details Form - Professional */}
                       <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 shadow-xl">
-                        <h2 className="text-2xl font-bold mb-6 text-white">Payment Details</h2>
+                        <h2 className="mb-6 text-white">Payment Details</h2>
 
                         <div className="space-y-6">
                           {/* Card Information */}
                           <div>
-                            <h3 className="text-lg font-semibold mb-4">Card Information</h3>
+                            <h4 className="mb-4">Card Information</h4>
                             <div className="space-y-4">
                               <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">Card Number</label>
@@ -585,7 +613,7 @@ export default function TicketsPage() {
 
                           {/* Contact Information */}
                           <div>
-                            <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
+                            <h4 className="mb-4">Contact Information</h4>
                             <div className="space-y-4">
                               <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
@@ -612,7 +640,7 @@ export default function TicketsPage() {
 
                           {/* Billing Address */}
                           <div>
-                            <h3 className="text-lg font-semibold mb-4">Billing Address</h3>
+                            <h4 className="mb-4">Billing Address</h4>
                             <div className="space-y-4">
                               <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">Address</label>
@@ -760,7 +788,7 @@ export default function TicketsPage() {
                             <div className="flex-1">
                               <div className="flex items-center justify-between mb-3">
                                 <div>
-                                  <h3 className="text-xl font-bold mb-1">{selectedEvent.title}</h3>
+                                  <h3 className="mb-1">{selectedEvent.title}</h3>
                                   <p className="text-gray-400 text-sm">{selectedEvent.date}</p>
                                 </div>
                                 <button

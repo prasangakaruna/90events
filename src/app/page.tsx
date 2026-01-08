@@ -240,20 +240,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
         
-        {/* ACIDIR Console Text Effect - Professional - Moved to bottom */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 hidden lg:block acidir-text">
-          <div className="relative">
-            <div className="absolute inset-0 blur-lg bg-red-600/60 animate-pulse"></div>
-            <div className="relative text-4xl md:text-6xl font-black text-white tracking-wider acidir-text-content" style={{
-              textShadow: '0 0 25px rgba(239, 68, 68, 0.9), 0 0 50px rgba(239, 68, 68, 0.7), 0 0 75px rgba(239, 68, 68, 0.5)',
-              fontFamily: 'Arial, sans-serif',
-              letterSpacing: '0.15em',
-              transform: 'perspective(600px) rotateY(-8deg)',
-            }}>
-              ACIDIR
-            </div>
-          </div>
-        </div>
+        
         
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[600px]">
@@ -268,18 +255,18 @@ export default function Home() {
               </div>
               
               {/* ILKER AYRIK - Left Side */}
-              <p className="text-2xl md:text-3xl lg:text-4xl text-gray-200 mb-2 font-light italic tracking-wide">
+              <p className="sub-header text-gray-200 mb-2 italic tracking-wide">
                 ILKER AYRIK
               </p>
               
               {/* Main Title - Professional Typography */}
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-[1.1] tracking-tight">
+              <h1 className="mb-4">
                 <span className="neon-text block mb-1">Gerçekler</span>
                 <span className="neon-text block">Acıdır</span>
           </h1>
               
               {/* Description */}
-              <p className="text-base md:text-lg text-gray-300 mb-6 max-w-xl leading-relaxed">
+              <p className="body-text-lg text-gray-300 mb-6 max-w-xl">
                 {t.heroDescription}
               </p>
               
@@ -348,7 +335,7 @@ export default function Home() {
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Amazing Prizes</h2>
+            <h2 className="mb-4">Amazing Prizes</h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Every ticket is a chance to win incredible prizes worth over $50,000 at every show!
             </p>
@@ -356,22 +343,22 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-              <h3 className="text-white font-bold text-lg mb-2">Annual Insurance Package</h3>
+              <h4 className="text-white mb-2">Annual Insurance Package</h4>
               <p className="text-gray-400 text-sm mb-4">by State Farm Insurance</p>
               <div className="text-[#f0425f] font-bold text-2xl">$2,500</div>
             </div>
             <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-              <h3 className="text-white font-bold text-lg mb-2">Cash Prize</h3>
+              <h4 className="text-white mb-2">Cash Prize</h4>
               <p className="text-gray-400 text-sm mb-4">by Bank of America</p>
               <div className="text-[#f0425f] font-bold text-2xl">$10,000</div>
             </div>
             <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-              <h3 className="text-white font-bold text-lg mb-2">Weekend Getaway Package</h3>
+              <h4 className="text-white mb-2">Weekend Getaway Package</h4>
               <p className="text-gray-400 text-sm mb-4">by Marriott Hotels</p>
               <div className="text-[#f0425f] font-bold text-2xl">$3,000</div>
             </div>
             <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-              <h3 className="text-white font-bold text-lg mb-2">Dining Gift Cards</h3>
+              <h4 className="text-white mb-2">Dining Gift Cards</h4>
               <p className="text-gray-400 text-sm mb-4">by Olive Garden</p>
               <div className="text-[#f0425f] font-bold text-2xl">$500</div>
             </div>
@@ -421,7 +408,7 @@ export default function Home() {
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
               Tour Dates
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+            <h2 className="mb-4 text-black">
               Catch us live
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -474,9 +461,9 @@ export default function Home() {
                 <span className="text-white text-sm font-semibold">Your Host</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold">İlker Ayrık</h2>
+              <h2>İlker Ayrık</h2>
 
-              <p className="text-xl text-[#f0425f] font-semibold">Turkey's Beloved Entertainer</p>
+              <p className="sub-header text-[#f0425f]">Turkey's Beloved Entertainer</p>
 
               <p className="text-gray-300 text-lg leading-relaxed">
                 İlker Ayrık is one of Turkey's most recognized TV personalities with over 20 years of experience in entertainment. Known for his charismatic hosting style and quick wit, he has brought joy to millions of viewers across numerous hit shows.
@@ -543,7 +530,7 @@ export default function Home() {
             <span className="inline-block px-4 py-2 bg-[#f0425f] text-white text-sm font-semibold rounded-lg mb-4">
               {t.aboutShows}
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="mb-6">
               {t.loveOnStage} <span className="text-[#f0425f]">{t.truthRevealed}</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -565,7 +552,7 @@ export default function Home() {
                   </div>
                   <div className="text-3xl">{feature.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <h3 className="mb-3">{feature.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
               </div>
             ))}
