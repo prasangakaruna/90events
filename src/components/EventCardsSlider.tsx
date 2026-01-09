@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Event {
   id: string;
@@ -154,6 +155,16 @@ export default function EventCardsSlider({ events }: EventCardsSliderProps) {
                     <span className="text-gray-500 text-xs">From</span>
                     <span className="text-[#f0425f] font-bold text-lg">{event.price}</span>
                   </div>
+                  
+                  {/* Buy Ticket Button */}
+                  {event.available && (
+                    <Link
+                      href={`/events/${event.id}`}
+                      className="block w-full mt-3 px-4 py-2.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-center font-semibold rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg hover:shadow-[#f0425f]/30"
+                    >
+                      Buy Ticket
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

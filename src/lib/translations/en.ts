@@ -31,6 +31,16 @@ export const en = {
   truthRevealed: 'Truth revealed.',
   aboutShowsDescription: 'Experience a revolutionary blend of drama, comedy, and illusion that explores the deepest truths of human relationships. Each performance is a journey through love, loss, and the moments that define us.',
   
+  // Feature Cards
+  feature1Title: 'Realistic Experience',
+  feature1Description: 'Realistic experiences that mirror life\'s most profound moments',
+  feature2Title: 'Every Moment of Life',
+  feature2Description: 'Every moment of life captured in stunning performances',
+  feature3Title: 'Amazing Prizes',
+  feature3Description: 'Win incredible prizes worth over $50,000 at every show',
+  feature4Title: 'Unforgettable Experience',
+  feature4Description: 'Create memories that will last a lifetime',
+  
   liveShows: 'LIVE SHOWS',
   catchUsLive: 'Catch us live',
   liveShowsDescription: '2 cities across North America. One unforgettable experience.',

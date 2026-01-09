@@ -178,6 +178,61 @@ const getAllSponsors = (): SponsorDetails[] => {
     },
     {
       id: '8',
+      name: 'Luxury Hotels',
+      description: 'Premium hospitality partner.',
+      fullDescription: 'Luxury Hotels provides premium accommodation and hospitality services for our events, ensuring comfortable stays for artists and VIP guests.',
+      image: '/img/photo-1581578731548-c64695cc6952.jpg',
+      type: 'industry',
+      website: 'https://www.luxuryhotels.com',
+      contactEmail: 'sponsorships@luxuryhotels.com',
+      contactPhone: '+1 (555) 456-7890',
+      benefits: [
+        'Logo on select materials',
+        'VIP accommodation packages',
+        'Social media mentions',
+        'Event program listing'
+      ],
+      industry: 'Hospitality'
+    },
+    {
+      id: '9',
+      name: 'Live Nation Entertainment',
+      description: 'Entertainment industry leader.',
+      fullDescription: 'Live Nation Entertainment is a global leader in live entertainment, bringing expertise and resources to make our events unforgettable.',
+      image: '/img/photo-1610945265064-0e34e5519bbf.jpg',
+      type: 'industry',
+      website: 'https://www.livenation.com',
+      contactEmail: 'sponsorships@livenation.com',
+      contactPhone: '+1 (310) 867-7000',
+      benefits: [
+        'Logo on select materials',
+        'VIP event access',
+        'Social media promotion',
+        'Industry networking opportunities'
+      ],
+      industry: 'Entertainment'
+    },
+    {
+      id: '9',
+      name: 'Live Nation Entertainment',
+      description: 'Entertainment industry leader.',
+      fullDescription: 'Live Nation Entertainment is a global leader in live entertainment, bringing expertise and resources to make our events unforgettable.',
+      image: '/img/photo-1610945265064-0e34e5519bbf.jpg',
+      type: 'industry',
+      website: 'https://www.livenation.com',
+      contactEmail: 'sponsorships@livenation.com',
+      contactPhone: '+1 (310) 867-7000',
+      benefits: [
+        'Logo on select materials',
+        'VIP event access',
+        'Social media promotion',
+        'Industry networking opportunities'
+      ],
+      industry: 'Entertainment'
+    },
+    // City Sponsors
+    {
+      id: '10',
       name: 'Meta Studio',
       description: 'Creative design studio.',
       fullDescription: 'Meta Studio is a local creative agency providing design and marketing services for our city-based events.',
@@ -196,6 +251,216 @@ const getAllSponsors = (): SponsorDetails[] => {
       ],
       location: 'New York, NY',
       industry: 'Creative Services'
+    },
+    {
+      id: '11',
+      name: 'Prime Fitness',
+      description: 'Premium fitness center.',
+      fullDescription: 'Prime Fitness is a local premium fitness center supporting our events with wellness programs and fitness-related prizes.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'silver',
+      website: 'https://www.primefitness.com',
+      contactEmail: 'info@primefitness.com',
+      contactPhone: '+1 (555) 456-7890',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'Fitness membership prizes'
+      ],
+      location: 'New York, NY',
+      industry: 'Fitness & Wellness'
+    },
+    {
+      id: '12',
+      name: 'Saka Restaurant',
+      description: 'Authentic Turkish cuisine.',
+      fullDescription: 'Saka Restaurant offers authentic Turkish cuisine and provides catering services for our events, bringing delicious flavors to attendees.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'bronze',
+      website: 'https://www.sakarestaurant.com',
+      contactEmail: 'info@sakarestaurant.com',
+      contactPhone: '+1 (555) 567-8901',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'Catering opportunities'
+      ],
+      location: 'New York, NY',
+      industry: 'Food & Beverage'
+    },
+    {
+      id: '13',
+      name: 'Dream Homes',
+      description: 'Luxury real estate.',
+      fullDescription: 'Dream Homes is a luxury real estate agency providing exclusive property services and prizes for our events.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'platinum',
+      website: 'https://www.dreamhomes.com',
+      contactEmail: 'info@dreamhomes.com',
+      contactPhone: '+1 (555) 678-9012',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'Real estate consultation prizes'
+      ],
+      location: 'Illinois (Chicago)',
+      industry: 'Real Estate'
+    },
+    {
+      id: '14',
+      name: 'Tech Solutions',
+      description: 'IT consulting services.',
+      fullDescription: 'Tech Solutions provides IT consulting and technology services, supporting our events with technical expertise and solutions.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'diamond',
+      website: 'https://www.techsolutions.com',
+      contactEmail: 'info@techsolutions.com',
+      contactPhone: '+1 (555) 789-0123',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'Technology consultation prizes'
+      ],
+      location: 'Illinois (Chicago)',
+      industry: 'Technology'
+    },
+    {
+      id: '15',
+      name: 'Public Relations',
+      description: 'PR and marketing agency.',
+      fullDescription: 'Public Relations is a leading PR and marketing agency providing communication services and media relations for our events.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'gold',
+      website: 'https://www.publicrelations.com',
+      contactEmail: 'info@publicrelations.com',
+      contactPhone: '+1 (555) 890-1234',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'PR consultation services'
+      ],
+      location: 'Illinois (Chicago)',
+      industry: 'Marketing & PR'
+    },
+    {
+      id: '16',
+      name: 'Creative Agency',
+      description: 'Full-service creative agency.',
+      fullDescription: 'Creative Agency is a full-service creative agency providing design, branding, and marketing services for our events.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'silver',
+      website: 'https://www.creativeagency.com',
+      contactEmail: 'hello@creativeagency.com',
+      contactPhone: '+1 (555) 901-2345',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'Creative services consultation'
+      ],
+      location: 'California (Palo Alto)',
+      industry: 'Creative Services'
+    },
+    {
+      id: '17',
+      name: 'IT Solutions',
+      description: 'Technology solutions provider.',
+      fullDescription: 'IT Solutions is a technology solutions provider offering IT services and support for our events and operations.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'bronze',
+      website: 'https://www.itsolutions.com',
+      contactEmail: 'info@itsolutions.com',
+      contactPhone: '+1 (555) 012-3456',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'IT consultation services'
+      ],
+      location: 'California (Palo Alto)',
+      industry: 'Technology'
+    },
+    {
+      id: '18',
+      name: 'Marketing Firm',
+      description: 'Digital marketing experts.',
+      fullDescription: 'Marketing Firm is a digital marketing agency specializing in online marketing strategies and campaigns for businesses.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'platinum',
+      website: 'https://www.marketingfirm.com',
+      contactEmail: 'info@marketingfirm.com',
+      contactPhone: '+1 (555) 123-4567',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'Marketing consultation services'
+      ],
+      location: 'California (Palo Alto)',
+      industry: 'Marketing'
+    },
+    {
+      id: '19',
+      name: 'Design Studio',
+      description: 'Creative design services.',
+      fullDescription: 'Design Studio provides creative design services including graphic design, branding, and visual identity for businesses.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'diamond',
+      website: 'https://www.designstudio.com',
+      contactEmail: 'hello@designstudio.com',
+      contactPhone: '+1 (555) 234-5678',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'Design consultation services'
+      ],
+      location: 'California (Palo Alto)',
+      industry: 'Design'
+    },
+    {
+      id: '20',
+      name: 'Media Group',
+      description: 'Media and communications.',
+      fullDescription: 'Media Group is a media and communications company providing media services, content creation, and broadcasting solutions.',
+      image: '/img/img16346_orig.webp',
+      price: '$1,500',
+      type: 'city',
+      tier: 'custom',
+      website: 'https://www.mediagroup.com',
+      contactEmail: 'info@mediagroup.com',
+      contactPhone: '+1 (555) 345-6789',
+      benefits: [
+        'Logo on city-specific materials',
+        'Local social media promotion',
+        'Event program listing',
+        'Media coverage opportunities'
+      ],
+      location: 'California (Palo Alto)',
+      industry: 'Media & Communications'
     }
   ];
 };

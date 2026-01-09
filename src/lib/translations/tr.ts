@@ -31,6 +31,16 @@ export const tr = {
   truthRevealed: 'Gerçek ortaya çıktı.',
   aboutShowsDescription: 'İnsan ilişkilerinin en derin gerçeklerini keşfeden devrim niteliğinde bir drama, komedi ve illüzyon karışımı yaşayın. Her performans, aşk, kayıp ve bizi tanımlayan anlar boyunca bir yolculuktur.',
   
+  // Feature Cards
+  feature1Title: 'Gerçekçi Deneyim',
+  feature1Description: 'Hayatın en derin anlarını yansıtan gerçekçi deneyimler',
+  feature2Title: 'Hayatın Her Anı',
+  feature2Description: 'Hayatın her anı çarpıcı performanslarda yakalanıyor',
+  feature3Title: 'Harika Ödüller',
+  feature3Description: 'Her gösteride $50,000\'den fazla değerinde inanılmaz ödüller kazanın',
+  feature4Title: 'Unutulmaz Deneyim',
+  feature4Description: 'Hayat boyu sürecek anılar yaratın',
+  
   liveShows: 'CANLI GÖSTERİLER',
   catchUsLive: 'Bizi canlı yakalayın',
   liveShowsDescription: 'Kuzey Amerika genelinde 2 şehir. Unutulmaz bir deneyim.',

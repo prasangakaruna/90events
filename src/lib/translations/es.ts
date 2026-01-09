@@ -25,6 +25,16 @@ export const es = {
   truthRevealed: 'Verdad revelada.',
   aboutShowsDescription: 'Experimenta una mezcla revolucionaria de drama, comedia e ilusión que explora las verdades más profundas de las relaciones humanas. Cada actuación es un viaje a través del amor, la pérdida y los momentos que nos definen.',
   
+  // Feature Cards
+  feature1Title: 'Experiencia Realista',
+  feature1Description: 'Experiencias realistas que reflejan los momentos más profundos de la vida',
+  feature2Title: 'Cada Momento de la Vida',
+  feature2Description: 'Cada momento de la vida capturado en actuaciones impresionantes',
+  feature3Title: 'Premios Increíbles',
+  feature3Description: 'Gana premios increíbles valorados en más de $50,000 en cada espectáculo',
+  feature4Title: 'Experiencia Inolvidable',
+  feature4Description: 'Crea recuerdos que durarán toda la vida',
+  
   liveShows: 'ESPECTÁCULOS EN VIVO',
   catchUsLive: 'Cátenos en vivo',
   liveShowsDescription: '2 ciudades en América del Norte. Una experiencia inolvidable.',

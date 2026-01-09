@@ -424,7 +424,7 @@ export default function Home() {
           {/* View All Link */}
           <div className="text-center mt-12">
             <Link
-              href="/events"
+              href="/tickets"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0425f] hover:bg-[#d63852] text-white rounded-lg transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl"
             >
               <span>View All Tour Dates</span>
@@ -540,10 +540,10 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { num: '01', title: 'Gerçekçi Deneyim', desc: 'Realistic experiences that mirror life\'s most profound moments', icon: '🎭' },
-              { num: '02', title: 'Hayatın Her Anı', desc: 'Every moment of life captured in stunning performances', icon: '✨' },
-              { num: '03', title: 'Amazing Prizes', desc: 'Win incredible prizes worth over $50,000 at every show', icon: '🎁' },
-              { num: '04', title: 'Unforgettable Experience', desc: 'Create memories that will last a lifetime', icon: '🌟' },
+              { num: '01', title: t.feature1Title, desc: t.feature1Description, icon: '🎭' },
+              { num: '02', title: t.feature2Title, desc: t.feature2Description, icon: '✨' },
+              { num: '03', title: t.feature3Title, desc: t.feature3Description, icon: '🎁' },
+              { num: '04', title: t.feature4Title, desc: t.feature4Description, icon: '🌟' },
             ].map((feature, idx) => (
               <div key={idx} className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#f0425f] transition-all duration-300">
                 <div className="flex items-center justify-between mb-4">

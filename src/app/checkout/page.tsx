@@ -1,13 +1,24 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  selectedSize?: string;
+  image?: string;
+}
 
 function CheckoutContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const eventId = searchParams.get('eventId');
+  const type = searchParams.get('type'); // 'shop' or 'tickets'
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -23,6 +34,22 @@ function CheckoutContent() {
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  // Load cart items from localStorage if it's a shop checkout
+  useEffect(() => {
+    if (type === 'shop') {
+      const savedCart = localStorage.getItem('shopCart');
+      if (savedCart) {
+        try {
+          const cart = JSON.parse(savedCart);
+          setCartItems(cart);
+        } catch (e) {
+          console.error('Error loading cart', e);
+        }
+      }
+    }
+  }, [type]);
 
   // Mock ticket selection - in real app, get from state management
   const ticketSelection = {
@@ -35,9 +62,22 @@ function CheckoutContent() {
     { id: 'vip', name: 'VIP Pass', price: 149, quantity: 1 },
   ];
 
-  const subtotal = tickets.reduce((sum, ticket) => sum + ticket.price * ticket.quantity, 0);
-  const serviceFee = subtotal * 0.1;
-  const total = subtotal + serviceFee;
+  // Use shop cart items if type is shop, otherwise use tickets
+  const items: CartItem[] = type === 'shop' 
+    ? cartItems 
+    : tickets.map(t => ({ 
+        id: t.id, 
+        name: t.name, 
+        price: t.price, 
+        quantity: t.quantity, 
+        image: undefined, 
+        selectedSize: undefined 
+      }));
+  
+  const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const serviceFee = type === 'shop' ? subtotal * 0.05 : subtotal * 0.1; // 5% for shop, 10% for tickets
+  const shippingFee = type === 'shop' ? 9.99 : 0;
+  const total = subtotal + serviceFee + shippingFee;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -69,47 +109,82 @@ function CheckoutContent() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
+      // Clear cart if it's a shop order
+      if (type === 'shop') {
+        localStorage.removeItem('shopCart');
+      }
       // In a real app, process payment here
-      router.push(`/confirmation?eventId=${eventId}&orderId=${Date.now()}`);
+      const orderId = Date.now();
+      if (type === 'shop') {
+        router.push(`/confirmation?type=shop&orderId=${orderId}`);
+      } else {
+        router.push(`/confirmation?eventId=${eventId}&orderId=${orderId}`);
+      }
     }
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-12">
+    <div className="min-h-screen bg-white text-gray-900 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">Checkout</h1>
+          <div className="mb-6">
+            <h1 className="text-lg font-semibold mb-0.5 text-gray-900 tracking-tight uppercase">Checkout</h1>
+            <p className="text-xs text-gray-500 font-normal">Complete your purchase securely</p>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Order Summary */}
             <div className="lg:col-span-1">
-              <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 sticky top-24">
-                <h2 className="text-2xl font-bold mb-6">Order Summary</h2>
-                <div className="space-y-4 mb-6">
-                  {tickets.map((ticket) => (
-                    <div key={ticket.id} className="flex justify-between items-start">
-                      <div>
-                        <p className="font-semibold text-white">{ticket.name}</p>
-                        <p className="text-sm text-gray-400">Qty: {ticket.quantity}</p>
+              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 shadow-sm sticky top-24">
+                <h2 className="text-2xl font-bold mb-6 text-gray-900">Order Summary</h2>
+                <div className="space-y-4 mb-6 max-h-96 overflow-y-auto">
+                  {items.length === 0 ? (
+                    <p className="text-gray-500 text-center py-8">Your cart is empty</p>
+                  ) : (
+                    items.map((item) => (
+                      <div key={item.id} className="flex gap-3 items-start pb-4 border-b border-gray-200 last:border-0 last:pb-0">
+                        {item.image && (
+                          <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="font-semibold text-gray-900 text-sm">{item.name}</p>
+                          {item.selectedSize && (
+                            <p className="text-xs text-gray-500 mt-1">Size: {item.selectedSize}</p>
+                          )}
+                          <p className="text-xs text-gray-500 mt-1">Qty: {item.quantity}</p>
+                        </div>
+                        <p className="text-gray-900 font-semibold flex-shrink-0 text-sm">
+                          ${(item.price * item.quantity).toFixed(2)}
+                        </p>
                       </div>
-                      <p className="text-[#f0425f] font-semibold">
-                        ${(ticket.price * ticket.quantity).toFixed(2)}
-                      </p>
-                    </div>
-                  ))}
+                    ))
+                  )}
                 </div>
-                <div className="border-t border-gray-800 pt-4 space-y-2">
-                  <div className="flex justify-between text-gray-400">
+                <div className="border-t border-gray-300 pt-4 space-y-3">
+                  <div className="flex justify-between text-gray-600 text-sm">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span className="text-gray-900 font-medium">${subtotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-gray-400">
-                    <span>Service Fee</span>
-                    <span>${serviceFee.toFixed(2)}</span>
+                  {shippingFee > 0 && (
+                    <div className="flex justify-between text-gray-600 text-sm">
+                      <span>Shipping</span>
+                      <span className="text-gray-900 font-medium">${shippingFee.toFixed(2)}</span>
+                    </div>
+                  )}
+                  <div className="flex justify-between text-gray-600 text-sm">
+                    <span>{type === 'shop' ? 'Processing Fee' : 'Service Fee'}</span>
+                    <span className="text-gray-900 font-medium">${serviceFee.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-xl font-bold pt-2 border-t border-gray-800">
-                    <span>Total</span>
-                    <span className="text-[#f0425f]">${total.toFixed(2)}</span>
+                  <div className="flex justify-between text-xl font-bold pt-3 border-t border-gray-300">
+                    <span className="text-gray-900">Total</span>
+                    <span className="text-gray-900">${total.toFixed(2)}</span>
                   </div>
                 </div>
               </div>
@@ -117,64 +192,74 @@ function CheckoutContent() {
 
             {/* Checkout Form */}
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
-                <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-                  <h2 className="text-2xl font-bold mb-6">Personal Information</h2>
+                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+                  <h2 className="text-2xl font-bold mb-6 text-gray-900">Personal Information</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium mb-2">First Name *</label>
+                      <label className="block text-sm font-semibold mb-2 text-gray-700">First Name *</label>
                       <input
                         type="text"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all"
+                        placeholder="John"
                       />
-                      {errors.firstName && <p className="text-[#f0425f] text-sm mt-1">{errors.firstName}</p>}
+                      {errors.firstName && <p className="text-red-600 text-sm mt-1">{errors.firstName}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Last Name *</label>
+                      <label className="block text-sm font-semibold mb-2 text-gray-700">Last Name *</label>
                       <input
                         type="text"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all"
+                        placeholder="Doe"
                       />
-                      {errors.lastName && <p className="text-[#f0425f] text-sm mt-1">{errors.lastName}</p>}
+                      {errors.lastName && <p className="text-red-600 text-sm mt-1">{errors.lastName}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Email *</label>
+                      <label className="block text-sm font-semibold mb-2 text-gray-700">Email *</label>
                       <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all"
+                        placeholder="john.doe@example.com"
                       />
-                      {errors.email && <p className="text-[#f0425f] text-sm mt-1">{errors.email}</p>}
+                      {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Phone *</label>
+                      <label className="block text-sm font-semibold mb-2 text-gray-700">Phone *</label>
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all"
+                        placeholder="+1 (555) 123-4567"
                       />
-                      {errors.phone && <p className="text-[#f0425f] text-sm mt-1">{errors.phone}</p>}
+                      {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
                     </div>
                   </div>
                 </div>
 
                 {/* Payment Information */}
-                <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-                  <h2 className="text-2xl font-bold mb-6">Payment Information</h2>
+                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-bold text-gray-900">Payment Information</h2>
+                    <div className="flex gap-2">
+                      <div className="w-10 h-6 bg-blue-600 rounded flex items-center justify-center text-white text-xs font-bold">VISA</div>
+                      <div className="w-10 h-6 bg-orange-500 rounded flex items-center justify-center text-white text-xs font-bold">MC</div>
+                    </div>
+                  </div>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium mb-2">Card Number *</label>
+                      <label className="block text-sm font-semibold mb-2 text-gray-700">Card Number *</label>
                       <input
                         type="text"
                         name="cardNumber"
@@ -182,13 +267,13 @@ function CheckoutContent() {
                         onChange={handleChange}
                         placeholder="1234 5678 9012 3456"
                         maxLength={19}
-                        className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all font-mono"
                       />
-                      {errors.cardNumber && <p className="text-[#f0425f] text-sm mt-1">{errors.cardNumber}</p>}
+                      {errors.cardNumber && <p className="text-red-600 text-sm mt-1">{errors.cardNumber}</p>}
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium mb-2">Expiry Date *</label>
+                        <label className="block text-sm font-semibold mb-2 text-gray-700">Expiry Date *</label>
                         <input
                           type="text"
                           name="expiryDate"
@@ -196,12 +281,12 @@ function CheckoutContent() {
                           onChange={handleChange}
                           placeholder="MM/YY"
                           maxLength={5}
-                          className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all font-mono"
                         />
-                        {errors.expiryDate && <p className="text-[#f0425f] text-sm mt-1">{errors.expiryDate}</p>}
+                        {errors.expiryDate && <p className="text-red-600 text-sm mt-1">{errors.expiryDate}</p>}
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2">CVV *</label>
+                        <label className="block text-sm font-semibold mb-2 text-gray-700">CVV *</label>
                         <input
                           type="text"
                           name="cvv"
@@ -209,67 +294,79 @@ function CheckoutContent() {
                           onChange={handleChange}
                           placeholder="123"
                           maxLength={4}
-                          className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all font-mono"
                         />
-                        {errors.cvv && <p className="text-[#f0425f] text-sm mt-1">{errors.cvv}</p>}
+                        {errors.cvv && <p className="text-red-600 text-sm mt-1">{errors.cvv}</p>}
                       </div>
+                    </div>
+                    <div className="pt-2">
+                      <p className="text-xs text-gray-500 flex items-center gap-1">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        Your payment information is secure and encrypted
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Billing Address */}
-                <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-                  <h2 className="text-2xl font-bold mb-6">Billing Address</h2>
+                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+                  <h2 className="text-2xl font-bold mb-6 text-gray-900">Billing Address</h2>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium mb-2">Address *</label>
+                      <label className="block text-sm font-semibold mb-2 text-gray-700">Address *</label>
                       <input
                         type="text"
                         name="billingAddress"
                         value={formData.billingAddress}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all"
+                        placeholder="123 Main Street"
                       />
-                      {errors.billingAddress && <p className="text-[#f0425f] text-sm mt-1">{errors.billingAddress}</p>}
+                      {errors.billingAddress && <p className="text-red-600 text-sm mt-1">{errors.billingAddress}</p>}
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium mb-2">City *</label>
+                        <label className="block text-sm font-semibold mb-2 text-gray-700">City *</label>
                         <input
                           type="text"
                           name="city"
                           value={formData.city}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all"
+                          placeholder="New York"
                         />
-                        {errors.city && <p className="text-[#f0425f] text-sm mt-1">{errors.city}</p>}
+                        {errors.city && <p className="text-red-600 text-sm mt-1">{errors.city}</p>}
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2">Zip Code *</label>
+                        <label className="block text-sm font-semibold mb-2 text-gray-700">Zip Code *</label>
                         <input
                           type="text"
                           name="zipCode"
                           value={formData.zipCode}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white focus:border-[#f0425f] focus:outline-none"
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 focus:outline-none transition-all"
+                          placeholder="10001"
                         />
-                        {errors.zipCode && <p className="text-[#f0425f] text-sm mt-1">{errors.zipCode}</p>}
+                        {errors.zipCode && <p className="text-red-600 text-sm mt-1">{errors.zipCode}</p>}
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Submit Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Link
-                    href={`/events/${eventId}`}
-                    className="px-6 py-3 border-2 border-gray-800 text-white rounded-lg hover:border-gray-700 transition-colors text-center font-semibold"
+                    href={type === 'shop' ? '/shop' : `/events/${eventId}`}
+                    className="px-6 py-3.5 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all font-semibold text-center"
                   >
-                    Back to Event
+                    {type === 'shop' ? 'Back to Shop' : 'Back to Event'}
                   </Link>
                   <button
                     type="submit"
-                    className="flex-1 px-6 py-3 bg-[#f0425f] text-white rounded-lg hover:bg-[#d63852] transition-colors font-semibold text-lg"
+                    disabled={items.length === 0}
+                    className="flex-1 px-6 py-3.5 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-900 shadow-lg"
                   >
                     Complete Purchase
                   </button>
@@ -286,10 +383,10 @@ function CheckoutContent() {
 export default function CheckoutPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#f0425f] mx-auto mb-4"></div>
-          <p className="text-gray-400">Loading...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
         </div>
       </div>
     }>

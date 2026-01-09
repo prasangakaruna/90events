@@ -656,7 +656,7 @@ export default function Home2() {
           {/* View All Link */}
           <div className="text-center mt-12">
             <Link
-              href="/events"
+              href="/tickets"
               className="btn-primary-lg inline-flex items-center gap-2"
             >
               <span>View All Tour Dates</span>

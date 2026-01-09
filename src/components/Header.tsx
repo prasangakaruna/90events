@@ -3,12 +3,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { useTranslation } from '@/contexts/TranslationContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
+interface CartItem {
+  id: string;
+  quantity: number;
+}
+
 export default function Header() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -18,6 +26,43 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Load cart count from localStorage
+  useEffect(() => {
+    const loadCartCount = () => {
+      const savedCart = localStorage.getItem('shopCart');
+      if (savedCart) {
+        try {
+          const cart: CartItem[] = JSON.parse(savedCart);
+          const count = cart.reduce((total, item) => total + item.quantity, 0);
+          setCartCount(count);
+        } catch (e) {
+          console.error('Error loading cart', e);
+        }
+      }
+    };
+
+    loadCartCount();
+
+    // Listen for storage changes (when cart is updated from other tabs/components)
+    const handleStorageChange = () => {
+      loadCartCount();
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    
+    // Also listen for custom event for same-tab updates
+    window.addEventListener('cartUpdated', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('cartUpdated', handleStorageChange);
+    };
+  }, []);
+
+  const handleCartClick = () => {
+    router.push('/checkout?type=shop');
+  };
 
   return (
     <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
@@ -66,6 +111,26 @@ export default function Header() {
           
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
+            {/* Cart Icon */}
+            <button
+              onClick={handleCartClick}
+              className="relative p-2 text-white hover:text-[#f0425f] transition-colors group"
+              aria-label="Shopping cart"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-[#f0425f] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount > 99 ? '99+' : cartCount}
+                </span>
+              )}
+              <div className="absolute -bottom-10 right-0 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                {cartCount > 0 ? `${cartCount} item${cartCount !== 1 ? 's' : ''} in cart` : 'View cart'}
+              </div>
+            </button>
             <Link
               href="/login"
               className="hidden md:block btn-secondary flex items-center justify-center gap-2"
@@ -146,6 +211,26 @@ export default function Header() {
                 {t.apply || 'Apply'}
               </Link>
               <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+                {/* Mobile Cart Button */}
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    handleCartClick();
+                  }}
+                  className="px-6 py-3.5 bg-transparent hover:bg-white/10 text-white rounded-full transition-all duration-300 transform hover:scale-105 font-semibold text-base flex items-center justify-center gap-2 border border-white/40 hover:border-white/60 relative"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                  Cart {cartCount > 0 && `(${cartCount})`}
+                  {cartCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-[#f0425f] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                      {cartCount > 99 ? '99+' : cartCount}
+                    </span>
+                  )}
+                </button>
                 <div className="px-2">
                   <LanguageSwitcher />
                 </div>

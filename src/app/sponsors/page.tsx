@@ -54,25 +54,25 @@ const tourTitlePartners: Sponsor[] = [
 
 const industrySponsors: Sponsor[] = [
   {
-    id: '1',
+    id: '6',
     name: 'Skin Pharmaceuticals',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     image: '/img/photo-1554866585-cd94860890b7.jpg',
   },
   {
-    id: '2',
+    id: '7',
     name: 'Bank Of America',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     image: '/img/photo-1555041469-a586c61ea9bc.jpg',
   },
   {
-    id: '3',
+    id: '8',
     name: 'Luxury Hotels',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     image: '/img/photo-1581578731548-c64695cc6952.jpg',
   },
   {
-    id: '4',
+    id: '9',
     name: 'Live Nation Entertainment',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     image: '/img/photo-1610945265064-0e34e5519bbf.jpg',
@@ -80,17 +80,17 @@ const industrySponsors: Sponsor[] = [
 ];
 
 const citySponsors: Sponsor[] = [
-  { id: '1', name: 'Meta Studio', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'gold' },
-  { id: '2', name: 'Prime Fitness', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'silver' },
-  { id: '3', name: 'Saka Restaurant', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'bronze' },
-  { id: '4', name: 'Dream Homes', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'platinum' },
-  { id: '5', name: 'Tech Solutions', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'diamond' },
-  { id: '6', name: 'Public Relations', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'gold' },
-  { id: '7', name: 'Creative Agency', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'silver' },
-  { id: '8', name: 'IT Solutions', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'bronze' },
-  { id: '9', name: 'Marketing Firm', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'platinum' },
-  { id: '10', name: 'Design Studio', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'diamond' },
-  { id: '11', name: 'Media Group', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'custom' },
+  { id: '10', name: 'Meta Studio', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'gold' },
+  { id: '11', name: 'Prime Fitness', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'silver' },
+  { id: '12', name: 'Saka Restaurant', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'bronze' },
+  { id: '13', name: 'Dream Homes', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'platinum' },
+  { id: '14', name: 'Tech Solutions', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'diamond' },
+  { id: '15', name: 'Public Relations', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'gold' },
+  { id: '16', name: 'Creative Agency', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'silver' },
+  { id: '17', name: 'IT Solutions', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'bronze' },
+  { id: '18', name: 'Marketing Firm', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'platinum' },
+  { id: '19', name: 'Design Studio', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'diamond' },
+  { id: '20', name: 'Media Group', price: '$1,500', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/img/img16346_orig.webp', tier: 'custom' },
 ];
 
 const faqs = [
@@ -176,7 +176,7 @@ export default function SponsorsPage() {
               <p className="text-gray-400 text-lg mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
               </p>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-6 mb-8">
                 <div>
                   <div className="text-4xl font-bold text-yellow-400 mb-2">26</div>
                   <div className="text-gray-400">Sponsors</div>
@@ -190,6 +190,16 @@ export default function SponsorsPage() {
                   <div className="text-gray-400">Partners</div>
                 </div>
               </div>
+              <Link
+                href="#tour-title-partners"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl"
+              >
+                <span>View More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </Link>
             </div>
             <div className="flex-1 grid grid-cols-1 gap-4">
               <div className="relative aspect-square rounded-lg overflow-hidden">
@@ -214,7 +224,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Tour Title Partners Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-black">
+      <section id="tour-title-partners" className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-black">
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-12">Tour Title Partners</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -236,7 +246,7 @@ export default function SponsorsPage() {
                     href={`/sponsors/${partner.id}`}
                     className="btn-gradient"
                   >
-                    View Details
+                    View More
                   </Link>
                 </div>
               </div>
@@ -272,7 +282,7 @@ export default function SponsorsPage() {
                   href={`/sponsors/${sponsor.id}`}
                   className="btn-gradient block w-full text-center"
                 >
-                  View Details
+                  View More
                 </Link>
               </div>
             ))}
@@ -288,7 +298,7 @@ export default function SponsorsPage() {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">City Based Sponsors</h2>
           <p className="text-gray-400 mb-8 max-w-3xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          Our City-Based Sponsors are local businesses and organizations that help make our events possible in their respective cities. By partnering with us, these sponsors gain targeted exposure, connect directly with the local community, and showcase their commitment to supporting meaningful experiences. Explore the sponsors below to see the companies helping bring our events to life in your city.
           </p>
           <div className="flex flex-wrap gap-3 mb-12">
             {['all', 'gold', 'silver', 'bronze', 'platinum', 'diamond', 'custom'].map((filter) => (
@@ -322,7 +332,7 @@ export default function SponsorsPage() {
                   href={`/sponsors/${sponsor.id}`}
                   className="btn-gradient block w-full text-center"
                 >
-                  View Details
+                  View More
                 </Link>
               </div>
             ))}

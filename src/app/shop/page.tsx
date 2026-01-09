@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -61,9 +62,34 @@ const vipExperience = {
   image: '/img/img16346_orig.webp',
 };
 
+interface CartItem extends Product {
+  selectedSize?: string;
+  quantity: number;
+}
+
 export default function ShopPage() {
+  const router = useRouter();
   const [selectedSizes, setSelectedSizes] = useState<{ [key: string]: string }>({});
-  const [cart, setCart] = useState<any[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  // Load cart from localStorage on mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem('shopCart');
+    if (savedCart) {
+      try {
+        setCart(JSON.parse(savedCart));
+      } catch (e) {
+        console.error('Error loading cart from localStorage', e);
+      }
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('shopCart', JSON.stringify(cart));
+    // Dispatch custom event to update header cart count
+    window.dispatchEvent(new Event('cartUpdated'));
+  }, [cart]);
 
   const handleSizeSelect = (productId: string, size: string) => {
     setSelectedSizes((prev) => ({
@@ -73,13 +99,44 @@ export default function ShopPage() {
   };
 
   const handleAddToCart = (product: Product) => {
-    const cartItem = {
+    // Check if size is required but not selected
+    if (product.sizes && product.sizes.length > 0 && !selectedSizes[product.id]) {
+      alert('Please select a size');
+      return;
+    }
+
+    const cartItem: CartItem = {
       ...product,
       selectedSize: selectedSizes[product.id],
       quantity: 1,
     };
-    setCart((prev) => [...prev, cartItem]);
-    // Show notification or update cart icon
+
+    // Check if item already exists in cart (same product and size)
+    const existingItemIndex = cart.findIndex(
+      (item) => item.id === product.id && item.selectedSize === selectedSizes[product.id]
+    );
+
+    if (existingItemIndex >= 0) {
+      // Update quantity if item exists
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity += 1;
+      setCart(updatedCart);
+    } else {
+      // Add new item
+      setCart((prev) => [...prev, cartItem]);
+    }
+  };
+
+  const getCartItemCount = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const handleGoToCheckout = () => {
+    if (cart.length === 0) {
+      alert('Your cart is empty. Add some products first!');
+      return;
+    }
+    router.push('/checkout?type=shop');
   };
 
   return (
@@ -218,9 +275,24 @@ export default function ShopPage() {
       {/* All Products Section */}
       <section id="products" className="py-16 bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h2 className="text-4xl font-bold mb-2">All Products</h2>
-            <p className="text-gray-400">{products.length} items available</p>
+          <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
+            <div>
+              <h2 className="text-4xl font-bold mb-2">All Products</h2>
+              <p className="text-gray-400">{products.length} items available</p>
+            </div>
+            {cart.length > 0 && (
+              <button
+                onClick={handleGoToCheckout}
+                className="btn-gradient-lg flex items-center gap-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Checkout ({getCartItemCount()} {getCartItemCount() === 1 ? 'item' : 'items'})
+              </button>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
