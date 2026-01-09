@@ -308,6 +308,47 @@ export default function TicketsPage() {
     setShowCheckout(true);
   };
 
+  const handleCompletePurchase = () => {
+    if (!selectedEvent || selectedSeats.length === 0) return;
+
+    // Save ticket purchase to localStorage for "My Account"
+    const ticketData = {
+      id: `ticket-${Date.now()}`,
+      orderId: `ORD-${Date.now()}`,
+      eventName: selectedEvent.title,
+      eventDate: selectedEvent.date,
+      eventTime: selectedEvent.eventDetails.showStarts,
+      location: selectedEvent.location,
+      venue: selectedEvent.venue.name,
+      tickets: selectedSeats.map(seat => ({
+        type: seat.section || 'General Admission',
+        quantity: 1,
+        price: seat.price || 0,
+        section: seat.section,
+        row: seat.row,
+        seat: seat.number,
+      })),
+      extras: selectedExtras.map(extra => ({
+        name: extra.name,
+        price: extra.id === '1' ? extra.price * selectedSeats.length : extra.price,
+      })),
+      subtotal: subtotal,
+      fees: fees,
+      total: grandTotal,
+      purchaseDate: new Date().toISOString(),
+      status: 'confirmed' as const,
+    };
+
+    // Get existing tickets or create new array
+    const existingTickets = localStorage.getItem('userTickets');
+    const ticketsArray = existingTickets ? JSON.parse(existingTickets) : [];
+    ticketsArray.push(ticketData);
+    localStorage.setItem('userTickets', JSON.stringify(ticketsArray));
+
+    // Redirect to confirmation page
+    window.location.href = `/confirmation?eventId=${selectedEvent.id}&orderId=${ticketData.orderId}`;
+  };
+
   const handleBackToExtras = () => {
     setShowCheckout(false);
   };
@@ -373,7 +414,7 @@ export default function TicketsPage() {
       </section>
 
       {/* Buy Tickets Section - Professional */}
-      <section className="py-16 bg-black">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
           <div className="flex flex-col lg:flex-row gap-8">
@@ -690,7 +731,10 @@ export default function TicketsPage() {
 
                           {/* Complete Purchase Button */}
                           <div className="pt-6 border-t border-gray-800">
-                            <button className="w-full btn-gradient-lg text-lg">
+                            <button 
+                              onClick={handleCompletePurchase}
+                              className="w-full btn-gradient-lg text-lg"
+                            >
                               Complete Purchase
                             </button>
                             <p className="text-xs text-gray-500 text-center mt-3">

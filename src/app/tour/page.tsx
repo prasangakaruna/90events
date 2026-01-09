@@ -165,17 +165,20 @@ const experiencePackages: ExperiencePackage[] = [
 const testimonials = [
   {
     quote: "The camping retreat was magical! İlker's stories around the campfire were unforgettable.",
-    author: 'Sarah M.',
+    author: 'Sarah & Mike',
+    location: 'Los Angeles, CA',
     rating: 5,
   },
   {
     quote: "Best decision ever! The truck adventure gave us views we'll never forget.",
     author: 'David Chen',
+    location: 'New York, NY',
     rating: 5,
   },
   {
     quote: 'The VIP package was worth every penny. A truly once-in-a-lifetime experience.',
     author: 'Maria Santos',
+    location: 'Miami, FL',
     rating: 5,
   },
 ];
@@ -410,7 +413,17 @@ export default function TourPage() {
               Tour Dates
             </div>
             <h2 className="mb-4 text-black">Catch İlker Live</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">Find a show near you and secure your tickets today</p>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-6">Find a show near you and secure your tickets today</p>
+            <Link
+              href="/tickets"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-full hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-base shadow-2xl hover:shadow-[#f0425f]/60"
+            >
+              <span>Book Now</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </Link>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -497,7 +510,17 @@ export default function TourPage() {
                 <div className="text-gray-600 text-sm mb-4">
                   Doors: {show.doorsTime} • Show: {show.showTime}
                 </div>
-                <div className="text-lg font-bold text-[#f0425f]">{show.price}</div>
+                <div className="text-lg font-bold text-[#f0425f] mb-4">{show.price}</div>
+                <Link
+                  href="/tickets"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all duration-300 transform hover:scale-105 font-semibold text-sm shadow-lg hover:shadow-[#f0425f]/50"
+                >
+                  <span>Book Now</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </Link>
               </div>
             ))}
           </div>
@@ -732,7 +755,10 @@ export default function TourPage() {
                 </div>
                 <p className="text-gray-300 mb-6 italic text-lg leading-relaxed">"{testimonial.quote}"</p>
                 <div className="pt-4 border-t border-gray-800">
-                  <p className="text-sm font-semibold text-white">- {testimonial.author}</p>
+                  <p className="text-sm font-semibold text-white mb-1">- {testimonial.author}</p>
+                  {testimonial.location && (
+                    <p className="text-xs text-gray-400">{testimonial.location}</p>
+                  )}
                 </div>
               </div>
             ))}
@@ -747,9 +773,9 @@ export default function TourPage() {
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="relative z-10 container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Ready to Create Memories?</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Ready for the Experience of a Lifetime?</h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-95 leading-relaxed">
-            Join thousands of others who have experienced the magic. Get your tickets now and be part of an unforgettable journey.
+            Don't just watch the show – be part of the adventure. Limited spots available for each experience.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

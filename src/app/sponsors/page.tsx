@@ -400,7 +400,8 @@ export default function SponsorsPage() {
           <div className="inline-block px-3 py-1 bg-yellow-400 text-black text-sm font-semibold rounded mb-4">
             Apply Now
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">Sponsor Application</h2>
+          <h2 className="text-3xl text-center md:text-4xl font-bold mb-12">Sponsor Application</h2>
+          <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-center" > Fill out the form below to express your interest in becoming a sponsor. Our partnership team will review your application and get back to you shortly.</p>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>

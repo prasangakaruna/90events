@@ -112,6 +112,33 @@ function CheckoutContent() {
       // Clear cart if it's a shop order
       if (type === 'shop') {
         localStorage.removeItem('shopCart');
+      } else {
+        // Save ticket purchase to localStorage for "My Account"
+        const ticketData = {
+          id: `ticket-${Date.now()}`,
+          orderId: `ORD-${Date.now()}`,
+          eventName: eventId ? `Event ${eventId}` : 'Gercekler Acidir by Ilker Ayrik',
+          eventDate: 'November 7, 2026',
+          eventTime: '8:00 PM',
+          location: 'New York, NY',
+          venue: 'The Town Hall',
+          tickets: tickets.map(t => ({
+            type: t.name,
+            quantity: t.quantity,
+            price: t.price,
+          })),
+          subtotal: subtotal,
+          fees: serviceFee,
+          total: total,
+          purchaseDate: new Date().toISOString(),
+          status: 'confirmed' as const,
+        };
+
+        // Get existing tickets or create new array
+        const existingTickets = localStorage.getItem('userTickets');
+        const ticketsArray = existingTickets ? JSON.parse(existingTickets) : [];
+        ticketsArray.push(ticketData);
+        localStorage.setItem('userTickets', JSON.stringify(ticketsArray));
       }
       // In a real app, process payment here
       const orderId = Date.now();

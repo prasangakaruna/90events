@@ -105,6 +105,12 @@ function ConfirmationContent() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
+              href="/account"
+              className="flex-1 px-6 py-3 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-colors text-center font-semibold"
+            >
+              View My Tickets
+            </Link>
+            <Link
               href="/events"
               className="flex-1 px-6 py-3 border-2 border-gray-800 text-white rounded-lg hover:border-gray-700 transition-colors text-center font-semibold"
             >
@@ -112,7 +118,7 @@ function ConfirmationContent() {
             </Link>
             <Link
               href="/"
-              className="flex-1 px-6 py-3 bg-[#f0425f] text-white rounded-lg hover:bg-[#d63852] transition-colors text-center font-semibold"
+              className="flex-1 px-6 py-3 border-2 border-gray-800 text-white rounded-lg hover:border-gray-700 transition-colors text-center font-semibold"
             >
               Back to Home
             </Link>

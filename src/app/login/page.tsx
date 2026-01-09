@@ -74,7 +74,7 @@ export default function LoginPage() {
               <span className="text-white text-2xl font-bold">90</span>
             </div>
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">Welcome Back</h1>
+          <h4 className="text-4xl md:text-5xl font-bold mb-2">Welcome Back</h4>
           <p className="text-gray-400">Sign in to your account to continue</p>
         </div>
 
