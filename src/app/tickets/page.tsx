@@ -425,7 +425,7 @@ export default function TicketsPage() {
                   <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                   Ticket Selection
                 </div>
-                <h2>Buy Tickets</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black">Buy Tickets</h2>
               </div>
               
               {/* Progress Indicator - Professional */}
