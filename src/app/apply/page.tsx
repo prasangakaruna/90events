@@ -363,11 +363,155 @@ export default function ApplyPage() {
               <p className="text-gray-300 text-lg mb-8">
                 Don't miss your chance to compete for amazing prizes and create unforgettable memories with your partner!
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/tickets"
+                  className="inline-block px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-black rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  Buy Tickets
+                </Link>
+                <Link
+                  href="/tickets"
+                  className="inline-block px-8 py-4 bg-transparent hover:bg-white/10 text-white rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 border-2 border-white/30 hover:border-white/50"
+                >
+                  Get Tickets & Apply Now
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsorships Section */}
+      <section className="py-24 bg-gradient-to-b from-black via-purple-900/20 to-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Become a Sponsor</h2>
+              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                Partner with us and reach thousands of engaged audiences. Showcase your brand on stage and connect with our community.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {/* Sponsor Tier 1 */}
+              <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50 hover:border-[#f0425f]/50 transition-all">
+                <div className="text-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-bold text-lg">1</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Tour Title Sponsor</h3>
+                  <p className="text-gray-400 text-sm">Premium visibility and branding</p>
+                </div>
+                <ul className="space-y-2 mb-6 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Logo on all promotional materials</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Stage mentions during shows</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Social media promotion</span>
+                  </li>
+                </ul>
+                <Link
+                  href="/sponsors"
+                  className="block w-full text-center px-6 py-3 bg-transparent border border-gray-600 text-white rounded-lg hover:bg-white/10 hover:border-[#f0425f] transition-all font-semibold"
+                >
+                  Learn More
+                </Link>
+              </div>
+
+              {/* Sponsor Tier 2 */}
+              <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50 hover:border-[#f0425f]/50 transition-all">
+                <div className="text-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-bold text-lg">2</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Industry Sponsor</h3>
+                  <p className="text-gray-400 text-sm">Targeted industry exposure</p>
+                </div>
+                <ul className="space-y-2 mb-6 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Logo on event materials</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Booth space at venues</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Digital marketing inclusion</span>
+                  </li>
+                </ul>
+                <Link
+                  href="/sponsors"
+                  className="block w-full text-center px-6 py-3 bg-transparent border border-gray-600 text-white rounded-lg hover:bg-white/10 hover:border-[#f0425f] transition-all font-semibold"
+                >
+                  Learn More
+                </Link>
+              </div>
+
+              {/* Sponsor Tier 3 */}
+              <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50 hover:border-[#f0425f]/50 transition-all">
+                <div className="text-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-bold text-lg">3</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">City Sponsor</h3>
+                  <p className="text-gray-400 text-sm">Local market presence</p>
+                </div>
+                <ul className="space-y-2 mb-6 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>City-specific branding</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Local event presence</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-[#f0425f] mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Community engagement</span>
+                  </li>
+                </ul>
+                <Link
+                  href="/sponsors"
+                  className="block w-full text-center px-6 py-3 bg-transparent border border-gray-600 text-white rounded-lg hover:bg-white/10 hover:border-[#f0425f] transition-all font-semibold"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+
+            <div className="text-center">
               <Link
-                href="/tickets"
-                className="inline-block px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-black rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                href="/sponsors"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-[#f0425f] to-[#ec4899] hover:from-[#d63852] hover:to-[#db2777] text-white rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
               >
-                Get Tickets & Apply Now
+                View All Sponsorship Opportunities
               </Link>
             </div>
           </div>

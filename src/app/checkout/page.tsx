@@ -127,16 +127,15 @@ function CheckoutContent() {
     <div className="min-h-screen bg-white text-gray-900 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-6">
-            <h1 className="text-lg font-semibold mb-0.5 text-gray-900 tracking-tight uppercase">Checkout</h1>
-            <p className="text-xs text-gray-500 font-normal">Complete your purchase securely</p>
+          <div className="mb-6"> 
+            <p className="text-[18px] text-gray-500 font-normal">Complete your purchase securely</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Order Summary */}
             <div className="lg:col-span-1">
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 shadow-sm sticky top-24">
-                <h2 className="text-2xl font-bold mb-6 text-gray-900">Order Summary</h2>
+                <h6 className=" text-[10px] font-bold text-gray-900 uppercase tracking-wide">Order Summary</h6>
                 <div className="space-y-4 mb-6 max-h-96 overflow-y-auto">
                   {items.length === 0 ? (
                     <p className="text-gray-500 text-center py-8">Your cart is empty</p>
@@ -195,7 +194,7 @@ function CheckoutContent() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
                 <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                  <h2 className="text-2xl font-bold mb-6 text-gray-900">Personal Information</h2>
+                    <h6 className=" text-[10px] font-bold text-gray-900 uppercase tracking-wide">Personal Information</h6>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold mb-2 text-gray-700">First Name *</label>
@@ -251,7 +250,7 @@ function CheckoutContent() {
                 {/* Payment Information */}
                 <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-bold text-gray-900">Payment Information</h2>
+                    <h6 className=" text-[10px] font-bold text-gray-900 uppercase tracking-wide">Payment Information</h6>
                     <div className="flex gap-2">
                       <div className="w-10 h-6 bg-blue-600 rounded flex items-center justify-center text-white text-xs font-bold">VISA</div>
                       <div className="w-10 h-6 bg-orange-500 rounded flex items-center justify-center text-white text-xs font-bold">MC</div>
@@ -312,7 +311,7 @@ function CheckoutContent() {
 
                 {/* Billing Address */}
                 <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                  <h2 className="text-2xl font-bold mb-6 text-gray-900">Billing Address</h2>
+                   <h6 className=" text-[10px] font-bold text-gray-900 uppercase tracking-wide">Billing Address</h6>
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-semibold mb-2 text-gray-700">Address *</label>

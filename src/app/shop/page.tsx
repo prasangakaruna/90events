@@ -221,16 +221,16 @@ export default function ShopPage() {
       </section>
 
       {/* Featured VIP Experience */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">FEATURED</span>
+            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">FEATURED</span>
           </div>
           
-          <div className="bg-gradient-to-r from-purple-900/30 via-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700">
+          <div className="bg-gradient-to-r from-purple-100 via-gray-50 to-purple-100 rounded-2xl p-8 border border-gray-200">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Left - Image */}
-              <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-800">
+              <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-200">
                 <Image
                   src={vipExperience.image}
                   alt={vipExperience.name}
@@ -242,18 +242,18 @@ export default function ShopPage() {
               {/* Right - Content */}
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/20 border border-orange-500/50 rounded-full mb-4">
-                  <span className="text-orange-400 text-sm font-semibold">VIP Experience</span>
+                  <span className="text-orange-600 text-sm font-semibold">VIP Experience</span>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">{vipExperience.name}</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">{vipExperience.name}</h2>
                 
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-6 leading-relaxed">
                   {vipExperience.description}
                 </p>
 
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <span className="text-4xl font-bold text-yellow-400">${vipExperience.price}</span>
+                    <span className="text-4xl font-bold text-yellow-600">${vipExperience.price}</span>
                   </div>
                   <Link
                     href={`/shop/${vipExperience.id}`}
@@ -373,10 +373,10 @@ export default function ShopPage() {
       </section>
 
       {/* Don't Miss Out Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-900/30 via-gray-900 to-purple-900/30">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Don't Miss Out</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Don't Miss Out</h2>
+          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
             Limited edition tour merchandise. Once they're gone, they're gone forever.
           </p>
           <div className="flex justify-center">
@@ -385,6 +385,100 @@ export default function ShopPage() {
               <circle cx="20" cy="21" r="1"></circle>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Sponsors Section */}
+      <section className="py-16 bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Sponsors</h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Proudly supported by these amazing partners
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
+            {/* Tour Title Sponsors */}
+            <Link href="/sponsors/1" className="group">
+              <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-[#f0425f]/50 transition-all h-full flex flex-col items-center justify-center min-h-[150px]">
+                <div className="relative w-20 h-20 mb-4 rounded-lg overflow-hidden bg-gray-700">
+                  <Image
+                    src="/img/photo-1554866585-cd94860890b7.jpg"
+                    alt="Nike"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-sm text-center">Nike</h3>
+              </div>
+            </Link>
+
+            <Link href="/sponsors/2" className="group">
+              <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-[#f0425f]/50 transition-all h-full flex flex-col items-center justify-center min-h-[150px]">
+                <div className="relative w-20 h-20 mb-4 rounded-lg overflow-hidden bg-gray-700">
+                  <Image
+                    src="/img/photo-1555041469-a586c61ea9bc.jpg"
+                    alt="Doğtaş Furniture"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-sm text-center">Doğtaş Furniture</h3>
+              </div>
+            </Link>
+
+            <Link href="/sponsors/3" className="group">
+              <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-[#f0425f]/50 transition-all h-full flex flex-col items-center justify-center min-h-[150px]">
+                <div className="relative w-20 h-20 mb-4 rounded-lg overflow-hidden bg-gray-700">
+                  <Image
+                    src="/img/toyoto.jpg"
+                    alt="Toyota Motors"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-sm text-center">Toyota Motors</h3>
+              </div>
+            </Link>
+
+            <Link href="/sponsors/4" className="group">
+              <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-[#f0425f]/50 transition-all h-full flex flex-col items-center justify-center min-h-[150px]">
+                <div className="relative w-20 h-20 mb-4 rounded-lg overflow-hidden bg-gray-700">
+                  <Image
+                    src="/img/photo-1581578731548-c64695cc6952.jpg"
+                    alt="Coca-Cola Company"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-sm text-center">Coca-Cola</h3>
+              </div>
+            </Link>
+
+            <Link href="/sponsors/5" className="group">
+              <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-[#f0425f]/50 transition-all h-full flex flex-col items-center justify-center min-h-[150px]">
+                <div className="relative w-20 h-20 mb-4 rounded-lg overflow-hidden bg-gray-700">
+                  <Image
+                    src="/img/photo-1610945265064-0e34e5519bbf.jpg"
+                    alt="Samsung Electronics"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-sm text-center">Samsung</h3>
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/sponsors"
+              className="inline-block px-6 py-3 bg-transparent border-2 border-gray-700 text-white rounded-lg hover:border-[#f0425f] hover:bg-[#f0425f]/10 transition-all font-semibold"
+            >
+              View All Sponsors
+            </Link>
           </div>
         </div>
       </section>
