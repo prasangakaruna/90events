@@ -368,8 +368,8 @@ export default function TicketsPage() {
           {/* Event Stage Image Background - Full Cover */}
           <div className="absolute inset-0 opacity-50">
             <Image
-              src="/img/event-stage-BBm4cEDz.webp"
-              alt="Event stage"
+              src="/img/baneer.jpg"
+              alt="Hero banner"
               fill
               className="object-cover"
               style={{ objectPosition: 'center center' }}
@@ -381,8 +381,8 @@ export default function TicketsPage() {
           {/* Additional transparent image overlay for depth */}
           <div className="absolute inset-0 opacity-30">
             <Image
-              src="/img/event-stage-BBm4cEDz.webp"
-              alt="Event stage"
+              src="/img/baneer.jpg"
+              alt="Hero banner"
               fill
               className="object-cover blur-sm"
               style={{ objectPosition: 'center center' }}

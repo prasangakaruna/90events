@@ -91,8 +91,8 @@ export default function AccountPage() {
           
           <div className="absolute inset-0 opacity-50">
             <Image
-              src="/img/event-stage-BBm4cEDz.webp"
-              alt="Event stage"
+              src="/img/baneer.jpg"
+              alt="Hero banner"
               fill
               className="object-cover"
               style={{ objectPosition: 'center center' }}

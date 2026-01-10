@@ -230,31 +230,6 @@ export default function TourPage() {
           {/* Dynamic Reddish-orange glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-orange-600/30 via-red-600/20 to-transparent blur-3xl animate-pulse-glow"></div>
           
-          {/* Event Stage Image Background - Full Cover */}
-          <div className="absolute inset-0 opacity-50">
-            <Image
-              src="/img/event-stage-BBm4cEDz.webp"
-              alt="Event stage"
-              fill
-              className="object-cover"
-              style={{ objectPosition: 'center center' }}
-              priority
-              quality={95}
-            />
-          </div>
-          
-          {/* Additional transparent image overlay for depth */}
-          <div className="absolute inset-0 opacity-30">
-            <Image
-              src="/img/event-stage-BBm4cEDz.webp"
-              alt="Event stage"
-              fill
-              className="object-cover blur-sm"
-              style={{ objectPosition: 'center center' }}
-              quality={80}
-            />
-          </div>
-          
           {/* Professional Spotlight effect */}
           <div className="absolute inset-0 bg-gradient-radial from-white/12 via-transparent to-transparent" style={{
             background: 'radial-gradient(ellipse at center 40%, rgba(255,255,255,0.18) 0%, transparent 65%)'
@@ -358,41 +333,51 @@ export default function TourPage() {
 
    
 
-      {/* More Than Just a Tour Section - Professional */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
+   
+
+         {/* Choose Your Adventure Section - Professional */}
+         <section id="packages" className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-bold rounded-full shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider mb-4">
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-              Why Choose Us
+              Experience Packages
             </div>
-            <h2 className="mb-4">More Than Just a Tour</h2>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-              It's an Experience - Every moment is crafted to create unforgettable memories
+            <h2 className="mb-4">Choose Your Adventure</h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-3 leading-relaxed">
+              Every package is designed to create unforgettable memories. Pick the experience that speaks to you.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#f0425f]/50 transition-all group">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
-                  ❤️
+            <p className="text-sm text-gray-500">
+              Most experiences are <span className="text-[#f0425f] font-semibold">standalone</span> - no show ticket required.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {experiencePackages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className="bg-gray-900 rounded-xl p-8 border-2 border-gray-800 hover:border-[#f0425f] transition-all relative shadow-lg hover:shadow-xl group"
+              >
+                <div className="absolute top-6 right-6">
+                  <div className="bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white px-4 py-2 rounded-lg font-bold text-xl shadow-lg">
+                    {pkg.price}
+                  </div>
                 </div>
-                <h3 className="mb-4">Personal Connection</h3>
-                <p className="text-gray-400 leading-relaxed">Small groups mean real conversations and genuine moments with İlker that create lasting bonds.</p>
+                <h3 className="mb-4 pr-24 text-white group-hover:text-[#f0425f] transition-colors">{pkg.title}</h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">{pkg.description}</p>
+                <ul className="space-y-2 mb-6">
+                  {pkg.features.map((feature, index) => (
+                    <li key={index} className="text-sm text-gray-300 flex items-start gap-3">
+                      <span className="text-[#f0425f] mt-0.5 font-bold">✓</span>
+                      <span className="leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button className="btn-gradient-lg w-full">
+                  Book This Experience
+                </button>
               </div>
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#f0425f]/50 transition-all group">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
-                  📸
-                </div>
-                <h3 className="mb-4">Captured Moments</h3>
-                <p className="text-gray-400 leading-relaxed">Professional photos and videos to relive your adventure forever and share with loved ones.</p>
-              </div>
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#f0425f]/50 transition-all group">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
-                  ⭐
-                </div>
-                <h3 className="mb-4">Exclusive Access</h3>
-                <p className="text-gray-400 leading-relaxed">Behind the scenes stories and experiences you won't find anywhere else in the world.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -527,52 +512,47 @@ export default function TourPage() {
         </div>
       </section>
 
-      {/* Choose Your Adventure Section - Professional */}
-      <section id="packages" className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
+
+   {/* More Than Just a Tour Section - Professional */}
+   <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-bold rounded-full shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider mb-4">
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-              Experience Packages
+              Why Choose Us
             </div>
-            <h2 className="mb-4">Choose Your Adventure</h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-3 leading-relaxed">
-              Every package is designed to create unforgettable memories. Pick the experience that speaks to you.
+            <h2 className="mb-4">More Than Just a Tour</h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+              It's an Experience - Every moment is crafted to create unforgettable memories
             </p>
-            <p className="text-sm text-gray-500">
-              Most experiences are <span className="text-[#f0425f] font-semibold">standalone</span> - no show ticket required.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {experiencePackages.map((pkg) => (
-              <div
-                key={pkg.id}
-                className="bg-gray-900 rounded-xl p-8 border-2 border-gray-800 hover:border-[#f0425f] transition-all relative shadow-lg hover:shadow-xl group"
-              >
-                <div className="absolute top-6 right-6">
-                  <div className="bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white px-4 py-2 rounded-lg font-bold text-xl shadow-lg">
-                    {pkg.price}
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#f0425f]/50 transition-all group">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                  ❤️
                 </div>
-                <h3 className="mb-4 pr-24 text-white group-hover:text-[#f0425f] transition-colors">{pkg.title}</h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">{pkg.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {pkg.features.map((feature, index) => (
-                    <li key={index} className="text-sm text-gray-300 flex items-start gap-3">
-                      <span className="text-[#f0425f] mt-0.5 font-bold">✓</span>
-                      <span className="leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button className="btn-gradient-lg w-full">
-                  Book This Experience
-                </button>
+                <h3 className="mb-4">Personal Connection</h3>
+                <p className="text-gray-400 leading-relaxed">Small groups mean real conversations and genuine moments with İlker that create lasting bonds.</p>
               </div>
-            ))}
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#f0425f]/50 transition-all group">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                  📸
+                </div>
+                <h3 className="mb-4">Captured Moments</h3>
+                <p className="text-gray-400 leading-relaxed">Professional photos and videos to relive your adventure forever and share with loved ones.</p>
+              </div>
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#f0425f]/50 transition-all group">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#f0425f] to-[#ec4899] rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                  ⭐
+                </div>
+                <h3 className="mb-4">Exclusive Access</h3>
+                <p className="text-gray-400 leading-relaxed">Behind the scenes stories and experiences you won't find anywhere else in the world.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+   
 
       {/* City Based Sponsors Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white text-black relative overflow-hidden">

@@ -301,7 +301,7 @@ export default function Home2() {
                 {/* Event Stage Image Background - Full Cover */}
                 <div className="absolute inset-0 opacity-50">
                   <Image
-                    src={show.events[0]?.image || '/img/event-stage-BBm4cEDz.webp'}
+                    src={show.events[0]?.image || '/img/baneer.jpg'}
                     alt={show.name}
                     fill
                     className="object-cover"
@@ -313,7 +313,7 @@ export default function Home2() {
                 {/* Additional transparent image overlay for depth */}
                 <div className="absolute inset-0 opacity-30">
                   <Image
-                    src={show.events[0]?.image || '/img/event-stage-BBm4cEDz.webp'}
+                    src={show.events[0]?.image || '/img/baneer.jpg'}
                     alt={show.name}
                     fill
                     className="object-cover blur-sm"

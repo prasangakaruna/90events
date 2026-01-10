@@ -203,121 +203,22 @@ export default function Home() {
         
         {/* Background Image - Full Section */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Dynamic Reddish-orange glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-600/30 via-red-600/20 to-transparent blur-3xl animate-pulse-glow"></div>
-          
-          {/* Event Stage Image Background - Full Cover */}
-          <div className="absolute inset-0 opacity-50">
+          {/* Event Stage Image Background - Centered */}
+          <div className="absolute inset-0 flex items-center justify-center">
             <Image
-              src="/img/event-stage-BBm4cEDz.webp"
-              alt="Event stage"
-              fill
-              className="object-cover"
-              style={{ objectPosition: 'center center' }}
+              src="/img/baneer.jpg"
+              alt="Hero banner"
+              width={1200}
+              height={600}
+              className="object-contain"
               priority
               quality={95}
             />
           </div>
-          
-          {/* Additional transparent image overlay for depth */}
-          <div className="absolute inset-0 opacity-30">
-            <Image
-              src="/img/event-stage-BBm4cEDz.webp"
-              alt="Event stage"
-              fill
-              className="object-cover blur-sm"
-              style={{ objectPosition: 'center center' }}
-              quality={80}
-            />
-          </div>
-          
-          {/* Professional Spotlight effect */}
-          <div className="absolute inset-0 bg-gradient-radial from-white/12 via-transparent to-transparent" style={{
-            background: 'radial-gradient(ellipse at center 40%, rgba(255,255,255,0.18) 0%, transparent 65%)'
-          }}></div>
-          
-          {/* Subtle vignette effect */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
         
-        
-        
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[600px]">
-            {/* Left side - Professional Content */}
-            <div className="text-left lg:text-left animate-fadeIn flex flex-col justify-center space-y-4">
-              {/* Badge */}
-              <div className="mb-2">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white text-xs font-bold rounded-full shadow-lg shadow-[#f0425f]/30 uppercase tracking-wider">
-                  <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                  Hosted by İlker Ayrık
-                </span>
-              </div>
-              
-              {/* ILKER AYRIK - Left Side */}
-              <p className="sub-header text-gray-200 mb-2 italic tracking-wide">
-                ILKER AYRIK
-              </p>
-              
-              {/* Main Title - Professional Typography */}
-              <h1 className="mb-4">
-                <span className="neon-text block mb-1">Gerçekler</span>
-                <span className="neon-text block">Acıdır</span>
-          </h1>
-              
-              {/* Description */}
-              <p className="body-text-lg text-gray-300 mb-6 max-w-xl">
-                {t.heroDescription}
-              </p>
-              
-              {/* CTA Buttons - Professional */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
-            <Link
-              href="/tickets"
-              className="btn-gradient-lg flex items-center justify-center gap-2"
-            >
-              <span>{t.buyTicket || 'Get Tickets'}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </Link>
-            <Link
-              href="/tickets"
-              className="btn-secondary-lg flex items-center justify-center gap-2"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>View All Dates</span>
-                </Link>
-              </div>
-              
-              {/* Statistics - Professional Cards */}
-              <div className="flex flex-wrap gap-6 md:gap-8 mb-6">
-                <div className="text-left group">
-                  <div className="text-3xl md:text-4xl font-extrabold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">7</div>
-                  <div className="text-gray-400 text-sm font-medium uppercase tracking-wider">{t.shows}</div>
-                </div>
-                <div className="text-left group">
-                  <div className="text-3xl md:text-4xl font-extrabold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">$50K+</div>
-                  <div className="text-gray-400 text-sm font-medium uppercase tracking-wider">{t.prizes}</div>
-                </div>
-                <div className="text-left group">
-                  <div className="text-3xl md:text-4xl font-extrabold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">1</div>
-                  <div className="text-gray-400 text-sm font-medium uppercase tracking-wider">{t.experience}</div>
-                </div>
-              </div>
-
-             
-            </div>
-            
-            {/* Right side - Empty or can be used for image */}
-            <div className="flex items-center justify-center lg:justify-end">
-              {/* Right side can be used for additional content if needed */}
-            </div>
-          </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center min-h-[680px]">
+          {/* Content removed - banner image only */}
         </div>
         
         {/* Professional Bottom Gradient Fade - Reduced */}
