@@ -18,10 +18,15 @@ interface Show {
 
 interface ExperiencePackage {
   id: string;
+  category: string;
   title: string;
+  subtitle: string;
   price: string;
-  description: string;
-  features: string[];
+  duration: string;
+  groupSize: string;
+  activity: string;
+  highlights: string[];
+  locations: string[];
 }
 
 const shows: Show[] = [
@@ -96,69 +101,75 @@ const shows: Show[] = [
 const experiencePackages: ExperiencePackage[] = [
   {
     id: '1',
-    title: 'Scenic Truck Adventure',
-    price: '$299',
-    description: 'Join İlker for an unforgettable journey through breathtaking landscapes in a comfortable truck. Experience nature like never before.',
-    features: [
-      '4-hour scenic tour',
-      'Professional guide',
-      'Photo opportunities',
-      'Refreshments included',
-      'Small group experience',
+    category: '🏕️ FAMILY FOCUSED',
+    title: 'Family Camping Adventure',
+    subtitle: '"Gerçekler Acıdır USA Edition"',
+    price: 'Contact Us',
+    duration: '8 Days',
+    groupSize: '12-16',
+    activity: 'Moderate',
+    highlights: [
+      'Camp with Ilker at Grand Canyon & Zion',
+      'Learn American camping techniques',
+      'Family campfire meals & s\'mores',
+      'Mix of camping & luxury hotels',
+      'Behind-the-scenes filming access',
     ],
+    locations: ['🏜️ Grand Canyon', '🏔️ Zion', '🌅 Bryce Canyon', '🏜️ Sedona'],
   },
   {
     id: '2',
-    title: 'Outdoor Camping Retreat',
-    price: '$449',
-    description: 'Spend a night under the stars with İlker. Campfire stories, stargazing, and authentic outdoor experience.',
-    features: [
-      'Overnight camping',
-      'Campfire dinner',
-      'Stargazing session',
-      'Breakfast included',
-      'Camping gear provided',
+    category: '🚛 CULINARY FOCUSED',
+    title: 'Trucker\'s Culinary Road Trip',
+    subtitle: '"Big Rig, Big Flavors"',
+    price: 'Contact Us',
+    duration: '10 Days',
+    groupSize: '10-12',
+    activity: 'Light',
+    highlights: [
+      'Ride in production truck with Ilker',
+      'Cook at scenic highway stops',
+      'Visit authentic truck stops',
+      'Pacific Coast Highway beauty',
+      'Historic Route 66 experience',
     ],
+    locations: ['🌉 San Francisco', '🌊 Big Sur', '🏖️ Santa Barbara', '🛣️ Route 66'],
   },
   {
     id: '3',
-    title: 'Bike & Dine Tour',
-    price: '$199',
-    description: 'Explore the city on two wheels, then enjoy a curated dining experience with İlker.',
-    features: [
-      '3-hour bike tour',
-      'Local restaurant visit',
-      'Meal included',
-      'Bike rental',
-      'City exploration',
+    category: '🚙 ADVENTURE EXTREME',
+    title: 'Jeep Wilderness Expedition',
+    subtitle: '"Off-Road Amerika"',
+    price: 'Contact Us',
+    duration: '9 Days',
+    groupSize: '8-10',
+    activity: 'Challenging',
+    highlights: [
+      'Drive your own Jeep Wrangler',
+      'Rooftop tent camping under stars',
+      'Hell\'s Revenge legendary trail',
+      'Remote backcountry access',
+      'Professional off-road training',
     ],
+    locations: ['🏔️ Moab', '🏜️ Canyonlands', '🌵 Monument Valley', '⛰️ Capitol Reef'],
   },
   {
     id: '4',
-    title: 'VIP Sponsor Dinner',
-    price: '$149',
-    description: 'An exclusive dinner experience with İlker and other VIP guests. Intimate setting, great food, great company.',
-    features: [
-      '3-course dinner',
-      'Meet & greet with İlker',
-      'VIP seating',
-      'Wine pairing',
-      'Limited to 20 guests',
+    category: '🏍️ GOURMET EXPERIENCE',
+    title: 'Motorcycle Foodie Journey',
+    subtitle: '"Two Wheels, Endless Flavors"',
+    price: 'Contact Us',
+    duration: '10 Days',
+    groupSize: '8-10',
+    activity: 'Moderate',
+    highlights: [
+      'Ride Honda motorcycles premium routes',
+      'Michelin-star restaurants & wineries',
+      'Wine tasting Napa & Sonoma',
+      'Pacific Coast Highway riding',
+      'Meet acclaimed chefs',
     ],
-  },
-  {
-    id: '5',
-    title: 'Ultimate VIP Package',
-    price: '$899',
-    description: 'The complete experience: show tickets, backstage access, dinner, and a personal meet & greet.',
-    features: [
-      'Premium show tickets',
-      'Backstage access',
-      'VIP dinner',
-      'Personal meet & greet',
-      'Photo opportunities',
-      'Signed merchandise',
-    ],
+    locations: ['🍷 Napa Valley', '🌊 Oregon Coast', '🍺 Portland', '🌆 Seattle'],
   },
 ];
 
@@ -352,30 +363,87 @@ export default function TourPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {experiencePackages.map((pkg) => (
               <div
                 key={pkg.id}
                 className="bg-gray-900 rounded-xl p-8 border-2 border-gray-800 hover:border-[#f0425f] transition-all relative shadow-lg hover:shadow-xl group"
               >
-                <div className="absolute top-6 right-6">
-                  <div className="bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white px-4 py-2 rounded-lg font-bold text-xl shadow-lg">
-                    {pkg.price}
+                {/* Category Badge */}
+                <div className="mb-4">
+                  <span className="text-xs font-bold text-[#f0425f] uppercase tracking-wider">
+                    {pkg.category}
+                  </span>
+                </div>
+
+                {/* Title and Subtitle */}
+                <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-[#f0425f] transition-colors">
+                  {pkg.title}
+                </h3>
+                <p className="text-gray-400 italic mb-6 text-sm">{pkg.subtitle}</p>
+
+                {/* Info Grid */}
+                <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-gray-800">
+                  <div>
+                    <div className="text-xs text-gray-500 mb-1">Duration</div>
+                    <div className="text-white font-semibold">{pkg.duration}</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500 mb-1">Group Size</div>
+                    <div className="text-white font-semibold">{pkg.groupSize}</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500 mb-1">Activity</div>
+                    <div className="text-white font-semibold">{pkg.activity}</div>
                   </div>
                 </div>
-                <h3 className="mb-4 pr-24 text-white group-hover:text-[#f0425f] transition-colors">{pkg.title}</h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">{pkg.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {pkg.features.map((feature, index) => (
-                    <li key={index} className="text-sm text-gray-300 flex items-start gap-3">
-                      <span className="text-[#f0425f] mt-0.5 font-bold">✓</span>
-                      <span className="leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button className="btn-gradient-lg w-full">
-                  Book This Experience
-                </button>
+
+                {/* Tour Highlights */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-bold text-gray-300 mb-3 uppercase tracking-wider">Tour Highlights</h4>
+                  <ul className="space-y-2">
+                    {pkg.highlights.map((highlight, index) => (
+                      <li key={index} className="text-sm text-gray-300 flex items-start gap-3">
+                        <span className="text-[#f0425f] mt-0.5 font-bold">✓</span>
+                        <span className="leading-relaxed">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Locations */}
+                <div className="mb-6 pb-6 border-b border-gray-800">
+                  <div className="flex flex-wrap gap-2">
+                    {pkg.locations.map((location, index) => (
+                      <span key={index} className="text-sm text-gray-400">
+                        {location}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Price and Actions */}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-xs text-gray-500 mb-1">From</div>
+                    <div className="text-xl font-bold text-[#f0425f]">{pkg.price}</div>
+                  </div>
+                  <div className="flex gap-3">
+                    <button className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all font-semibold text-sm border border-gray-700">
+                      Contact Us
+                    </button>
+                    <Link
+                      href={`/tour/packages/${pkg.id}`}
+                      className="px-4 py-2 bg-gradient-to-r from-[#f0425f] to-[#ec4899] text-white rounded-lg hover:from-[#d63852] hover:to-[#db2777] transition-all font-semibold text-sm flex items-center gap-2"
+                    >
+                      View Details
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
